@@ -71,3 +71,22 @@ BFC 的区域不会与 float 的元素区域重叠
 	b、:after / <br> : clear: both
 	c、创建父级 BFC
 	d、父级设置高度
+
+
+二、浏览器篇
+
+1、从输入 url 到展示的过程
+   （1）DNS解析
+   （2）TCP三次握手
+   （3）发送请求，分析url，设置请求报文头（头，主体）
+   （4）服务器返回请求的文件（html）
+   （5）浏览器渲染
+	a.HTML parser --> DOM Tree
+	   I.标记化算法，进行元素状态的标记
+	   II.dom树构建
+	b.CSS parser --> Style Tree
+	   I.解析css代码，生成样式树
+	c.attrchment --> Render Tree
+	   I.结合dom树与style树,生成渲染树
+	d.layout:布局
+	e.GPU painting:像素绘制页面
