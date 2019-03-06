@@ -70,3 +70,14 @@ gulp   （grunt，fis3，webpack）
 1、git init 初始化文件
 2、在GitHub上建立远程仓库
 3、在本地生成秘钥（在git命令行里打ssh-Keygen）
+
+六、创建个人的hexo博客
+1、安装node环境
+2、下载hexo脚手架  命令：npm install hexo-cli -g
+3、下载hexo包 命令：hexo init blog
+4、进入blog文件夹  安装依赖  命令：npm install
+5、启动本地服务看看是否有效  命令：hexo server
+6、部署到GitHub上  命令：npm install hexo-deployer-git --save
+     更改配置文件_config.yml
+7、hexo g(变为生产环境)
+8、hexo d(变为开发环境）
