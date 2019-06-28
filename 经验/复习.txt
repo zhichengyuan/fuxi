@@ -1,0 +1,92 @@
+一、CSS篇
+1. 盒模型
+页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：
+
+
+   a、content-box (W3C 标准盒模型)
+
+   b、border-box (IE 盒模型)
+
+   c、padding-box
+
+   d、margin-box
+
+
+2、BFC
+   块级格式化上下文，是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。
+
+   IE下为 Layout，可通过 zoom:1 触发
+      a、触发条件：
+	（1）根元素
+	（2）positon: absolute/fixed
+	（3）display: inline-block / table
+	（4）float 元素
+	（5）ovevflow !== visible
+
+      b、规则：
+	（1）属于同一个 BFC 的两个相邻 Box 垂直排列
+
+	（2）属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠
+
+	（3）BFC 中子元素不会超出他的包含块
+	（4）
+BFC 的区域不会与 float 的元素区域重叠
+
+	（5）计算 BFC 的高度时，浮动子元素也参与计算
+
+	（6）文字层不会被浮动层覆盖，环绕于周围。
+
+      c、应用：
+	（1）阻止margin重叠
+	（2）可以包含浮动元素 —— 清除内部浮动(清除浮动的原理是两个div都位于同一个 BFC 区域之中)
+	（3）自适应两栏布局
+	（4）可以阻止元素被浮动元素覆盖
+
+
+3、居中布局
+      a、水平居中
+	（1）行内元素: text-align: center
+	（2）块级元素: margin: 0 auto
+	（3）absolute + transform
+	（4）flex + justify-content: center
+
+      b、垂直居中
+	（1）line-height: height
+        （2）absolute + transform
+        （3）flex + align-items: center
+        （4）table
+
+      c、水平垂直居中
+	（1）absolute + transform
+	（2）flex + justify-content + align-items
+
+
+4、选择器优先级
+	a、!important > 行内样式 > #id > .class > tag > * > 继承 > 默认
+	b、选择器 从右往左 解析
+
+
+5、去除浮动影响，防止父级高度塌陷
+	a、通过增加尾元素清除浮动
+	b、:after / <br> : clear: both
+	c、创建父级 BFC
+	d、父级设置高度
+
+
+二、浏览器篇
+
+1、从输入 url 到展示的过程
+   （1）DNS解析
+   （2）TCP三次握手
+   （3）发送请求，分析url，设置请求报文头（头，主体）
+   （4）服务器返回请求的文件（html）
+   （5）浏览器渲染
+	a.HTML parser --> DOM Tree
+	   I.标记化算法，进行元素状态的标记
+	   II.dom树构建
+	b.CSS parser --> Style Tree
+	   I.解析css代码，生成样式树
+	c.attrchment --> Render Tree
+	   I.结合dom树与style树,生成渲染树
+	d.layout:布局
+	e.GPU painting:像素绘制页面

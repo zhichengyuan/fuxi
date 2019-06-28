@@ -1,0 +1,83 @@
+一、webpack的理解
+1、webpack是一个模块处理器，将一切的文件看成是一个个的模块，有一个入口文件，根据入口和文件的依赖打包文件，支持AMD、CMD和es6的import规范。其目的是为了提高开发效率，提高代码质量，保证开发的统一性。
+二、webpack的使用
+1、安装git，node环境
+2、全局安装webpack （npm包管理工具）命令：npm install webpack webpack-cli -g   (webpack-cli 是命令行接口工具）
+     npm安装的慢的情况下可以使用cnpm（淘宝镜像）命令：npm install -g --registry https://registry.npm.taobao.org 
+     用的时候要统一，否则容易出现错误
+3、全局安装之后再局部安装防止webpack版本冲突
+     （1）初始化当前项目 命令：npm init   （在文件夹内会出现pack.json文件）
+     （2）局部安装webpack 命令：npm install webpack webpack-cli --save-dev(安装在当前的开发环境当中)
+注意：当互相传文件的时候可以不传node_modules文件，但是得传输package.json文件，然后通过npm install下载包
+4、执行wepack  ！报错--》新建入口文件   .src/index.js
+     设置入口文件（webpack4以上必须自己设置入口文件、 默认处理src文件夹下的index.js）
+     设置完入口文件通过命令：webpack打包，打包出的dist文件就是压缩后的文件
+5、规定webpack处理打包方式--->shell语句和配置文件
+6、配置wepack.config.js文件（详情看class文件夹）
+7、开启监听模式 命令：webpack --watch (省的老是用webpack命令手动打包）
+8、在本地打开文件
+   （1）先下载服务  命令：npm install webpack-dev-server -D 开发环境下安装
+   （2）开启服务器 命令：webpack-dev-server（不知道为什么不好使）
+9、loader的加载和使用
+	下载css相关的loader和抽离html的相关loader，，，下载js相关的loader，，，下载完成需要写相应的配置文件
+	(命令：npm install style-loader css-loader -D)
+
+	img打包是只有经过入口文件的图片才会被打包(下载的命令:npm install url-loader -D)
+     （1）、两种抽离html的方法：
+           下载loader（ npm install file-loader html-loader extract-loader -D）或者下载插件（npm install html-webpack-plugin -D）
+      （2）、下载压缩js的插件npm install uglifyjs-webpack-plugin -D    然后在入口文件里引入，然后再引用
+      （3）、下载压缩css的插件 npm install mini-css-extract-plugin -D 然后在入口文件里面引入，然后使用
+10、webpack的简单工作流程
+
+二、less 的学习
+      （1）、本地引用看官网
+      （2）、webpack里面使用
+	a、下载less-loader( npm install less-loader -D,,,,,npm install less -D)       b、配置文件里写相应的配置
+
+
+三   gulp的学习
+1、全局下载gulp   命令：npm install gulp -g
+2、下载局部gulp   命令：npm install gulp --save-dev(开发环境）
+3、下载图片压缩插件，（具体可以看看官网） 下载命令： npm install gulp-imagemin --save-dev   然后配置文件引入使用
+4、检查文件是否被压缩过  下载命令：npm install gulp-newer --save-dev 然后配置文件引入使用
+
+5、下载html文件压缩插件，（具体可以看看官网https://gulpjs.com）下载命令：npm install gulp-htmlclean --save-dev  然后配置文件引入使用
+
+6、下载js文件压缩插件，下载命令：npm install gulp-uglify  --save-dev  然后配置文件引入使用
+      压缩js文件之前可以下载去掉调试语句（下载命令：npm install gulp-strip-debug --save-dev 然后配置文件引入使用）
+     压缩js文件之前可以把js文件处理成一个文件再压缩（下载命令：npm install gulp-concat --save-dev 然后配置文件引入使用）
+
+7、下载less转换css插件，下载命令:npm install gulp-less --save-dev 然后配置文件引入使用
+      下载解决css动画兼的插件 下载命令：npm install gulp-postcss --save-dev 然后在配置文件内引入
+      下载添加css前缀的插件  下载命令：npm install autoprefixer --save-dev  然后在配置文件内引入
+      下载压缩css代码的插件  下载命令：npm install cssnano --save-dev  然后在配置文件内引入
+
+8、export NODE_ENV development设置为开发环境
+
+9、下载启动微型本地服务器的插件 下载命令：npm install gulp-connect  然后在配置文件内引入
+
+四、一个项目需要几步
+1、确定需要的技术     创建文件目录   确定第三方依赖
+2、编码  刷新
+3、语法检查   文件合并   文件压缩
+
+自动化构建工具，可以完成   css、js语法检查   文件合并  文件压缩
+
+gulp   （grunt，fis3，webpack）
+
+
+五、git的学习
+1、git init 初始化文件
+2、在GitHub上建立远程仓库
+3、在本地生成秘钥（在git命令行里打ssh-Keygen）
+
+六、创建个人的hexo博客
+1、安装node环境
+2、下载hexo脚手架  命令：npm install hexo-cli -g
+3、下载hexo包 命令：hexo init blog
+4、进入blog文件夹  安装依赖  命令：npm install
+5、启动本地服务看看是否有效  命令：hexo server
+6、部署到GitHub上  命令：npm install hexo-deployer-git --save
+     更改配置文件_config.yml
+7、hexo g(变为生产环境)
+8、hexo d(变为开发环境）
