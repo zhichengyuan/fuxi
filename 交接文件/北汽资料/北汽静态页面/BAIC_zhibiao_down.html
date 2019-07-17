@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/download.css">
+    <link rel="stylesheet" type="text/css" href="./css/zhibiao_down.css">
+    <title>新闻</title>
+    <style>
+        .w{
+            padding-top:88px;
+        }
+        .layui-input, .layui-textarea {
+            display: block;
+            width: 70%;
+            padding-left: 10px;
+            background: #ccc;
+            border-radius: 5px;
+            height: 35px;
+        }
+</style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       
+    </div>
+    <!-- 公共版心 -->
+    <div class="w" class="margin-top:10px;">
+      <div class="news common_color " style="width:100%;height:auto;">
+          <!-- 上半部分筛选 -->
+          <div class="search_div">
+              <!-- tab切换 -->
+              <h1 class="search_div_tab">
+                  <span >指标数据与统计</span>
+                  <span style="display:none;">论坛指标</span>
+                  <span style="display:none;">销售指标</span>
+                  <p><a href="" class="btn" style="display:none;">查看导出任务</a></p>
+              </h1>
+              <!-- 搜索下拉框 -->
+              <div class="search_box">
+                    <ul class="search_list clearfix">
+                        <li>
+                            <div class="benpin">
+                                    <span class="input_name">搜索：</span>
+                                    <input type="text" placeholder="输入关键字" class="input_search">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">品牌：</span>
+                                    <p class="input_search1" id="brandId"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="select_div" style="bottom: 0px; display: none;">
+                                            <h2>品牌<span class="close"><img src="./image/close.png" style="width: 100%;height:100%;"></span></h2>
+                                            <div class="select_div_sort clearfix">
+                                              <div class="fl">
+                                                <a href="javaceript:;" style="margin-left: 10px;">A</a>
+                                                <a href="javaceript:;">B</a>
+                                                <a href="javaceript:;">C</a>
+                                                <a href="javaceript:;">D</a>
+                                                <a href="javaceript:;">F</a>
+                                                <a href="javaceript:;">G</a>
+                                                <a href="javaceript:;">H</a>
+                                                <a href="javaceript:;">J</a>
+                                                <a href="javaceript:;">K</a>
+                                                <a href="javaceript:;">L</a>
+                                                <a href="javaceript:;">M</a>
+                                                <a href="javaceript:;">O</a>
+                                                <a href="javaceript:;">Q</a>
+                                                <a href="javaceript:;">R</a>
+                                                <a href="javaceript:;">S</a>
+                                                <a href="javaceript:;">T</a>
+                                                <a href="javaceript:;">W</a>
+                                                <a href="javaceript:;">X</a>
+                                                <a href="javaceript:;">Y</a>
+                                                <a href="javaceript:;">Z</a>
+                                              </div>
+                                              
+                                            </div>
+                                            <div class="sort_car">
+                                              <table>
+                                                <tbody><tr>
+                                                <td>A</td>
+                                                <td><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>A</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>B</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>C</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>D</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>E</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>F</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>G</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>H</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>I</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>J</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>K</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                              </tbody></table>
+                                            </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">车企：</span>
+                                    <p class="input_search1" id="cheqi"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2" style="bottom: 0px; background: rgb(255, 255, 255); display: none;z-index: 2;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择车企</h2>
+                                                <div class="pwizhi_index_table">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="t1Tbody"><tr><td><input type="radio" name="cheqi"><span>感知品质</span></td></tr><tr><td><input type="radio" name="cheqi"><span>越野性能</span></td></tr><tr><td><input type="radio" name="cheqi"><span>信息娱乐</span></td></tr><tr><td><input type="radio" name="cheqi"><span>操控</span></td></tr><tr><td><input type="radio" name="cheqi"><span>装备</span></td></tr><tr><td><input type="radio" name="cheqi"><span>售后服务</span></td></tr><tr><td><input type="radio" name="cheqi"><span>外观</span></td></tr><tr><td><input type="radio" name="cheqi"><span>软实力</span></td></tr><tr><td><input type="radio" name="cheqi"><span>舒适性</span></td></tr><tr><td><input type="radio" name="cheqi"><span>动力</span></td></tr><tr><td><input type="radio" name="cheqi"><span>零部件</span></td></tr><tr><td><input type="radio" name="cheqi"><span>服务态度</span></td></tr><tr><td><input type="radio" name="cheqi"><span>经济性</span></td></tr><tr><td><input type="radio" name="cheqi"><span>实用性及便利性</span></td></tr><tr><td><input type="radio" name="cheqi"><span>空间</span></td></tr><tr><td><input type="radio" name="cheqi"><span>质量可靠性</span></td></tr><tr><td><input type="radio" name="cheqi"><span>安全</span></td></tr><tr><td><input type="radio" name="cheqi"><span>品牌</span></td></tr><tr><td><input type="radio" name="cheqi"><span>内饰</span></td></tr></tbody>
+                                                </table>
+                                                <p class="is_t" style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f cheqi_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">车型：</span>
+                                    <p class="input_search1" id="chexing"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="select_div" style="bottom: 0px; display: none;">
+                                            <h2>车型<span class="close"><img src="./image/close.png" style="width: 100%;height:100%;"></span></h2>
+                                            <div class="select_div_sort clearfix">
+                                                <div class="fl">
+                                                    <span>所有车型</span>
+                                                    <select id="AllCar" style="height: 21px;"><option value="0">所有车型</option><option>小型SUV</option><option>紧凑型SUV</option><option>微型车</option><option>MPV</option><option>紧凑型车</option></select>
+                                                </div>
+                                              
+                                            </div>
+                                            <div class="sort_car">
+                                              <table>
+                                                <tbody>
+                                                <tr>
+                                                <td>A</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>B</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>C</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                                <tr>
+                                                <td>D</td>
+                                                <td><a href="javascript:;">奥迪</a></td>
+                                                </tr>
+                                               
+                                              </tbody></table>
+                                            </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">一级指标：</span>
+                                    <p class="input_search1" id="zhibiao1"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择一级指标</h2>
+                                                <div class="pwizhi_index_table">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="zhibiao1Tbody"><tr><td><input type="radio" name="zhibiao1"><span>感知品质</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>越野性能</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>信息娱乐</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>操控</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>装备</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>售后服务</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>外观</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>软实力</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>舒适性</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>动力</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>零部件</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>服务态度</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>经济性</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>实用性及便利性</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>空间</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>质量可靠性</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>安全</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>品牌</span></td></tr><tr><td><input type="radio" name="zhibiao1"><span>内饰</span></td></tr></tbody>
+                                                </table>
+                                                <p class="is_t" style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f zhibiao1_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">二级指标：</span>
+                                    <p class="input_search1" id="zhibiao2"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择二级指标</h2>
+                                                <div class="pwizhi_index_table">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="zhibiao2Tbody"><tr><td><input type="radio" name="zhibiao2"><span>感知品质</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>越野性能</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>信息娱乐</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>操控</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>装备</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>售后服务</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>外观</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>软实力</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>舒适性</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>动力</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>零部件</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>服务态度</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>经济性</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>实用性及便利性</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>空间</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>质量可靠性</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>安全</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>品牌</span></td></tr><tr><td><input type="radio" name="zhibiao2"><span>内饰</span></td></tr></tbody>
+                                                </table>
+                                                <p class="is_t" style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f zhibiao2_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">三级指标：</span>
+                                    <p class="input_search1" id="zhibiao3"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择三级指标</h2>
+                                                <div class="pwizhi_index_table">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="zhibiao3Tbody"><tr><td><input type="radio" name="zhibiao3"><span>感知品质</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>越野性能</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>信息娱乐</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>操控</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>装备</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>售后服务</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>外观</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>软实力</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>舒适性</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>动力</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>零部件</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>服务态度</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>经济性</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>实用性及便利性</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>空间</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>质量可靠性</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>安全</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>品牌</span></td></tr><tr><td><input type="radio" name="zhibiao3"><span>内饰</span></td></tr></tbody>
+                                                </table>
+                                                <p class="is_t" style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f zhibiao3_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">四级指标：</span>
+                                    <p class="input_search1" id="zhibiao4"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择四级指标</h2>
+                                                <div class="pwizhi_index_table">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="zhibiao4Tbody"><tr><td><input type="radio" name="zhibiao4"><span>感知品质</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>越野性能</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>信息娱乐</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>操控</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>装备</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>售后服务</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>外观</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>软实力</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>舒适性</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>动力</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>零部件</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>服务态度</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>经济性</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>实用性及便利性</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>空间</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>质量可靠性</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>安全</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>品牌</span></td></tr><tr><td><input type="radio" name="zhibiao4"><span>内饰</span></td></tr></tbody>
+                                                </table> 
+                                                <p class="is_t " style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f zhibiao4_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin">
+                                    <span class="input_name">提及率：</span>
+                                    <input type="text" placeholder="请输入主题词" class="input_search">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">满意度：</span>
+                                    <p class="input_search1" id="satisfy"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2 peizhi_a2_height" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>选择满意度</h2>
+                                                <div class="pwizhi_index_table pwizhi_index_table_height">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="satisfyTbody"><tr><td><input type="radio" name="satisfy"><span>满意</span></td></tr><tr><td><input type="radio" name="satisfy"><span>中立</span></td></tr><tr><td><input type="radio" name="satisfy"><span>不满意</span></td></tr></tbody>
+                                                </table> 
+                                                <p class="is_t " style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f satisfy_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">聚合：</span>
+                                    <p class="input_search1" id="together"></p>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                                    <div class="peizhi_a2 peizhi_a2_height" style="bottom: 0px; background: rgb(255, 255, 255); z-index: 2; display: none;">
+                                        <div class="peizhi_a3" style="background: #fff;">
+                                                <h2>是否聚合</h2>
+                                                <div class="pwizhi_index_table pwizhi_index_table_height">
+                                                    <table class="layui-table">
+                                                    <colgroup>
+                                                    <col width="50">
+                                                    <col width="150">
+                                                    </colgroup>
+                                                    <tbody id="togetherTbody"><tr><td><input type="radio" name="together"><span>是</span></td></tr><tr><td><input type="radio" name="together"><span>否</span></td></tr></tbody>
+                                                </table> 
+                                                <p class="is_t " style="position: absolute; bottom: 0;background: #fff;width: 100%;"><button class="is_t_f together_btn">确定</button><button class="is_t_l">关闭</button></p>
+                                                </div>
+                                                
+                                        </div>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="benpin" style="position:relative;">
+                                    <span class="input_name">年份：</span>
+                                    <div class="layui-form" style="display:inline-block;width: 22%;">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                            <div class="layui-input-inline">
+                                                <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span style="display:inline-block">到</span>
+                                    <div class="layui-form" style="display:inline-block;width: 22%;">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                            <div class="layui-input-inline">
+                                                <input type="text" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i class="icon iconfont icon-xiajiantou"></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="search_btn_box">
+                        <div class="search_btn">
+                            <button class="daochu">导出</button>
+                            <button class="down">下载</button>
+                        </div>
+                    </div>
+              </div>
+          </div>
+        
+      </div>
+      
+    </div>
+      <!-- 公共底部 -->
+    <div class="footer">
+        <p>&copy;北京汽车股份有限公司 版权所有 京ICP备14056995号-1</p>
+        <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+    </div>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="./js/placeholder.js"></script>
+
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script>
+        layui.use('laydate', function(){
+          var laydate = layui.laydate;
+          
+          //常规用法
+          laydate.render({
+            elem: '#test1'
+          });
+          //常规用法
+          laydate.render({
+            elem: '#test2'
+          });
+  
+        });
+        </script>
+    <script>
+        $(function () {
+            //询问框
+            function tipText(tip1) {
+                
+                layer.confirm(tip1, {
+                    btn: ['确认'] //按钮
+                    }, function(){
+                    layer.msg('确认完成', {icon: 1});
+                    }); 
+            }
+            //点击下拉框显示
+            $('#brandId').click(function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                $(this).parent('.benpin').find('.select_div').stop().animate({bottom:"-340px"},1000).show();
+            })
+            //选择完品牌隐藏
+            $('.sort_car').on('click','a',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var brandName = $(this).html();
+                console.log(brandName);
+                $(this).parents('.benpin').find('.input_search1').html(brandName);
+                $(this).parents('.benpin').find('.select_div').stop().css({'bottom':'0px'}).hide();
+            })
+            //点击输入框弹出车企或指标1下拉框
+            $('#cheqi').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('.input_search1').html();
+                if(input_search1 == '') {
+                    tipText('请选择品牌！！！');
+                }else{
+                    $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+                }
+
+            })
+            //车企点击确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .cheqi_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="cheqi"]:checked').parents('td').find('span').html();
+                console.log(b); 
+                $('#cheqi').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //点击输入框弹出车型下拉框
+            $('#chexing').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('#cheqi').html();
+                console.log(input_search1);
+                if(input_search1 == '') {
+                    tipText('请选择车企！！！');
+                }else{
+                    $(this).parent('.benpin').find('.select_div').stop().animate({bottom:"-280px"},1000).show();
+                }
+
+            })
+            //点击关闭按钮隐藏
+            $('.peizhi_a3').on('click','.is_t .is_t_l',function() {
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //点击输入框弹出一级指标下拉框
+            $('#zhibiao1').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('#chexing').html();
+                if(input_search1 == '') {
+                    tipText('请选择车型！！！！');
+                }else{
+                    $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+                }
+               
+            })
+            //一级指标点击确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .zhibiao1_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="zhibiao1"]:checked').parents('td').find('span').html();
+                $('#zhibiao1').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //点击输入框弹出二级指标下拉框
+            $('#zhibiao2').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('#zhibiao1').html();
+               if(input_search1 == "") {
+                tipText('请选择一级指标！！！');
+               }else{
+                $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+               }
+            })
+            //二级指标点击确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .zhibiao2_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="zhibiao2"]:checked').parents('td').find('span').html();
+                console.log(b);
+                $('#zhibiao2').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //点击输入框弹出三级指标下拉框
+            $('#zhibiao3').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('#zhibiao2').html();
+                if(input_search1 == "") {
+                    tipText('请选择二级指标！！！');
+                }else{
+                    $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+                }
+               
+            })
+            //三级指标点击确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .zhibiao3_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="zhibiao1"]:checked').parents('td').find('span').html();
+                console.log(b);
+                $('#zhibiao3').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //点击输入框弹出四级指标下拉框
+            $('#zhibiao4').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var input_search1 = $('#zhibiao3').html();
+                if(input_search1 == "") {
+                    tipText('请选择三级指标！！！');
+                }else{
+                    $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+                }
+                
+            })
+            //四级指标点击确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .zhibiao4_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="zhibiao1"]:checked').parents('td').find('span').html();
+                console.log(b);
+                $('#zhibiao4').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //满意度下拉框交互
+            //点击输入框弹出满意度下拉框
+            $('#satisfy').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-185px"},1000).show();
+            })
+            //满意度确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .satisfy_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="satisfy"]:checked').parents('td').find('span').html();
+                console.log(b);
+                $('#satisfy').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+            //满意度下拉框交互结束
+
+            //聚合下拉框交互
+            //点击输入框弹出聚合下拉框
+            $('#together').click(function (e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                $(this).parent('.benpin').find('.peizhi_a2').stop().animate({bottom:"-185px"},1000).show();
+            })
+            //聚合确定隐藏弹框
+            $('.peizhi_a3').on('click','.is_t .together_btn',function(e) {
+                var e=e.event||window.event;
+                e.stopPropagation();
+                var a = $(this).parents('.pwizhi_index_table').find('td input');
+                var b = $('input[name="together"]:checked').parents('td').find('span').html();
+                console.log(b);
+                $('#together').html(b);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+            });
+             // 点击div以外地方div隐藏
+            $(document).on("click",function(){
+                console.log(111111);
+                $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+                $('.select_div').stop().css({'bottom':'0px'}).hide();
+            });
+            $('.peizhi_a2').on("click",function(event){
+                var event=event||window.event;
+                event.stopPropagation();
+            });
+            $('.select_div').on("click",function(event){
+                var event=event||window.event;
+                event.stopPropagation();
+            });
+        });
+    </script>
+ 
+  
+    
+</body>
+</html>

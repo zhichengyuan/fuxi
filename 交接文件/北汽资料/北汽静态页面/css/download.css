@@ -1,0 +1,58 @@
+.download{ width: 100%; height: 800px; padding:0 23px 40px 35px;box-sizing: border-box; background: rgba(234,239,240,0.6);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ebeef1,endColorstr=#99ebeef1);
+}
+.layui-table-page select{height: 23px;}
+/*tab切换*/
+.download_tab{margin: 0;width: 100%;}
+.download_tab_ul{border: 0;height:100%; border-bottom: 1px solid #9c9f9f;}
+.download_tab_ul li{height: 67px; line-height: 67px; font-size: 20px; margin-right:60px; min-width: 0px; padding: 0;}
+.download_tab_ul>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{margin-top:7px; border-bottom: 0px;}
+.layui-tab-brief > .layui-tab-title .layui-this{color:#000;}
+.download_tab > .layui-tab-title .layui-this:after{height:60px;}
+/*tab——item-上半部分公共样式及*/
+.download_tab_main{padding: 0; position: relative;}
+.Batch_download{ position: absolute;right: 18px; top: -54px; height: 48px; line-height: 48px; width: 118px; background-color: #696c6c;}
+.download_tab_top{height: 80px; line-height: 80px;}
+/*底边线*/
+.layui-table-view{border:0;}
+.download_tab_top .first a{display: inline-block; color: #006cff;font-size: 16px; margin-right: 30px;}
+.download_tab_top .scend{display: inline-block;}
+.download_tab_top .scend label{color: #a2a5a7;font-size: 16px;}
+.download_tab_top .scend input{width: 282px; height: 42px; line-height: 42px;background-color:#cbd8db;font-size: 16px;color:#969998; text-align: left;border:2px solid #fff;
+     -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;behavior:url(../js/PIE.htc);vertical-align: middle;}
+.download_tab_top .three{margin-left: 12px; height: 40px;line-height: 40px; vertical-align: middle; width: 88px;background-color: #f52b27;}
+/*时间*/
+.layui-form-label {
+    float: left;
+    display: block;
+    padding: 9px 15px;
+     width: 130px; 
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+}
+.download_tab_top .layui-form-item .layui-input-inline input{height: 42px; line-height: 42px;background-color:#cbd8db;}
+.download_time{position: relative;}
+.download_time .icon-riqi{position: absolute; right: 30px;top: 3px;color: #7da8bc;font-size: 20px;}
+.download_tab_top .layui-laydate .layui-this{background-color: #f52b27!important;}
+.download_tab_top .layui-laydate .layui-this {
+    background-color: #f52b27!important;
+    color: #fff!important;
+}
+
+/*下半部分*/
+.download_tab_bom{width: 100%;}
+.download_tab_bom .layui-table-header .layui-table tr{background-color: #62a3f8;color: #d5e4fe;}
+.download_tab_bom  table  {text-align: center;}
+.download_tab_bom  table td i{font-size: 24px;color: #fff; cursor: pointer;}
+.download_tab_bom  table td{height: 48px;  line-height: 48px;color: #fff; background-color: rgba(0,0,0,0.4);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+}
+.layui-table{background-color: transparent;}
+.layui-table-view .layui-table th{text-align: center;}
+.download_tab_bom .layui-table-view{text-align: center;}
+.laytable-cell-1-0-2{text-align: left;}
+.icon-kaiguan:hover{color: #f52b27;}
+/*分页*/
+.download_tab_bom .layui-table-page, .layui-table-total{border: 0;margin-top: 20px;}
+.download_tab_bom .layui-laypage .layui-laypage-curr .layui-laypage-em{background-color:#f52b27;}

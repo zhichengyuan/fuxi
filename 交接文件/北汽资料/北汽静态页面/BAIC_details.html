@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/details_detailed.css">
+    <title>舆情页</title>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="fr">
+          <p><span>欢迎您：李毅&nbsp;&nbsp;<a href="#"><i class="icon iconfont icon-shutDown"></i>退出</a></span></p>
+          <p class="hidden_p"><i class="icon iconfont icon-weizhi"></i>
+            <a href="#">当前位置：</a>
+            <a href="./BAIC_login.html">首页</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="#">资讯</a>
+          </p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w">
+      <!-- 舆情页面 -->
+      <div class="details_detailed layui-clear">
+        <!-- 左半部分（重要资讯） -->
+          <div class="details_detailed_l fl">
+            <!-- serach -->
+            <div class="details_detailed_l_search common_color">
+                    <div class="details_detailed_l_search_t">
+                      <input placeholder="请输入关键字" type="text" class="search_t_input">
+                      <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="icon iconfont icon-search"></i> 搜索</button>
+                   </div>
+                    <div class="clearfix search_screen">
+                      <div class="fl search_screen_l">
+                        <span>品牌：</span>
+                        <input type="text" class="show_car" readonly disabled>
+                        <i class="icon iconfont icon-xiajiantou"></i>
+                        <div class="select_div">
+                          <h2>厂商</h2>
+                          <div class="select_div_sort clearfix">
+                            <div class="fl">
+                              <a href="javaceript:;">A</a>
+                              <a href="javaceript:;">B</a>
+                              <a href="javaceript:;">C</a>
+                              <a href="javaceript:;">D</a>
+                              <a href="javaceript:;">F</a>
+                              <a href="javaceript:;">G</a>
+                              <a href="javaceript:;">H</a>
+                              <a href="javaceript:;">J</a>
+                              <a href="javaceript:;">K</a>
+                              <a href="javaceript:;">L</a>
+                              <a href="javaceript:;">M</a>
+                              <a href="javaceript:;">O</a>
+                              <a href="javaceript:;">Q</a>
+                              <a href="javaceript:;">R</a>
+                              <a href="javaceript:;">S</a>
+                              <a href="javaceript:;">T</a>
+                              <a href="javaceript:;">W</a>
+                              <a href="javaceript:;">X</a>
+                              <a href="javaceript:;">Y</a>
+                              <a href="javaceript:;">Z</a>
+                            </div>
+                            <div class="fr" style="position: relative;">
+                              <input placeholder="搜索" style="width: 60%;" type="text" class="search_t_input">
+                              <button style="position: absolute;top: 10px; right: 0;" class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                            </div>
+                          </div>
+                          <div class="sort_car">
+                            <table>
+                              <tr>
+                              <td>A</td>
+                              <td><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>A</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>B</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>C</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>D</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>E</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>F</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>G</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>H</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>I</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>J</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>K</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fl search_screen_r">
+                        <span>车型：</span>
+                        <input type="text" class="show_car" readonly disabled>
+                        <i class="icon iconfont icon-xiajiantou"></i>
+                        <div class="select_div">
+                          <h2>细分市场</h2>
+                          <div class="sort_car">
+                            <table>
+                              <tr style="background: #f3f5f9;">
+                              <td style=" font-size: 14px; color: #101010;">细分市场</td>
+                              <td style=" font-size: 14px; color: #101010;">车型</td>
+                              </tr>
+                              <tr>
+                              <td>微型轿车</td>
+                              <td><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>小型轿车</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>紧凑型轿车</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中型轿车</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中大型轿车</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>大型轿车</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>小型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>紧凑型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中大型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                              <tr>
+                              <td>中大型SUV</td>
+                              <td><a href="javascript:;">奥迪</a></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!-- serach 结束 -->
+            <!-- 重要资讯 -->
+             <!-- 召回资讯 -->
+           <div class="details_wrapper details_zy details_margin common_color" id="details_detailed_message">
+                <!-- <div class="details_title">
+                    <h1>重要资讯</h1>
+                </div>
+                <ol class="new_list">
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                </ol> -->
+            </div>
+             <!-- <div class="common_color details_detailed_message" id="details_detailed_message"> -->
+                 <!-- 模板 -->
+             <!-- </div> -->
+            <!-- 重要资讯结束 -->
+            <!-- tab小标题 -->
+            <!-- 外层div -->
+          </div>
+          <!-- 促销资讯 -->
+          <div class="details_wrapper common_color" id="details_detailed_message1">
+              <!-- <div class="details_title">
+                  <h1>促销资讯</h1>
+                  <a href="">更多></a>
+              </div>
+              <ol class="new_list">
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                        <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+              </ol> -->
+          </div>
+           <!-- 科技资讯 -->
+           <div class="details_wrapper common_color" id="details_detailed_message2">
+                <div class="details_title">
+                    <h1>科技资讯</h1>
+                    <a href="">更多></a>
+                </div>
+                <ol class="new_list">
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                </ol>
+            </div>
+            <!-- 新车资讯 -->
+           <div class="details_wrapper details_margin common_color" id="details_detailed_message3">
+                <!-- <div class="details_title">
+                    <h1>新车资讯</h1>
+                    <a href="">更多></a>
+                </div>
+                <ol class="new_list">
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                </ol> -->
+            </div>
+            <!-- 政策资讯 -->
+            <div class="details_wrapper common_color" id="details_detailed_message5">
+              <!-- <div class="details_title">
+                  <h1>政策资讯</h1>
+                  <a href="">更多></a>
+              </div>
+              <ol class="new_list">
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+              </ol> -->
+          </div>
+            <!-- 召回资讯 -->
+           <div class="details_wrapper common_color" id="details_detailed_message4" style="height:173px;">
+                <!-- <div class="details_title">
+                    <h1>召回资讯</h1>
+                    <a href="">更多></a>
+                </div>
+                <ol class="new_list">
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                            <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                </ol> -->
+            </div>
+            <div class="details_wrapper common_color" id="details_detailed_message5" style="height:173px;">
+              <div class="details_title">
+                  <h1>召回资讯</h1>
+                  <a href="">更多></a>
+              </div>
+              <ol class="new_list">
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                          <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+              </ol>
+          </div>
+           
+      </div>
+      <div class="ziyuan common_color">
+         <p>
+             <span>资讯</span>
+        <a href="https://www.autohome.com.cn/beijing/#pvareaid=3311664"><img src="./image/qczj.png" alt=""></a> 
+        <a href="http://auto.sohu.com/"><img src="./image/shqc.png" alt=""></a> 
+        <a href="http://auto.163.com/"><img src="./image/wyqc.png" alt=""></a> 
+        <a href="http://auto.qq.com/"><img src="./image/txqc.png" alt=""></a> 
+        <a href="http://auto.sina.com.cn/"><img src="./image/xlqc.png" alt=""></a> 
+        <a href="http://beijing.bitauto.com/?referrer=http://beijing.bitauto.com/?leads_source=p013006&WT.mc_id=bdcyt__qb_jtc_dy_ycw&b_scene_zt=1&referrer=https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E6%98%93%E8%BD%A6&oq=%25E6%2596%25B0%25E6%25B5%25AA%25E6%25B1%25BD%25E8%25BD%25A6&rsv_pq=f39077e70001bc3a&rsv_t=4d65tGoEMwtKHZnJWHQh2KUdnkP7rx9qOS1RJ9SE%2FxnM2o9BJ4pLMNDKi6I&rqlang=cn&rsv_enter=0&inputT=3072&rsv_sug3=15&rsv_sug1=11&rsv_sug7=100&rsv_sug4=3072"><img src="./image/yc.png" alt=""></a> 
+        <a href="https://auto.ifeng.com/"><img src="./image/fkwqc.png" alt=""></a>
+        <a href="http://www.xcar.com.cn/#zoneclick=104415"><img src="./image/akqc.png" alt=""></a> 
+        <a href="http://www.cheshi.com/"><img src="./image/wscs.png" alt=""></a> 
+        <a href="https://www.pcauto.com.cn/"><img src="./image/tpy.png" alt=""></a> 
+        <a href="http://www.chexun.com/"><img src="./image/cww.png" alt=""></a> 
+        <a href="https://www.58che.com/"><img src="./image/58.png" alt=""></a>
+        <a href="http://www.feelcars.com/"><img src="./image/qcts.png" alt=""></a> 
+        <a href="http://news.chekb.com/"><img src="./image/qckbw.png" alt=""></a> 
+        <a href="http://www.12365auto.com/"><img src="./image/czw.png" alt=""></a>
+        <a href="https://www.qctt.cn/"><img src="./image/qctt.png" alt=""></a> 
+        <a href="http://www.16888.com/"><img src="./image/czzj.png" alt=""></a> 
+         </p>
+      </div>
+     
+    </div>
+  <!-- 公共底部 -->
+<div class="footer">
+    <p>&copy;北京汽车研究总院 </p>
+    <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+</div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/placeholder.js"></script>
+  <script type="text/javascript" src="./json/details.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- 重要资讯模板 -->
+  <script type="text/html" id="details_detailed_message_template">
+    <div class="details_title">
+      <h1>重要资讯TOP5</h1><h2><span class="active">每日</span><span>每周</span><span>每月</span></h2>
+    </div>
+    <ol type="1">
+      {{# layui.each(d.data.important_message,function(index,item) { }}
+      <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 重要资讯模板结束 -->
+  <!-- 促销资讯 -->
+  <script type="text/html" id="details_detailed_message_template1">
+    <div class="details_title">
+      <h1>促销资讯</h1>
+      <a href="">更多></a>
+  </div>
+    <ol>
+      {{# layui.each(d.data.salespromotion_message,function(index,item) { }}
+      <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 促销资讯结束 -->
+  <!-- 科技资讯 -->
+  <script type="text/html" id="details_detailed_message_template2">
+    <div class="details_title">
+      <h1>科技资讯</h1>
+      <a href="">更多></a>
+  </div>
+    <ol>
+      {{# layui.each(d.data.Tech_message,function(index,item) { }}
+      <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 科技资讯结束 -->
+  <!-- 新车资讯 -->
+  <script type="text/html" id="details_detailed_message_template3">
+    <div class="details_title">
+      <h1>新车资讯</h1>
+      <a href="">更多></a>
+  </div>
+    <ol>
+      {{# layui.each(d.data.newcar_message,function(index,item) { }}
+      <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 新车资讯结束 -->
+   <!-- 政策资讯 -->
+   <script type="text/html" id="details_detailed_message_template5">
+    <div class="details_title">
+      <h1>政策资讯</h1>
+      <a href="">更多></a>
+  </div>
+    <ol>
+      {{# layui.each(d.data.policy_message,function(index,item) { }}
+         <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 政策资讯结束 -->
+  <!-- 召回资讯 -->
+  <script type="text/html" id="details_detailed_message_template4">
+    <div class="details_title">
+      <h1>召回资讯</h1>
+      <a href="">更多></a>
+  </div>
+    <ol>
+      {{# layui.each(d.data.recall_message,function(index,item) { }}
+      <li><a href="{{item.link}}" class="layui-elip">{{item.text}}</a><span>{{item.time}}</span><span>{{item.source}}</span></li>
+     {{# }); }}
+    </ol>
+  </script>
+  <!-- 召回资讯结束 -->
+ 
+  <!-- 标题模板 -->
+  <script type="text/html" id="message_title_template">
+      {{# layui.each(d.data.title_tab,function(index,item) { }}
+          {{# if(index == 0) { }}
+           <div class="swiper-slide"><span class="active">{{item}}</span></div>
+          {{# }else{ }}
+           <div class="swiper-slide"><span>{{item}}</span></div>
+          {{# } }}
+      {{# }); }}
+  </script>
+  <!-- 标题模板结束 -->
+  <!-- 标题新闻模板 -->
+  <script type="text/html" id="message_smalltitle_template">
+      {{# layui.each(d.data.title_massage,function(index,item) { }}
+          <li><a href="{{item.link}}">{{item.text}}<span>{{item.time}}</span></a></li>
+      {{# }); }}
+  </script>
+  <!-- 标题新闻模板结束 -->
+  <script type="text/javascript">
+    layui.use(['layer', 'laytpl'], function(){
+      var layer = layui.layer,
+          laytpl = layui.laytpl;
+      //重要资讯
+        laytpl($("#details_detailed_message_template").html()).render(details_page, function(html){
+                $("#details_detailed_message").html(html)
+        });
+      // 重要资讯结束
+      //促销资讯
+      laytpl($("#details_detailed_message_template1").html()).render(details_page, function(html){
+                $("#details_detailed_message1").html(html)
+        });
+      // 促销资讯结束
+       //科技资讯
+       laytpl($("#details_detailed_message_template2").html()).render(details_page, function(html){
+                $("#details_detailed_message2").html(html)
+        });
+      // 科技资讯结束
+      //新车资讯
+      laytpl($("#details_detailed_message_template3").html()).render(details_page, function(html){
+                $("#details_detailed_message3").html(html)
+        });
+      // 新车资讯结束
+      //召回资讯
+      laytpl($("#details_detailed_message_template4").html()).render(details_page, function(html){
+                $("#details_detailed_message4").html(html)
+        });
+      // 召回资讯结束
+      //政策资讯
+      laytpl($("#details_detailed_message_template5").html()).render(details_page, function(html){
+                $("#details_detailed_message5").html(html)
+        });
+      // 政策资讯结束
+      // 标题
+        laytpl($("#message_title_template").html()).render(details_page, function(html){
+                $("#message_title").html(html)
+        });
+      // 标题结束
+      //标题新闻
+        laytpl($("#message_smalltitle_template").html()).render(details_page, function(html){
+                $("#message_smalltitle").html(html)
+        });
+      //标题新闻结束
+    });
+    //echarts
+    // 行业趋势
+    //   function Industry_trend() {
+    //         var base1 = +new Date(details_page.data.trend_time.start.y,details_page.data.trend_time.start.m,details_page.data.trend_time.start.day);
+    //         var oneDay1 = 24 * 3600 * 1000;
+    //         var date1 = [];
+    //         var year_num = details_page.data.trend_time.end.y - details_page.data.trend_time.start.y;
+    //         for (var i = 1; i < year_num; i++) {
+    //             var now = new Date(base1 += oneDay1);
+    //             date1.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+    //         }
+    //         trend_analysis_option =  {
+    //             tooltip: {
+    //                 trigger: 'axis',
+    //                 position: function (pt) {
+    //                     return [pt[0], '10%'];
+    //                 }
+    //             },
+    //             title: {
+    //                 left: 'center',
+    //                 top:'10',
+    //                 text: '趋势分析',
+    //             },
+    //             legend:{
+    //                 left:0,
+    //                 top:'10',
+    //                 type:'plain'
+    //             },
+    //             xAxis: {
+    //                 type: 'category',
+    //                 boundaryGap: false,
+    //                 data: date1
+    //             },
+    //             yAxis: {
+    //                 type: 'value',
+    //                 boundaryGap: [0, '100%']
+    //             },
+    //             dataZoom: [{
+    //                 type: 'slider',
+    //                 start: 0,
+    //                 end: 10,
+    //                 fillerColor:'rgba(189,217,237,0.6)',
+    //                 borderColor:'#afcdef',
+    //                 handleStyle:{
+    //                     color:'#1579f2'
+    //                 }
+    //             }],
+    //             series: [
+    //                 {
+    //                     name:'北汽',
+    //                     type:'line',
+    //                     smooth:true,
+    //                     symbol: 'none',
+    //                     width:1,
+    //                     sampling: 'average',
+    //                     itemStyle: {
+    //                         color: '#f52a2d'
+    //                     },
+    //                     areaStyle: {
+    //                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+    //                             offset: 0,
+    //                             color: 'rgb(236, 230, 225)'
+    //                         }, {
+    //                             offset: 1,
+    //                             color: 'rgb(238,203,205)'
+    //                         }])
+    //                     },
+    //                     data: details_page.data.trend_event
+    //                 }
+    //             ]
+    //         };
+    //         window.trend_analysis = echarts.init(document.getElementById('trend_analysis'));
+    //         window.trend_analysis.setOption(trend_analysis_option);
+    //   }
+    //   Industry_trend();
+    // // 销量统计函数
+    //   function event_time() {
+    //       var base = +new Date(details_page.data.event_time.start, 0);
+    //       var oneDay = 24 * 3600 * 1000 *30;
+    //       var date = [];
+    //       var day_num = details_page.data.event_time.end - details_page.data.event_time.start;
+    //       for (var i = 1; i < day_num ; i++) {
+    //           var now = new Date(base += oneDay);
+    //           date.push([now.getFullYear(), now.getMonth() + 1+'月'].join('/'));
+    //       }
+    //       trend_event_option = {
+    //           title:{
+    //               show:true,
+    //               text:'北汽新能源-销量分析图',
+    //               left:'50%'
+    //           },
+    //           dataZoom:{
+    //               type:'slider',
+    //               fillerColor:'#c6e2f6',
+    //               borderColor:'#9fc2ed',
+    //               handleStyle:{
+    //                   color:'#1a76f0'
+    //               }
+    //           },
+    //           tooltip: {
+    //               show:true,
+    //               backgroundColor: '#222',
+    //               axisPointer:{
+    //                   type:'cross'
+    //               },
+    //               formatter: function (obj) {
+    //                   var value = obj.value;
+    //                   return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+    //                       + value[2] == 'undefined'? ' ' : value[2]; + '<br/>'
+    //                       + '</div>'
+    //               }
+    //           },
+    //           xAxis: {
+    //               type: 'category',
+    //               name:'月',
+    //               nameLocation:'end',
+    //               min:'dataMin',
+    //               axisTick:{
+    //                   show:false,
+    //                   interval:0,
+    //               },
+    //               data:date
+    //           },
+    //           yAxis: {
+    //               type: 'value',
+    //               name:'(万)',
+    //               axisTick:{
+    //                   show:false,
+    //                   interval:0,
+    //               },
+    //               splitLine: {
+    //                 show: false
+    //               }
+    //           },
+    //           series: [{
+    //               type: 'line',
+    //               data: details_page.data.data_event
+    //           }]
+    //       };
+    //       window.trend_event = echarts.init(document.getElementById('trend_event'));
+    //       window.trend_event.setOption(trend_event_option);
+    //   }
+    //   event_time();
+    // 销量统计函数结束
+    // 窗口变化图echarts跟着变化
+    //   $(window).resize(function(){
+    //     trend_analysis.resize();
+    //     trend_event.resize();
+    //   });
+  </script>
+  <!-- 效果 -->
+  <script type="text/javascript">
+    $(function(){
+        var mySwiper = $('.swiper-container').swiper({
+          mode : 'horizontal',
+          slidesPerView : 5,
+          grabCursor: true,
+          paginationClickable: true
+        });
+        $('.details_detailed_tab_left').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipePrev()
+        })
+        $('.details_detailed_tab_right').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipeNext()
+        })
+        // 点击切换
+        $('.didden_table').on('click','.swiper-container span',function() {
+           $('.didden_table .swiper-container span').removeClass('active');
+           $(this).addClass('active');
+        })
+        // 品牌、车型切换
+        $('.search_screen_l').click(function(e) {
+            e=e||window.event;
+            e.stopPropagation();
+            $('.select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.select_div').stop().animate({bottom:"-362px"},1000).show();
+        })
+        $('.search_screen_r').click(function(e) {
+            e=e||window.event;
+            e.stopPropagation();
+            $('.select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.select_div').stop().animate({bottom:"-362px"},1000).show();
+        })
+        // 表格子元素点击
+         $('.select_div').on('click','td a',function() {
+          $(this).parents('.select_div').siblings('.show_car').val($(this).text());
+          $('.select_div').stop().css({bottom:"0px"}).hide();
+         });
+        // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.select_div').stop().css({bottom:"0px"}).hide();
+        });
+        $('.select_div').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>热力指标页</title>
+  
+    </style>
+</head>
+<body>
+        <div>
+                <div style="width:800px;height: 500px;" id="Map1"></div>
+            </div>
+        
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="echarts.min.js"></script>
+  <script type="text/javascript" src="map.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+
+
+function percentNum(num, num2) {
+return (Math.round(num / num2 * 10000) / 100.00 + "%"); //小数点后两位百分比
+}
+
+function text(params,value) {
+    var str = params.data.name+'<br>占比：'+ value;
+    return str;
+}
+
+var mapDate = [
+                    {name: '北京', value: 302 },
+                    {name: '天津', value: 0},
+                    {name: '上海', value: 0},
+                    {name: '重庆', value: 198},
+                    {name: '河北', value: 1125},
+                    {name: '河南', value: 0},
+                    {name: '云南', value: 600},
+                    {name: '辽宁', value: 0},
+                    {name: '黑龙江', value: 0},
+                    {name: '湖南', value: 0},
+                    {name: '安徽', value: 0},
+                    {name: '山东', value: 0},
+                    {name: '新疆', value: 949},
+                    {name: '江苏', value: 166},
+                    {name: '浙江', value: 283},
+                    {name: '江西', value: 102},
+                    {name: '湖北', value: 223},
+                    {name: '广西', value: 0},
+                    {name: '甘肃', value: 1591},
+                    {name: '山西', value: 0},
+                    {name: '内蒙古', value: 2000},
+                    {name: '陕西', value: 315},
+                    {name: '吉林', value: 353},
+                    {name: '福建', value: 168},
+                    {name: '贵州', value: 0},
+                    {name: '广东', value: 238},
+                    {name: '青海', value: 1916},
+                    {name: '西藏', value: 887},
+                    {name: '四川', value: 1325},
+                    {name: '宁夏', value: 283},
+                    {name: '海南', value: 0},
+                    {name: '台湾', value: 0},
+                    {name: '香港', value: 0},
+                    {name: '澳门', value: 0}
+                ];
+var chart = document.getElementById("Map1");
+var name_title = '123';
+userMap (name_title,mapDate,chart);
+function userMap (name_title,mapDate,chart) {
+    console.log(mapDate);
+    var echart = echarts.init(chart);
+    var option = {
+            tooltip: {
+                formatter: function(params) {
+                    console.log(params)
+
+                if(params.data){
+                        var value =  percentNum(params.data.value,2000);
+                        console.log(value);
+                        return text(params,value);
+                        
+                    } else {
+                        return '';
+                    }
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 2000,
+                text:['High','Low'],
+                realtime: false,
+                calculable: true,
+                inRange: {
+                    color: ['#ffffff','#fbe5d8','#f4af85','#c55911','#813e0a']
+                }
+            },
+            geo: {
+                map: 'china',
+                roam: true,
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            color: 'rgba(0,0,0,0.4)'
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal:{
+                     
+                        borderColor: 'rgba(0, 0, 0, 0.2)'
+                    },
+                    emphasis:{
+                        areaColor: null,
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            series : [
+                {
+                    name: '浏览量',
+                    type: 'map',
+                    roam: true,
+                    coordinateSystem: 'geo',
+                    geoIndex: 0,
+                    // tooltip: {show: false},
+                    label: {
+                        show:true,
+                        normal: {
+                            formatter: '2222',
+                            position: 'right',
+                            show: true
+                        },
+                        
+                    },
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                formatter:'323223',
+                            },
+                            borderWidth:0
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                            },
+                            areaColor:'rgb(213, 214, 79)',
+                        }
+                    },
+                   
+
+                    data:mapDate
+                }
+            ]
+        };
+        echart.setOption(option,true);
+}
+var tiem = format(1356969600000);
+console.log(tiem);
+function add0(m){return m<10?'0'+m:m }
+
+
+
+
+
+
+
+
+
+</script>
+
+ 
+
+</body>
+</html>

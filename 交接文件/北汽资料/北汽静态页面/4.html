@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>热力指标页</title>
+  
+    <style>
+        .fixed_box{
+            position: fixed;
+            left: 0px;
+            top: 190px;
+            z-index: 99;
+            width: 40px;
+            height: auto;
+        }
+        .fixed_box h2{
+            width: 40px;
+            height: 120px;
+            background: #e4e4e4;
+            text-align: center;
+        }
+        .fixed_box h2 a{
+            display: inline-block;
+            width: 40px;
+            box-sizing: border-box;
+            padding:10px;
+            font-size: 18px;
+            text-decoration: none;
+            color:#000;
+        }
+        .fixed_box h2 a.font_maring {
+            margin-top: 10px;
+        }
+        .fixed_box h2.active1{
+            background: #d83f36;
+            
+        }
+        .fixed_box h2.active1 a{
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed_box">
+        <h2><a href="">国六咨询</a></h2>
+        <h2 class="active1"><a href="" class="font_maring">品越野</a></h2>
+    </div>
+        <div>
+                <div style="width:800px;height: 500px;" id="Map122"></div>
+            </div>
+        <div>
+            <div style="width:800px;height: 500px;" id="Map12"></div>
+        </div>
+        <div>
+            <div style="width:800px;height: 500px;" id="Map1"></div>
+        </div>
+    <div>
+        <div style="width:800px;height: 500px;" id="main"></div>
+    </div>
+    
+    <div>
+            <div style="width:800px;height: 500px;" id="Map"></div>
+        </div>
+
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/wedclun.js"></script>
+  <script type="text/javascript" src="./js/datatool.js"></script>
+  <script type="text/javascript" src="./js/map.js"></script>
+  <script type="text/javascript" src="./js/hot_tab_event.js"></script>
+  <script type="text/javascript" src="./json/hot_img.js"></script>
+  <script type="text/javascript" src="./json/sbD5011.js"></script>
+  <script type="text/javascript" src="./json/sbZhiXing.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+    function randomData() {  
+     return Math.round(Math.random()*500);  
+} 
+
+    function randomValue() {
+    return Math.round(Math.random()*1000);
+}
+function percentNum(num, num2) {
+return (Math.round(num / num2 * 10000) / 100.00 + "%"); //小数点后两位百分比
+}
+
+function text(params,value) {
+    var str = params.data.name+'<br>占比：'+ value;
+    return str;
+}
+var option = {
+    tooltip: {
+        formatter: function(params) {
+            console.log(params)
+
+        if(params.data){
+                   var value =  percentNum(params.data.value,2000);
+                   console.log(value);
+                   return text(params,value);
+                
+            } else {
+                return '';
+            }
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 2000,
+        text:['High','Low'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+        }
+    },
+    geo: {
+        map: 'china',
+        roam: true,
+        label: {
+            normal: {
+                show: true,
+                textStyle: {
+                    color: 'rgba(0,0,0,0.4)'
+                }
+            }
+        },
+        itemStyle: {
+            normal:{
+                borderColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            emphasis:{
+                areaColor: null,
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowBlur: 20,
+                borderWidth: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    },
+    series : [
+        {
+            name: '浏览量',
+            type: 'map',
+            roam: true,
+            coordinateSystem: 'geo',
+            geoIndex: 0,
+            // tooltip: {show: false},
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'right',
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#F06C00'
+                }
+            },
+            data:[
+                {name: '北京', value: randomValue()},
+                {name: '天津', value: randomValue()},
+                {name: '上海', value: randomValue()},
+                {name: '重庆', value: randomValue()},
+                {name: '河北', value: randomValue()},
+                {name: '河南', value: randomValue()},
+                {name: '云南', value: randomValue()},
+                {name: '辽宁', value: randomValue()},
+                {name: '黑龙江', value: randomValue()},
+                {name: '湖南', value: randomValue()},
+                {name: '安徽', value: randomValue()},
+                {name: '山东', value: randomValue()},
+                {name: '新疆', value: randomValue()},
+                {name: '江苏', value: randomValue()},
+                {name: '浙江', value: randomValue()},
+                {name: '江西', value: randomValue()},
+                {name: '湖北', value: randomValue()},
+                {name: '广西', value: randomValue()},
+                {name: '甘肃', value: randomValue()},
+                {name: '山西', value: randomValue()},
+                {name: '内蒙古', value: randomValue()},
+                {name: '陕西', value: randomValue()},
+                {name: '吉林', value: randomValue()},
+                {name: '福建', value: randomValue()},
+                {name: '贵州', value: randomValue()},
+                {name: '广东', value: randomValue()},
+                {name: '青海', value: randomValue()},
+                {name: '西藏', value: randomValue()},
+                {name: '四川', value: randomValue()},
+                {name: '宁夏', value: randomValue()},
+                {name: '海南', value: randomValue()},
+                {name: '台湾', value: randomValue()},
+                {name: '香港', value: randomValue()},
+                {name: '澳门', value: randomValue()}
+            ]
+        }
+    ]
+};
+
+
+
+// var chart=echarts.init(document.getElementById("Map"))
+// chart.setOption(option)
+
+var mapDate = [
+                    {name: '北京', value: 302,label: {
+                                normal: {
+                                    show: true,
+                                    formatter: function (params) {
+                                        return 222222;    //地图上展示文字 + 数值
+                                    },
+                                    
+                                }
+                            },  },
+                    {name: '天津', value: 0},
+                    {name: '上海', value: 0},
+                    {name: '重庆', value: 198},
+                    {name: '河北', value: 1125},
+                    {name: '河南', value: 0},
+                    {name: '云南', value: 600},
+                    {name: '辽宁', value: 0},
+                    {name: '黑龙江', value: 0},
+                    {name: '湖南', value: 0},
+                    {name: '安徽', value: 0},
+                    {name: '山东', value: 0},
+                    {name: '新疆', value: 949},
+                    {name: '江苏', value: 166},
+                    {name: '浙江', value: 283},
+                    {name: '江西', value: 102},
+                    {name: '湖北', value: 223},
+                    {name: '广西', value: 0},
+                    {name: '甘肃', value: 1591},
+                    {name: '山西', value: 0},
+                    {name: '内蒙古', value: 2000},
+                    {name: '陕西', value: 315},
+                    {name: '吉林', value: 353},
+                    {name: '福建', value: 168},
+                    {name: '贵州', value: 0},
+                    {name: '广东', value: 238},
+                    {name: '青海', value: 1916},
+                    {name: '西藏', value: 887},
+                    {name: '四川', value: 1325},
+                    {name: '宁夏', value: 283},
+                    {name: '海南', value: 0},
+                    {name: '台湾', value: 0},
+                    {name: '香港', value: 0},
+                    {name: '澳门', value: 0}
+                ];
+var chart = document.getElementById("Map1");
+var name_title = '123';
+userMap (name_title,mapDate,chart);
+function userMap (name_title,mapDate,chart) {
+    console.log(mapDate);
+    var echart = echarts.init(chart);
+    var option = {
+            tooltip: {
+                formatter: function(params) {
+                    console.log(params)
+
+                if(params.data){
+                        var value =  percentNum(params.data.value,2000);
+                        console.log(value);
+                        return text(params,value);
+                        
+                    } else {
+                        return '';
+                    }
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 2000,
+                text:['High','Low'],
+                realtime: false,
+                calculable: true,
+                inRange: {
+                    color: ['#ffffff','#fbe5d8','#f4af85','#c55911','#813e0a']
+                }
+            },
+            geo: {
+                map: 'china',
+                roam: true,
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            color: 'rgba(0,0,0,0.4)'
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal:{
+                     
+                        borderColor: 'rgba(0, 0, 0, 0.2)'
+                    },
+                    emphasis:{
+                        areaColor: null,
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            series : [
+                {
+                    name: '浏览量',
+                    type: 'map',
+                    roam: true,
+                    coordinateSystem: 'geo',
+                    geoIndex: 0,
+                    // tooltip: {show: false},
+                    label: {
+                        show:true,
+                        normal: {
+                            formatter: '2222',
+                            position: 'right',
+                            show: true
+                        },
+                        
+                    },
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                formatter:'323223',
+                            },
+                            borderWidth:0
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                            },
+                            areaColor:'rgb(213, 214, 79)',
+                        }
+                    },
+                   
+
+                    data:mapDate
+                }
+            ]
+        };
+        echart.setOption(option,true);
+}
+var tiem = format(1356969600000);
+console.log(tiem);
+function add0(m){return m<10?'0'+m:m }
+function format(shijianchuo)
+{
+//shijianchuo是整数，否则要parseInt转换
+var time = new Date(shijianchuo);
+var y = time.getFullYear();
+var m = time.getMonth()+1;
+var d = time.getDate();
+var h = time.getHours();
+var mm = time.getMinutes();
+var s = time.getSeconds();
+return y+'-'+add0(m);
+}
+getdate('')
+function getdate() {
+            var now = new Date(),
+                y = now.getFullYear(),
+                m = now.getMonth() + 1,
+                d = now.getDate();
+            return y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
+        }
+var chart = document.getElementById("Map12");
+yuanbing(Map12);
+function yuanbing() {
+    var echart = echarts.init(chart);
+    var idx = 1;
+    var option = {
+    timeline : {
+        data : [
+            '2013-01-01', '2013-02-01', '2013-03-01', '2013-04-01', '2013-05-01',
+        ],
+        label : {
+            formatter : function(s) {
+                
+                return format(s);
+            }
+        }
+    },
+    options : [
+        {
+            title : {
+                text: '浏览器占比变化',
+                subtext: '纯属虚构'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                data:['Chrome','Firefox','Safari','IE9+','IE8-']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true, 
+                        type: ['pie', 'funnel'],
+                        option: {
+                            funnel: {
+                                x: '25%',
+                                width: '50%',
+                                funnelAlign: 'left',
+                                max: 1700
+                            }
+                        }
+                    },
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    center: ['50%', '45%'],
+                    radius: '50%',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        },
+        {
+            series : [
+                {
+                    name:'浏览器（数据纯属虚构）',
+                    type:'pie',
+                    data:[
+                        {value: idx * 128 + 80,  name:'Chrome'},
+                        {value: idx * 64  + 160,  name:'Firefox'},
+                        {value: idx * 32  + 320,  name:'Safari'},
+                        {value: idx * 16  + 640,  name:'IE9+'},
+                        {value: idx++ * 8  + 1280, name:'IE8-'}
+                    ]
+                }
+            ]
+        }
+    ]
+};
+    echart.setOption(option,true);            
+
+}
+var data1 = [
+    [
+        {value:4.0,name:'有效性-取值范围约束'},
+        {value:3.0,name:'完整性-非空约束'}
+    ],
+    [
+        {value:8.0,name:'有效性-取值范围约束'},
+        {value:3.0,name:'完整性-非空约束'}
+    ],
+    [
+        {value:9.0,name:'有效性-取值范围约束'},
+        {value:3.0,name:'完整性-非空约束'}
+    ],
+]
+console.log(data1);
+arrA(data1)
+function arrA(data1) {
+    var arr = [];
+    var obj1 = {               
+                title : {
+                    text: '浏览器占比变化',
+                    subtext: '纯属虚构'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (s) {
+                        console.log(s);
+                        console.log(s.data);
+                        var value = s.data;
+                        if(value == 'undefined'){
+                            console.log(1111);
+                        }else{
+                            console.log(222);
+                            //var str = s.data.name +'<br>占比：' + s.percent + '%';
+                            // console.log(str);
+                        }
+
+                    }
+                },
+                legend: {
+                    data:['Chrome','Firefox','Safari','IE9+','IE8-']
+                },
+                series :[
+                    {
+                        type:'pie',center: ['50%', '45%'],
+                        radius: '50%',
+                        data:data1[0]
+                    }
+                ]
+        };
+    arr.push(obj1);
+    for(var i = 1;i<data1.length;i++) {
+        var obj =  {
+            series :[
+              {type:'pie',center: ['50%', '45%'],
+               radius: '50%',
+               data:data1[i]}]
+        }
+        arr.push(obj);
+    }
+    console.log(arr);
+    var chart222 = document.getElementById("Map122");
+    yuanbing11(chart222,arr)
+}
+ var chart222 = document.getElementById("Map122");
+//yuanbing11(chart222) ;
+
+function yuanbing11(chart222,arr2) {
+    var echart = echarts.init(chart222);
+    var idx = 1;
+var option = {
+    timeline : {
+        data : [  '2013-01-01', '2013-02-01','2013-03-01','2013-04-01' ],
+        label : {
+            formatter : function(s) {
+                
+                return format(s);
+            }
+        }
+    },
+    options : arr2
+};	
+echart.setOption(option,true);   
+}
+function add0(m){return m<10?'0'+m:m }
+function format(shijianchuo)
+{
+//shijianchuo是整数，否则要parseInt转换
+var time = new Date(shijianchuo);
+var y = time.getFullYear();
+var m = time.getMonth()+1;
+var d = time.getDate();
+var h = time.getHours();
+var mm = time.getMinutes();
+var s = time.getSeconds();
+return y+'-'+add0(m);
+}
+
+
+//搜索
+$('#doSearch').click(function () {
+        var value = $('#chexing2').html();
+        if(!value){
+            value = $("#brandName2").html();
+        }
+        goYuqing(value);
+    })
+    function doSearch() {
+        window.location.href = "/jnetcms/beiqi/BAIC_yuqing.jsp";
+
+    }
+    function goSencd(str){
+        window.location.href="./BAIC_news.jsp?newsName="+base16Str(str);
+    }
+    function goYuqing(str) {
+        window.location.href="./BAIC_yuqing.jsp?guanjian="+base16Str(str);
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+ 
+
+</body>
+</html>

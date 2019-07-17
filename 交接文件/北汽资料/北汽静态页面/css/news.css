@@ -1,0 +1,140 @@
+/*search*/
+.details_detailed_l_search{padding:0 24px; padding-top: 20px; height: 96px;}
+.details_detailed_l_search_t{float:left;width: 30%;padding-top:10px;margin-left: 3%;position: relative;}
+.search_t_input{width: 70%;height: 35px;line-height: 35px; border-radius: 5px; background-color:#ccd7dd;}
+.details_detailed_l_search_t>button{right: 0;position: absolute;top: 8px;width: 90px;height: 38px;line-height: 38px;font-size: 18px}
+.layui-form-label {padding: 0;}
+
+/*下拉框*/
+.search_screen{width: 30%; float:left;padding-top: 10px;}
+.search_screen>div{position: relative; margin-left: 15%; height: 35px;line-height: 35px; border-radius: 5px;background-color:#ccd7dd; width: 35%;}
+.search_screen>div span{position: absolute;left: -40px;}
+.search_screen>div i{position: absolute;right:5px;top:0px;color: #ffffff;}
+.search_screen .select_div{z-index: 10; position: absolute;bottom: 0px; display: none; background-color: #ffffff;width: 400px; height: 360px;overflow: hidden;}
+.select_div h2{width: 100%;height: 34px;font-size: 14px; line-height: 34px; background-color: #000000; color: #ffffff;padding: 0 10px;}
+.select_div_sort{padding: 0 10px; width: 100%; height: 50px; line-height: 50px;}
+.select_div_sort .fl{width: 65%;}
+.select_div_sort .fl a{font-size: 12px;}
+.select_div_sort .fr{width: 34%;}
+.show_car{width: 100%;height: 26px;background: #ccd7dd;line-height: 26px; padding-left: 5px;}
+.sort_car{width: 100%;padding: 0 10px; height: 276px;overflow: auto;}
+.sort_car{width: 100%;}
+.sort_car table,.sort_car tr{width: 100%;}
+.sort_car tr{border-bottom:1px solid #cccccc; }
+.sort_car tr td{width: 70%;border-left: 1px solid #cccccc;color: #0152ae; padding-left: 10px;}
+.sort_car tr td a{display: inline-block; padding: 0 5px; color: #0152ae;}
+.sort_car tr td a:hover{color: #ff0000;}
+.sort_car tr td:first-child{width: 30%; border: none;}
+.layui-btn-normal{background-color: #f62929;}
+/*品牌*/
+/* 新闻列表 */
+.news_list{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding:0px 20px;
+}
+.news-title{
+    width:100%;
+    height: 46px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #ccc;
+    margin-bottom:10px;
+}
+.news-title h1 {
+    display: inline-block;
+    height: 100%;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 70px;
+}
+.news-title h1.active{
+    color:  #000000;;
+    height: 44px;
+    line-height: 44px;
+}
+.list{
+    width: 100%;
+}
+.list ul {
+    display: none;
+    margin-bottom: 30px;
+}
+.list li {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom:1px dashed #ccd7dd;
+}
+.list li>h3{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top:2px;
+}
+.list li>a{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+.list li:hover{
+    background:#ccd7dd;
+}
+.list li:first-child:hover{
+    background:#fff;
+}
+.list li:first-child a:hover{
+    color: #000;
+}
+.list li a:hover{
+    color:#f62929;
+}
+.list li h1{
+    float: right;
+    width: 16%;
+    height: 100%;
+}
+.list li h2{
+    float: right;
+    width: 16%;
+    height: 100%;
+}
+.list li h1 span{
+    display: inline-block;
+    width:50%;
+    height: 100%;
+    font-size: 12px;
+    float: left;
+    color:#000;
+    text-align: center;
+}
+.list li a span{
+    float: left;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    color:red;
+    font-size:28px;
+}
+.list li h2 span{
+    margin-right: 20px;
+    font-size: 12px;
+}
+.list ul.active{
+    display: block;
+}
+.pages{
+    width: 100%;
+    margin:auto;
+    position: relative;
+}
+#demo7{
+    display: inline-block;
+    margin-left:20%;
+    /* left:50%;
+    transform: translate(-50%,0); */
+    
+}

@@ -1,0 +1,40 @@
+
+/* 修改后的css */
+.content .main .con-zhibiao .con-li span {
+    margin-right: 16px;
+    width: 75px;
+    text-align: right;
+    display: inline-block;
+    float: left;
+    /* width: 25%; */
+    height: 37px;
+    line-height: 37px;
+    text-align: right;
+}
+.content .main .con-zhibiao .con-li input {
+    text-indent: 1em;
+    background: #ccd7db;
+    font-size: 14px;
+    padding: 4px;
+    width: 322px;
+    height: 24px;
+    font-family: '΢���ź�';
+    /* margin-left: 10px; */
+    border-radius: 5px;
+    border: 1px solid #999999;
+}
+.content .main .con-zhibiao .con-biao {
+    vertical-align: middle;
+    /* margin-left: 10px; */
+}
+.content .main .con-zhibiao select {
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 4px;
+    width: 334px;
+    font-family: '΢���ź�';
+    background-color: #ccd7db;
+    height: 37px;
+    vertical-align: middle;
+}

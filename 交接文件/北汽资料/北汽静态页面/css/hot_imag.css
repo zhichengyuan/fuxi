@@ -1,0 +1,267 @@
+/*顶部切换*/
+.hot_tab{width: 43%; min-width: 300px;padding: 0 2%;}
+.hot_tab ul{width: 100%;margin-left:22%;}
+.hot_tab ul li{width: 20%; float: left;background: url(../image/three_hot_tab.png) no-repeat center center; height: 57px; text-align: center;padding-left: 1%; line-height: 57px; }
+.hot_tab ul li.active{background: url(../image/three_hot_tab_active.png) no-repeat center center;}
+.hot_tab_tem{display: none;}
+.hot_tab_tem.active{display: block;margin-top:10px}
+/* 中国汽车占有率分析图 */
+.occupancy_rate{width: 100%;height:340px;margin-top:12px;}
+/* 中国汽车占有率分析图结束 */
+/*车型参数*/
+.vehicle_type{width: 100%;height: 700px;margin-top:12px;}
+/*左侧*/
+.vehicle_type_l{width: 10%;height: 700px;padding: 0 12px;}
+.vehicle_type_l h2{color:#0e1111; height: 50px; line-height: 50px; border-bottom: 1px solid #ccc; font-size:16px;}
+.occupancy_rate_tab {width: 100%}
+.occupancy_rate_tab li{width: 100%;text-align: center; padding-top: 10px;}
+.occupancy_rate_tab li span{cursor: pointer; color: #fff; line-height: 30px; text-align: center; display: inline-block; width: 88px;height:30px; background: url(../image/lunbo.png) no-repeat;}
+.occupancy_rate_tab li span.active{ background: url(../image/lunboactive.png) no-repeat;}
+/*左侧结束*/
+/*右侧*/
+.vehicle_type_r{width: 89%;height: 700px; overflow-y:auto;overflow-x: auto;}
+.vehicle_type_r_t{width: 200%;padding: 0 12px;height: 180px; padding-top: 30px;}
+.vehicle_type_r_t li{text-align: center; background-color: #d1dce0; float: left; width: 7%;border:1px solid #e2e9ec; height: 90px; margin-top:45px;}
+.vehicle_type_r_t li img{margin: 20px;height: 60px;width: 110px;}
+.vehicle_type_r_t li:first-child{border: none; color:#878a8c;font-size: 14px;background-color:transparent;}
+.vehicle_type_r_t li:first-child p{padding-bottom: 10px;}
+.vehicle_type_r_t li:first-child input{margin:0 5px; vertical-align:middle;}
+.is_identical{padding-left: 56px;}
+/*表格数据*/
+.vehicle_type_r_b_ul{width: 200%;padding: 0 12px;height: 500px; padding-top: 30px;}
+.vehicle_type_r_b_ul>li{ text-align: center;width: 7%; height: 30px; line-height: 30px; float: left;}
+.vehicle_type_r_b_ul ol li{width: 100%;border:1px solid rgba(255,255,255,0.8);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.vehicle_type_r_b_ul ol li:nth-child(even){background-color: #e0e6e9; color:#000}
+.vehicle_type_r_b_ul ol li:nth-child(odd){color:#000}
+.vehicle_type_r_b_ul>li ol .bj_li{background-color:#63a891;color:#fff;}
+.finished_goods_l_b thead tr,.finished_goods_l_b thead tr{display: none;}
+.vehicle_type_r_b_ul>li:first-child ol .font-color{color:#484a4b;}
+/*右侧结束*/
+/*车型参数结束*/
+/*竞品左侧 开始*/
+.finished_goods{margin-top: 12px;}
+.finished_goods_l{width: 59%;height: 700px; padding: 0 15px;}
+.finished_goods_l_t{width: 100%; height: 310px;}
+.finished_goods_l_b{width: 100%; height: 380px;margin-top:12px;}
+/*竞品右侧*/
+.finished_goods_r{width: 40%;height: 700px; padding: 0 15px;}
+.finished_goods_r_t{width: 100%; height: 310px;margin-top:12px;}
+.finished_goods_r_b{width: 100%; height: 380px;}
+/*竟品结束*/
+/*user开始*/
+.user_message{width: 100%;margin-top: 12px;}
+.user_message_t_l{width: 100%; height:240px; padding: 0 5px; text-align: center;}
+.user_message_t_l img {width: 100%; margin-top:48px;}
+.user_message_t_l div {display: inline-block;box-sizing: border-box;padding:5px 10px;border:1px solid #ccc;margin-top:5px;font-size: 12px;cursor:pointer; } 
+.user_message_t_z{width: 63%; margin:0 1%; height:240px;}
+.user_message_t_z ul{width: 100%;padding-top: 38px;}
+.user_message_t_z ul li{position: relative; border-radius: 5px; float: left;width: 31%;height: 110px;margin-left: 2%;}  
+.user_message_t_z ul li>img {position: absolute;right: -10px;top: -15px;}
+.user_message_t_z ul li h2{height: 23px;line-height: 23px;background-color:#4e97fd;padding-left: 10px; color: #ffffff;font-size: 14px;}
+.user_message_t_z ul li.fashion h2{background-color:#ef595a;}
+.user_message_t_z ul li.Aboriginal h2{background-color:#7696fd;}
+.user_message_t_z ul li h2 span{padding-left: 5px;}
+.user_message_t_z ul li>div{border:1px solid #4e97fd; padding: 16px 5px; height: 86px; background-color: #fff;}
+.user_message_t_z ul li.fashion>div{border:1px solid #ef595a;}
+.user_message_t_z ul li.Aboriginal>div{border:1px solid #7696fd;}
+.user_message_t_z ul li>div p{padding-left: 10px; position: relative; color:#4e97fd; font-size: 12px;line-height: 20px;}
+.user_message_t_z ul li>div p i{font-size: 30px; font-style:normal; position: absolute;left: 0;}
+.user_message_t_z ul li.fashion>div p{color:#ef595a;}
+.user_message_t_z ul li.Aboriginal>div p{color:#7696fd;}
+.user_message_t_y{width: 25%; height:240px;}
+/*轮播*/
+.brand_lunbo{height: 345px; position: relative;}
+.swiper-container{height: 280px; text-align: center;margin: 30px 0; overflow: hidden;}
+.swiper-container1{height: 295px;margin: 30px 0 15px;}
+.swiper-container2{height: 295px;box-sizing: border-box;padding:0 15%;}
+.brand_lunbo a{position: absolute; bottom: 28px; display: inline-block; width: 20px; height: 14px; background-color: #8e999b; text-align: center;line-height: 14px;}
+.brand_lunbo i{font-size: 20px; color: #fff; }
+.brand_lunbo_l{top: -20px;left: 40%;}
+.brand_lunbo_r{bottom: 40px;left: 40%;}
+.brand_lunbo span{text-align: center; cursor: pointer; display: inline-block; color: #fff; line-height: 30px; width: 88px; height: 30px; background-image: url(../image/lunbo.png);}
+.brand_lunbo span.active{background-image: url(../image/lunboactive.png);}
+/*下半部分*/
+.user_message_b{width: 100%; margin-top:12px;}
+.user_message_b_l{width: 60%;height: 300px;}
+.user_message_b_r{width: 39%;height: 300px;}
+/*user结束*/
+/*促销*/
+.promotion{width: 100%; margin-top: 12px;}
+.promotion_t{width: 100%;}
+.promotion_t_l{width: 59%; height: 517px;}
+.promotion_t_r{width: 40%;}
+.promotion_t_r_t{width: 100%; height: 252px;padding: 0 25px;}
+.promotion_t_r_t h2{width: 100%;height: 30px; text-align: center; font-weight: 800; line-height: 40px; font-size: 14px;color: #555858;}
+.promotion_t_r_b{width: 100%; height: 252px; margin-top: 12px;}
+.promotion_b{width: 100%;height: 260px;margin-top: 12px;}
+.promotion .layui-table-cell{height: 23px; line-height: 23px;}
+.promotion .layui-table-box tr th{background-color:#62a2fa;}
+.promotion .layui-table tbody tr:hover{
+    background-color: transparent !important;
+}
+.promotion .layui-table tbody tr{background: #8e8f91;}
+.promotion .layui-table tbody tr:nth-child(even){
+    background-color: #a6a7a9 !important;
+}
+.promotion .layui-table tbody tr:hover{
+    background-color: transparent !important;
+}
+/*促销结束*/
+/*指标导航*/
+.three_index{
+	width: 100%;
+	margin-top: 12px;
+}
+.three_index_l{height: 245px;width: 10%; padding: 0 10px;}
+.three_index_l h2{height: 60px; line-height: 60px; font-weight: 800;font-size: 16px;color: #000000; border-bottom: 1px solid #ccc;}
+.three_index_l_tab {width: 100%;}
+.three_index_l_tab span{margin: 0 auto; cursor: pointer; margin-top:10px; text-align: center; color: #fff; font-size: 14px; line-height: 30px; display: block;width:90px;height: 30px; background: url(../image/lunbo.png) no-repeat;}
+.three_index_l_tab span.active{background: url(../image/lunboactive.png) no-repeat;}
+/*指标导航结束*/
+/*图表*/
+.three_index_r{height: 245px;width: 89%;}
+/*图表*/
+/*三排两列图表*/
+.three_fix_image{width: 100%;overflow: hidden;}
+.three_fix_image li{
+	height: 236px;
+	width: 100%;
+    margin-top: 13px;
+    margin-right: 2%;
+	float: left;
+}
+.three_fix_image li:nth-child(3n) {
+    margin-right: 0;
+}
+.three_fix_image .three_fix_image_i{margin-left:0.9%;margin-right:0.9%;}
+/*三排两列图表结束*/
+/*热力图开始*/
+.three_hot_img{width: 100%;margin-top: 12px;}
+.three_hot_img_l{width: 40%;height: 316px;}
+.three_hot_img_r{width: 59%;height: 316px;}
+/*热力图*结束/
+/*查询*/
+.three_hot_query{width: 100%;margin-top: 12px;}
+.three_hot_query_l{height: 264px;width: 49%;}
+.three_hot_query_l:first-child{width: 50%;margin-right: 1%;}
+.three_hot_query_l h2{height: 50px;line-height: 50px;color: #0f0f0f;font-size: 18px; text-align: center;}
+.three_hot_query_l ul{width: 100%;padding:0 13px;}
+.three_hot_query_l li{padding:0 13px; background: rgba(204,215,220,0.4);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4Cccd7dc,endColorstr=#4Cccd7dc); position: relative; width: 100%; height: 34px; font-size: 14px; color: #101010; line-height: 34px; border-bottom: 1px solid #e7eced;}
+.three_hot_query_l li a{width: 100%;display:block;color: #101010; padding-right:50px;}
+.three_hot_query_l li span{position: absolute;right: 13px; top: 0;}
+.three_hot_query_l>a{height: 40px; line-height: 40px; display: block; padding:0 13px; width: 100%; text-align: right; color:#f72a2a; font-size: 14px;}
+/*查询结束*/
+/*tab切换隐藏*/
+.index_data_item.active{display: block;}
+.index_data_item{display: none;}
+/*tab切换隐藏结束*/
+/*指标*/
+.index_statistics{width: 100%;margin-top:12px;}
+.security_lw{width: 10%; margin-right: 1%;height: 357px;}
+
+.security_l{width: 29%; margin-right: 1%;height: 357px;}
+.security_r{width: 59%;height: 357px;}
+/*指标结束*/
+/*安全指数*/
+.safety_index{width: 100%;margin-top:12px;}
+.safety_index_l{width: 40%; margin-right: 1%;height: 494px;}
+.safety_index_r{width: 59%;height: 494px;}
+.safety_index_r_t{width: 100%;height: 282px; padding: 0 15px;}
+.safety_index_r_t h2{color: #151618; font-size: 16px; height: 60px;line-height:60px;text-align: center;}
+.safety_index_r_b{width: 100%;height: 199px;margin-top:12px; padding: 0 15px;}
+/*表格*/
+.safety_index_r_b h2{color: #151618; font-size: 16px; height: 60px;line-height:60px;text-align: center;}
+.layui-hide{width: 100%;}
+.layui-table-box .layui-table{width: 100%;}
+.layui-table-tips-c {
+    position: absolute;
+    right: -3px;
+    top: -13px;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    cursor: pointer;
+    background-color: #666;
+    border-radius: 50%;
+    color: #fff;
+}
+.safety_index .layui-table-box tr th{background-color:#62a2fa;}
+.safety_index .layui-table tbody tr:hover{
+    background-color: transparent !important;
+}
+.safety_index .layui-table tbody tr{background: #8e8f91;}
+.safety_index .layui-table tbody tr:nth-child(even){
+  background-color: #e0e6e9 !important;
+}
+.safety_index .layui-table tbody tr:nth-child(odd){
+  background-color: #ffffff !important;
+}
+.safety_index .layui-table tbody tr:hover{
+    background-color: transparent !important;
+}
+/* 市场占比率图 */
+#occupancy_rate_img,#occupancy_rate_img1{ box-shadow:2px 2px 5px rgba(169,187,182, 0.2),2px -2px 5px rgba(169,187,182,0.2),-2px 2px 5px rgba(169,187,182,0.2),-2px -2px 5px rgba(169,187,182, 0.2);}
+/*安全指数结束
+
+/* 新闻 */
+.details_wrapper {
+    width: 32%;
+    height: 360px;
+    float: left;
+    margin-bottom: 15px;
+}
+.details_zm{
+    height: 264px;
+    width: 49%;
+}
+.details_wrapper .details_title{
+    width: 100%;
+    height:44px;
+    background: #f3faf8;
+    border-bottom: 1px solid #d8e0de;
+}
+.details_wrapper .details_title h1{
+    display:inline-block;
+    height: 44px;
+    line-height: 44px;
+    margin-left: 20px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+.details_wrapper .details_title a{
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    float: right;
+    margin-right: 20px;
+    color: #f62929;
+}
+.details_wrapper ol{
+    width: 100%;
+    box-sizing: border-box;
+    padding:9px 16px;
+    list-style-type:demical;
+}
+.details_wrapper ol li {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    color:#000;
+    list-style-position:outside;
+}
+.details_wrapper ol li a{
+    font-size: 12px;
+    color:#000;
+}
+.details_wrapper ol li a:hover{
+    color:#f62929;
+}
+.details_wrapper ol li span{
+    float: right;
+}
+.details_margin{
+    margin-right:0;
+    margin-left:0;
+}

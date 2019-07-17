@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/logoin_in.css">
+    <title>用户登录页</title>
+</head>
+<body class="login_body_in">
+    
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+    </div>
+    <!-- 公共版心 -->
+    <div class="wrapper">
+        <!--addDiv-->
+        <div class="sideAddValue"></div>
+       <div class="login_in_main common_color login_in" style="background:#fff;">
+        <h2>用户登录</h2>
+          <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <div class="headImg">
+                    <img src="./image/headPerson.png" alt="">
+                </div>
+                <input type="text" name="title" lay-verify="required|title"  autocomplete="off"placeholder="请输入用户名" class="layui-input user" id="getName">
+            </div>
+            <div class="layui-form-item">
+                <div class="headImg">
+                    <img src="./image/password.png" alt="">
+                </div>
+                <input type="password" name="password" lay-verify="pass|required"  placeholder="请输入密码" autocomplete="off" class="layui-input" id="getPwd">
+            </div>
+            <div class="layui-form-item searchPwd">
+              <div class="layui-input-inline">
+                <input type="text" name="yzm"  lay-verify="required"  placeholder="请输入验证码" autocomplete="off" class="layui-input">
+              </div>
+              <div class="layui-form-mid yzm layui-word-aux confirmImg"><img src="./image/yam.png"></div>
+            </div>
+             <div class="layui-form-item searchPwd" pane="">
+              <input type="checkbox" name="like1[read]" lay-skin="primary" title="忘记密码">
+          </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="demo1" id="submitBtn">登录</button>
+            </div>
+          </form>
+    </div>
+
+    </div>
+      <!-- 公共底部 -->
+    <div class="logoin_footer">
+      <p>&copy;北京汽车股份有限公司 </p>
+      <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+   </div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/placeholder.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <!--addEventListener-->
+    <!-- <script>
+        var _loginForm = document.getElementsByClassName('login_in_main')[0],
+            _allDom=document.getElementsByClassName('wrapper')[0],
+            _topT=document.getElementsByClassName('common_top')[0];
+        var _username = 'admin',
+            _password='admin',
+            _name=document.getElementById('getName'),
+            _pwd=document.getElementById('getPwd');
+            // console.log(_name + ':密码'+_pwd);
+        var btn = document.getElementById('submitBtn');
+        btn.onclick = function onclick(){
+            alert('123');
+            console.log(_name.value +': 密码是'+_pwd.value);
+            if (_username ==_name && _password == _pwd){
+                return 1;
+            } else{
+                alert('账号密码不正确');
+            }
+        };
+        _allDom.addEventListener("click",function(e){
+            _loginForm.style.display="none";
+            _allDom.style.opacity="0";
+        },false);
+        _loginForm.addEventListener("click",function(e){
+            e.stopPropagation();
+            e.preventDefault();
+        },true);
+    </script> -->
+  <script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+        ,layer = layui.layer
+        //自定义验证规则
+        form.verify({
+          title: function(value){
+            if(value.length < 4){
+              return '标题至少得5个字符啊';
+            }
+          }
+          ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+          ,content: function(value){
+            layedit.sync(editIndex);
+          }
+        });
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            if(data.field.password == '123456' && data.field.title == 'admin' && data.field.yzm == '6768') {
+                window.location.href = './BAIC_login.html';
+            } else {
+                layer.msg('信息错误');
+            }
+        //   layer.alert(JSON.stringify(data.field), {
+        //     title: '最终的交信息'
+        //   })
+          return false;
+        });   
+});
+  </script>
+</body>
+</html>

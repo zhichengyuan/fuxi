@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/brand.css">
+    <title>首页</title>
+    <style type="text/css">
+    
+    .zm_fillter p span.active{
+            color: red;
+            text-decoration: underline;
+        }
+        #car_brand li,#car_manufacturer li,.zm_fillter p span{
+            cursor:pointer;
+        }
+        .details_width{
+            width: 22%;
+            height: 420px;
+            margin-left:0;
+            margin-right:0;
+        }
+        .bullet{position: absolute;color:#000;font-size:14px;border-radius:20px;padding:10px;}
+    </style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="fr">
+          <p><span>欢迎您：李毅&nbsp;&nbsp;<a href="#"><i class="icon iconfont icon-shutDown"></i>退出</a></span></p>
+          <p class="hidden_p"><i class="icon iconfont icon-weizhi"></i>
+            <a href="#">当前位置：</a>
+            <a href="./BAIC_login.html">首页</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="./BAIC_first_depth.html">汽车品牌</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="#">品牌印象</a>
+          </p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w">
+        <!-- 大切换 -->
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <!-- <div class="brand_top_bj">
+              <ul class="layui-tab-title" id="tab_title_ul"> -->
+                <!-- tab切换渲染 -->
+              <!-- </ul>
+            </div> -->
+            <!-- 字母筛选 -->
+            <div class="zm_fillter common_color">
+                <p><i>品牌字母</i><span class="first">A</span><span class="active">B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span></p>
+                <div class="manufacturer clearfix">
+                  <i>厂商：</i>
+                  <ul class="clearfix" id="car_brand">
+                      <!-- <li class="active">
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li> -->
+                  </ul>
+                </div>
+                <div class="manufacturer clearfix brand">
+                  <i>品牌：</i>
+                  <ul class="clearfix" id="car_manufacturer">
+                      <!-- <li class="active">
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li>
+                      <li>
+                          <span>北京奔驰</span>
+                      </li> -->
+                  </ul>
+                </div>
+            </div>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                  <!--下半部分上 -->
+                   <div class="brand_btm_t clearfix">
+                     <div class="brand_btm_t_l fl common_color" id="brand_small_title">
+                       <!-- 标题内容渲染 -->
+                     </div>
+                     <div class="brand_btm_t_r fr common_color">
+                        <h2>绅宝品牌-用户印象</h2>
+                        <div class="screen_container">
+                          <!-- 弹幕 -->
+                        </div>
+                     </div>
+                   </div>
+                   <!--下半部分下 -->
+                   <div class="brand_btm-b clearfix">
+                     <div class="brand_btm-b_l common_color">
+                       <h2>导航</h2>
+                      <div class="brand_lunbo">
+                          <a href="javascript:;" class="brand_lunbo_l"><i class="icon iconfont icon-shangjiantou"></i></a>
+                          <a href="javascript:;" class="brand_lunbo_r"><i class="icon iconfont icon-xiajiantou"></i></a>
+                          <div class="swiper-container">
+                              <div class="swiper-wrapper" id="brand_car_swapper">
+                                  <!-- 轮播图渲染 -->
+                              </div>
+                          </div>
+                      </div>
+                     </div>
+                     <div class="brand_btm-b_z common_color" id="car_tab_color">
+                        <!-- 车颜色渲染 -->
+                     </div>
+                     <div class="brand_btm-b_r common_color">
+                       <!-- 词云 -->
+                       <div id="car_word" style="width:100%;height: 100%;"></div>
+                       <!-- <div id="car_word" style="width: 100%;height: 100%;"></div>  -->
+                     </div>
+                   </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+  <!-- 公共底部 -->
+<div class="footer">
+    <p>&copy;北京汽车研究总院 </p>
+    <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+</div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/wedclun.js"></script>
+  <script type="text/javascript" src="./js/jquery.barrager.min.js"></script>
+  <script type="text/javascript" src="./json/brand1.js"></script>
+  <script type="text/javascript" src="./json/first1.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- 渲染厂商模板 -->
+ <script id="car_manufacturer_template" type="text/html">
+    {{# layui.each(d.data,function(index,item) {}}
+    
+    {{# if(index==14){ }}
+        <li class="active">
+            <span>{{item.name}}</span>
+        </li>
+        {{#   }else{ }}
+            <li>
+                <span>{{item.name}}</span>
+            </li>
+        {{# } }}
+    {{# }); }}
+    
+</script>
+<!-- 渲染厂商模板结束 -->
+ <!-- 渲染厂商模板 -->
+ <script id="car_brand_template" type="text/html">
+    {{# layui.each(d.data,function(index,item) {}}
+        {{# if(index==6){ }}
+            <li class="active">
+                <span>{{item.name}}</span>
+            </li>
+        {{#   }else{ }}
+            <li>
+                <span>{{item.name}}</span>
+            </li>
+        {{# } }}
+    {{# }); }}
+</script>
+<!-- 渲染厂商模板结束 -->
+  <!-- tab标题切换模板 -->
+    <script type="text/html" id="tab_title">
+      {{# layui.each(d.data.tab_title,function(index,item) { }}
+        {{# if(index == 0) { }}
+          <li class="layui-this">{{item}}</li>
+        {{# } else{ }}
+          <li>{{item}}</li>
+        {{# }; }}
+        }
+      {{# });}}
+    </script>
+  <!-- tab标题切换结束-->
+  <!-- 详情介绍模板 -->
+    <script type="text/html" id="small_title">
+        <h2>{{d.data.title}}</h2>
+         <p>{{d.data.text}}</p>
+    </script>
+  <!-- 详情介绍模板结束 --> 
+  <!-- 车型轮播 -->
+      <script type="text/html" id="car_lunbo">
+        {{# layui.each(d.data.car_tab,function(index,item) { }}
+            {{# if(index == 0) { }}
+               <div class="swiper-slide"><span class="active">{{item}}</span></div>
+            {{# } else{ }}
+              <div class="swiper-slide"><span>绅宝D60</span></div>
+            {{# }; }}
+        {{# });}}
+      </script>
+  <!-- 车型轮播结束 -->
+  <!-- 车颜色渲染模板 -->
+     <script type="text/html" id="car_color">
+          <div class="brand_btm-b_z_t">
+            <h2>{{d.data.car_tab_color.title}}</h2>
+            <div class="brand_car">
+              <img src="{{d.data.car_tab_color.car_img[0].url}}">
+              <h3>
+                {{# layui.each(d.data.car_tab_color.car_img,function(index,item) { }}
+                  <span data-url="{{item.url}}" style="background-color:{{item.colorm}};"></span>
+                {{# }); }}
+              </h3>
+            </div>
+          </div>
+          <div class="brand_btm-b_z_b">
+              <p>{{d.data.car_tab_color.car_message}}</p>
+          </div>
+     </script>
+  <!-- 车颜色渲染模板结束 -->
+    <script type="text/javascript">
+      layui.use(['layer', 'laytpl'], function(){
+      var layer = layui.layer,
+          laytpl = layui.laytpl;
+          //tab标题切换
+            laytpl($("#tab_title").html()).render(brand_introduce, function(html){
+                  $("#tab_title_ul").html(html)
+            })
+          //tab标题切换结束
+          //标题介绍
+            laytpl($("#small_title").html()).render(brand_introduce, function(html){
+                  $("#brand_small_title").html(html)
+            })
+          //标题结束
+          // 车型轮播
+            laytpl($("#car_lunbo").html()).render(brand_introduce, function(html){
+                $("#brand_car_swapper").html(html)
+            })
+          //结束
+          //车颜色渲染
+            laytpl($("#car_color").html()).render(brand_introduce, function(html){
+                $("#car_tab_color").html(html)
+            })
+          //车颜色结束
+          // 厂商渲染
+        laytpl($("#car_brand_template").html()).render(car_brand, function(html){
+                $("#car_brand").html(html)
+        })
+        // 品牌
+        laytpl($("#car_manufacturer_template").html()).render(car_manufacturer, function(html){
+                $("#car_manufacturer").html(html)
+        })
+      });
+    </script>
+  <!-- 渲染语法结束 -->
+  <!-- 效果js -->
+    <script type="text/javascript">
+      $(function() {
+          // 轮播
+          $(".swiper-container").each(function(){
+             var swper =  $(this).swiper({
+                  mode : 'vertical',
+                  slidesPerView : 6,
+                  grabCursor: true,
+                  paginationClickable: true     
+               });
+              $(this).siblings('.brand_lunbo_l').click(function(e) {
+                e.preventDefault()
+                swper.swipePrev()
+              })
+              $(this).siblings('.brand_lunbo_r').click(function(e) {
+                e.preventDefault()
+                swper.swipeNext()
+              })
+          });
+          // 切换
+          $('.brand_btm-b_l').on('click','.swiper-container span',function() {
+            $('.swiper-container span').removeClass('active');
+            $(this).addClass('active');
+          })
+      })
+    </script>
+  <!-- 效果js结束 -->
+  <!-- 词云 -->
+  <!-- 弹幕 -->
+  <script type="text/javascript">  
+    var index = 0;
+    var time_i = setInterval(function() {
+      index++;
+      if(index == brand_introduce.data.data_dm.length-1) {
+        index = 0;
+      }
+      a(brand_introduce.data.data_dm[index].info);
+    },2500)
+    // 弹幕定时器
+    var timers = [];
+    // 控制弹幕显隐变量
+    var isShow = true;
+    function a(text){
+      // 创建弹幕
+        var jqueryDom = createScreenbullet(text);
+        // 添加定时任务
+        addInterval(jqueryDom);
+    }
+    // 新建一个弹幕
+    function createScreenbullet(text) {
+        var jqueryDom = $("<div class='bullet'>" + text + "</div>");           
+        var color_arr = ['#EEC591','#EEB4B4','#EEAEEE','#EEAD0E','#EE9A49','#EE9A00','#EE8262 ','#EE7AE9','#EE7621','#EE7600','#EE6363','#EE5C42','#EE3A8C','#EE30A7','#EE00EE','#EE0000','#FFB90F','#EEA2AD','#EE82EE','#FF7F50','#FF6EB4','#FF4500','#FF3030','#FF1493','#FDF5E6','#FAF0E6','#FAEBD7','#F7F7F7','#F5FFFA','#F5DEB3','#F4F4F4','#F0FFFF','#F0FFF0','#F0E68C','#F08080','#FF34B3','#FF0000','#FAFAD2','#F5F5DC','#F2F2F2','#F0F8FF','#F0F0F0','#EEEEE0','#EEEED1'];
+        var fontColor = color_arr[Math.floor(Math.random() * 43)];
+        var left = $(".screen_container").width() + "px";
+        var top = Math.floor(Math.random() * 170) + "px";
+        top = parseInt(top) > 180 ? "160px" : top;
+        jqueryDom.css({
+            "backgroundColor": fontColor,
+            "left": left,
+            "top": top,
+            "min-width":200,
+            "text-align":"center"
+        });
+        $(".screen_container").append(jqueryDom);
+        return jqueryDom;
+    }
+    // 为弹幕添加定时任务
+    function addInterval(jqueryDom) {
+        var left = jqueryDom.offset().left - $(".screen_container").offset().left;
+        var timer = setInterval(function () {
+            left--;
+            jqueryDom.css("left", left + "px");
+            if (jqueryDom.offset().left + jqueryDom.width() < $(".screen_container").offset().left) {
+                jqueryDom.remove();
+                clearInterval(timer);
+            }
+        }, 10);
+        timers.push(timer);
+    }
+  </script>
+  <!-- car_word -->
+<script type="text/javascript">
+var maskImage = new Image();
+maskImage.src = 'image/qiche.png';
+function car_ci(data) {
+  var cloun_option = {
+    height:280,
+    title: {
+        text: 'MD50-词云图',
+        x: 'center',
+        textStyle: {
+            fontSize: 23
+        }
+
+    },
+    backgroundColor: '#F7F7F7',
+    series: [{
+        type: 'wordCloud',
+        gridSize: 1,
+        sizeRange: [6, 60],
+        rotationRange: [0, 0],
+        maskImage: maskImage,
+        textPadding: 0,
+
+        autoSize: {
+            enable: true,
+            minSize: 10
+        },
+        left: 'center',
+        top: 'center',
+        width: '96%',
+        height: '100%',
+        textStyle: {
+             normal: {
+                color: function(v) {
+                    let color = ['#27D38A', '#FFCA1C', '#5DD1FA', '#F88E25','#47A0FF','#FD6565']
+                     let num =Math.floor(Math.random() * (5 + 1));
+                     console.log(num)
+                    return color[num];
+                },
+            },
+        },
+        data: data
+    }]
+  };
+  return cloun_option
+}
+var myChart_ci = echarts.init(document.getElementById('car_word'));
+maskImage.onload = function() {
+    myChart_ci.setOption(car_ci(brand_introduce.data.word_loud));
+};
+window.onresize = function() {
+    myChart_ci.resize();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <link type="text/css" href="./css/logoin_in.css">
+    <title>首页</title>
+    <style>
+        .wrapper{
+          position: relative;
+          width:100%;
+          height: 100%;
+          background:rgba(0, 0, 0, 0.2);
+          position: absolute;
+          z-index: 999;
+          margin-top:-231px;
+          display: none;
+        }
+        .show{
+          display: block;
+        }
+        .login_top a.hide{
+          display: none;
+        }
+        .login-wrapper{
+          position: absolute;
+          left:50%;
+          top:50%;
+          margin-left: -190px;
+          margin-top:-135px;
+          width: 380px;
+          height:370px;
+          box-sizing: border-box;
+          padding:30px 25px;
+          background: #fff;
+        }
+        .password{
+          height: 56px;
+        }
+        .password input{
+          margin-top:10px;
+        }
+        .login_in h2{
+          margin-bottom: 15px;
+          font-weight: bold;
+          color:#000;
+        }
+        .login_in_btn{
+          background:#ef1111;
+        }
+        #getName,#getPwd{
+          padding-left:42px;
+        }
+        #getName{
+          background: url('./image/user1.png') no-repeat 10px center ;
+        }
+        #getPwd{
+          background:url('./image/password.png') no-repeat 10px center;
+        }
+        .login_bj{display: none}
+        .close_login{position: absolute;right: 15px;top: 10px;width: 20px;height: 20px;cursor: pointer;}
+    </style>
+</head>
+<body class="login_body">
+    <img class="login_title" src="./image/login_title.gif">
+    <img class="login_cloud" src="./image/cloud.png">
+    <img class="login_car" src="./image/car.png">
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="./BAIC_download.html"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix common_top_login">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="fr">
+          <p class="login_bj"><a href="./BAIC_login.html"><i class="icon iconfont icon-shutDown"></i>退出登录</a></span></p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w common_top_login">
+      <!-- 下载 -->
+      <div class="login"> 
+        <div class="login_top">
+          <p>建立-运营-传递的赋能模型，实现数字化转型，从而拥有更好的未来。</p>
+          <a id="login-btn">点击登录 <i class="icon iconfont icon-jiantou"></i></a>
+        </div>
+        <div class="logoin_bom">
+          <ul class="clearfix">
+            <li>
+              <a href="./BAIC_first_depth.html" >
+                <div class="logoin_bom_t">
+                  <span>以古为镜</span>
+                  <p>历史数据的沉淀<i class="icon iconfont icon-rightarrow"></i></p>
+                </div>
+              </a>
+            </li>
+            <li class="login_padding">
+              <a href="./BAIC_details.html" class="login_anmiate" >
+                <div class="logoin_bom_t">
+                <span>以敌为镜</span>
+                <p>新闻资讯的向导<i class="icon iconfont icon-rightarrow"></i></p>
+                </div>
+                <div class="logoin_center">
+                  <h2><img src="./image/message_login.png" />&nbsp;重要资讯</h2>
+                  <p>售价7.99-11.99万元，北京汽车绅宝智行领潮上市 <span class="textr">2018-10-22</span></p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="./BAIC_details_six.html" >
+                <div class="logoin_bom_t">
+                <span>观古至今</span>
+                <p>国六标准的导向<i class="icon iconfont icon-rightarrow"></i></p>
+              </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+        <div class="login-wrapper common_color">
+            <div class="sideAddValue"></div>
+        <div class="login_in_main login_in" style="background:#fff;">
+          <img class="close_login" src="./image/close_login.png">
+          <h2>用户登录</h2>
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                  <!-- <div class="headImg">
+                      <img src="./image/headPerson.png" alt="">
+                  </div> -->
+                  <input type="text" name="title" lay-verify="required|title"  autocomplete="off"placeholder="请输入用户名" class="layui-input user" id="getName">
+              </div>
+              <div class="layui-form-item ">
+                  <!-- <div class="headImg">
+                      <img src="./image/password.png" alt="">
+                  </div> -->
+                  <input type="password" name="password" lay-verify="pass|required"  placeholder="请输入密码" autocomplete="off" class="layui-input" id="getPwd">
+              </div>
+              <div class="layui-form-item searchPwd">
+                <div class="layui-input-inline password">
+                  <input type="text" name="yzm"  lay-verify="required"  placeholder="请输入验证码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid yzm layui-word-aux confirmImg"><img src="./image/yam.png"></div>
+              </div>
+              <div class="layui-form-item searchPwd" pane="">
+                <input type="checkbox" name="like1[read]" lay-skin="primary" title="忘记密码">
+            </div>
+              <div class="layui-form-item">
+                  <button class="layui-btn layui-btn-fluid login_in_btn login_in_btn" lay-submit="" lay-filter="demo1" id="submitBtn">登录</button>
+              </div>
+            </form>
+      </div>
+        </div>
+    </div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+      
+      
+    $(function() {
+      $('.logoin_bom').on('mouseenter','li',function() {
+        $(this).find('.logoin_center').stop().animate({bottom:'0px'},1000);
+      })
+      $('.logoin_bom').on('mouseleave','li',function() {
+        $(this).find('.logoin_center').stop().animate({bottom:'-90px'},1000);
+      })
+      $('#login-btn').click(function () {
+        $('.wrapper').addClass('show');
+      })
+    })
+  </script>
+    <script type="text/javascript">
+      layui.use(['form', 'layedit', 'laydate'], function(){
+          var form = layui.form
+          ,layer = layui.layer
+          //自定义验证规则
+          form.verify({
+            title: function(value){
+              if(value.length < 4){
+                return '用户名至少得5个字符啊';
+              }
+            }
+            ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+            ,content: function(value){
+              layedit.sync(editIndex);
+            }
+          });
+          //监听提交
+          form.on('submit(demo1)', function(data){
+              if(data.field.password == '123456' && data.field.title == 'admin' && data.field.yzm == '6768') {
+                  $('.common_top div p').removeClass('login_bj');
+                  $('.wrapper').removeClass('show');
+                  $('#login-btn').addClass('hide');
+              } else {
+                  layer.msg('信息错误');
+              }
+          //   layer.alert(JSON.stringify(data.field), {
+          //     title: '最终的交信息'
+          //   })
+            return false;
+          });   
+          // 点击关闭退出
+          $('.close_login').click(function() {
+            $('.wrapper').removeClass('show');
+          })
+  });
+    </script>
+</body>
+</html>

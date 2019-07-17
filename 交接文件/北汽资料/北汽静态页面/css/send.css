@@ -1,0 +1,63 @@
+.send_depth_bom{width: 100%; margin-top: 20px;}
+.send_depth_bom .fl{width: 30%;height: 300px;background: rgba(234,239,240,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ebeef1,endColorstr=#99ebeef1);}
+.send_depth_bom .fr{width: 69%;height: 300px;background: rgba(234,239,240,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ebeef1,endColorstr=#99ebeef1);}
+/*tab切换*/
+.send_time_tab{position: absolute;left: 60%;top: 60px;}
+.send_jingzheng{position: absolute;left: 34%;top: 55px;}
+.send_car{position: absolute;left: 12%;top: 55px;}
+.send_car input,.send_jingzheng input{width: 120px; height: 30px; line-height: 30px; background-color: #ccd7dc; border:2px solid #ffffff;}
+.send_car i,.send_jingzheng i{position: absolute;right: 5px;top: 5px;color: #fff;}
+/*车型固定*/
+.send_car_div{
+	position: absolute;
+    top: 30px;
+    right: -400px;
+    width: 600px;
+    height: 0px;
+    background-color: #ffffff;
+    z-index: 999999;
+    display: none;
+}
+.send_car_div_footer td a:hover{color: #f62929;}
+.send_car_div h2{
+	padding: 0 10px;
+	font-size: 16px;
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	background-color: #101010;
+	color: #ffffff;
+}
+.send_car_div_main{
+	width: 100%;
+	padding: 0 10px;
+	height: 50px;
+	line-height: 50px;
+}
+.send_car_div_main span{padding: 3px 6px;background-color: #f62929; color: #fff;}
+.send_car_div_main .fr input{vertical-align: middle;width: 140px; background-color: #ffffff; border:1px solid #ccc; margin-top: 3px; margin-right: 6px;}
+.send_car_div_main .fr button{background-color: #f62929;}
+/*竞争关系*/
+.send_jingzheng_div{
+    position: absolute;
+    top: 30px;
+    right: -368px;
+    width: 600px;
+    height: 0px;
+    background-color: #ffffff;
+    z-index: 999999;
+    display: none;
+}
+.send_jingzheng_div h2{
+	padding: 0 10px;
+	font-size: 16px;
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	background-color: #101010;
+	color: #ffffff;
+}
+.send_car_div_footer{width: 100%; height: 250px;overflow-y:auto;}
+.send_car_div_footer th{background-color:#f3f5f9;}
+.send_car_div_footer td{color: font-size:16px; color: #000;}
+.send_car_div_footer td a{padding-right: 10px; color: #015293; font-size: 14px;}

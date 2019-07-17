@@ -1,0 +1,44 @@
+.login_car{position: absolute;bottom: 130px; right: 10%;}
+.login_title{position: absolute; margin:0 auto; left: 50%; top: 50px; margin-left: -300px;}
+.login_cloud{position: absolute; left: 10%;top: 80px;}
+.login{width: 100%;}
+.login_top{width: 550px; margin:0 auto; position: relative; margin-top: 230px;}
+.login_top p{text-align: center;color: #f62929;font-size: 16px;}
+.login_top a{color: #fff;position: absolute; left: 20px; top: 40px; display:block; line-height: 38px; text-align: center; width: 100px; height: 38px; background-image: url(../image/logoin_yuan.png);}
+.logoin_bom{width: 100%; position:fixed;bottom: 0;left: 0;}
+.logoin_bom ul{width: 100%; margin:0 auto; overflow: hidden;}
+.logoin_bom ul li{width: 33%; margin-right:0%; background: rgba(153,162,163,0.6);padding-top: 30px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#9999a2a3,endColorstr=#9999a2a3); float: left;height: 180px;}
+.logoin_bom .login_padding{margin:0 0.5%;}
+.logoin_bom ul li:hover{background-color: rgba(92,106,108,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#995c6a6c,endColorstr=#995c6a6c);}
+.logoin_bom ul li a{color: #fff; position: relative; display: block; width: 100%; height: 100%;}
+.logoin_bom ul li span{font-weight: 600; font-size: 18px;display: inline-block; padding-bottom:3px; border-bottom: 3px solid #fff;}
+.logoin_bom ul li p{font-size: 20px; padding-top:5px;}
+.logoin_bom ul .logoin_bom_t{width: 100%; padding-left:40%;}
+.icon-rightarrow{font-size: 20px; padding-left: 10px;}
+/*中间划过效果*/
+.logoin_center{background-color: #5c6a6c;z-index: 999; position: absolute;bottom: -99px;left: 0; z-index: 99999; width: 100%; height: 90px;}
+.logoin_center h2{font-size: 16px;margin:10px 0; padding-left: 1%;}
+.logoin_bom ul .logoin_center span{border-bottom: 0; font-size: 12px;float: right;}
+.logoin_center p{padding-right: 10px;height: 35px; line-height: 35px;color: #ffffff; font-size: 12px !important;}
+.logoin_center p:hover{ background-color: #fff; color: #000000;}
+@media screen and (max-width: 1400px) {
+	.login_title {
+	    position: absolute;
+	    margin: 0 auto;
+	    left: 50%;
+	    top: 20px;
+	    margin-left: -300px;
+	}
+    .login_car {
+	    position: absolute;
+	    bottom: 130px;
+	    right: 0%;
+	    width: 586px;
+	}
+	.login_top {
+	    width: 550px;
+	    margin: 0 auto;
+	    position: relative;
+	    margin-top: 130px;
+	}
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>热力指标页</title>
+  
+    </style>
+</head>
+<body>
+        <div>
+                <div style="width:800px;height: 500px;" id="guanxitu"></div>
+            </div>
+        <div>
+                <div style="width:800px;height: 500px;" id="Map122"></div>
+            </div>
+        <div>
+            <div style="width:800px;height: 500px;" id="Map12"></div>
+        </div>
+        <div>
+            <div style="width:800px;height: 500px;" id="Map1"></div>
+        </div>
+    <div>
+        <div style="width:800px;height: 500px;" id="main"></div>
+    </div>
+    
+    <div>
+            <div style="width:800px;height: 500px;" id="Map"></div>
+        </div>
+  <script type="text/javascript" src="./js/guanxi.js"></script>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/wedclun.js"></script>
+  <script type="text/javascript" src="./js/datatool.js"></script>
+  <script type="text/javascript" src="./js/map.js"></script>
+  <script type="text/javascript" src="./js/hot_tab_event.js"></script>
+  <script type="text/javascript" src="./json/hot_img.js"></script>
+  <script type="text/javascript" src="./json/sbD5011.js"></script>
+  <script type="text/javascript" src="./json/sbZhiXing.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<script>
+
+
+// var chart=echarts.init(document.getElementById("Map"))
+// chart.setOption(option)
+
+
+
+var chart = document.getElementById("guanxitu");
+var name_title = '123';
+guanxitu (name_title,webkitDep,chart);
+function guanxitu (name_title,webkitDep,chart) {
+    console.log(webkitDep);
+    var echart = echarts.init(chart);
+    var option = {
+        legend: {
+            data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        },
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            animation: false,
+            label: {
+                normal: {
+                    position: 'right',
+                    formatter: '{b}'
+                }
+            },
+            draggable: true,
+            data: webkitDep.nodes.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            }),
+            categories: webkitDep.categories,
+            force: {
+                // initLayout: 'circular'
+                // repulsion: 20,
+                edgeLength: 20,
+                repulsion: 20,
+                gravity: 0.2
+            },
+            edges: webkitDep.links
+        }]
+    };
+    echart.setOption(option,true);
+}
+
+
+
+
+
+
+
+
+</script>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/hot_imag.css">
+    <title>热力指标页</title>
+    <style type="text/css">
+      #user_zb_option_img1{display: none;}
+    
+      #user_zb_option_img1{display: none;}
+      .peizhi_a{position: absolute;z-index: 99999;left: 310px;margin-top: 12px;}
+      .peizhi_a1{position: relative;}
+      .peizhi_a1_span{font-weight: 800;color: #000000;color: #fffff9;padding: 3px 5px;border-radius: 2px;font-size: 12px;cursor: pointer;background: #f62929;}
+      .peizhi_a2{position: absolute;height: 300px;width: 400px;border: 1px solid #ccc;background: #ffff;display: none;}
+      .peizhi_a2 h2{font-size: 12px;line-height: 30px; height: 30px; width: 100%;background: #101010;color: #ffffff;padding-left: 10px;}
+      .peizhi_a2 div>.fr{border:1px solid #ccc;margin-top: 10px; margin-right: 5px;}
+      .peizhi_a3 select {height: 30px;height: 30px;margin-top: 10px;}
+      .peizhi_all{height: 30px;margin-left: 10px;line-height: 30px;background: red;padding: 0 10px;display: inline-block;color: #fff;}
+      .pwizhi_index_table {margin-top: 10px; height: 210px;overflow-y: auto;}
+      .pwizhi_index_table tr a{margin-right: 10px;}
+      .pwizhi_index_table tr a.active{color: #0177be;}
+      .pwizhi_index_table tr a:hover{color: #0177be;}
+      .pwizhi_index_table tr{font-weight:400;}
+      .benpin_width{
+        width: 10%;
+        height: 240px;
+        margin-left:0;
+      }
+      .user-width{
+        width: 100%;
+        margin-left:0;
+        height: 240px;
+      }
+    </style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="hot_tab fl clearfix">
+            <ul class="clearfix">
+              <li  tabName="配置"><a href="./BAIC_peizhi.html"><img src="./image/peizhi.png"></a></li>
+              <li tabName="竞品"><a href="./BAIC_jingpin.html"><img src="./image/jp.png"></a></li>
+              <li tabName="指标"><a href="./BAIC_zhibiao.html"><img src="./image/zhibiao.png"></a></li>
+              <li class="active" tabName="用户"><a href="./BAIC_user.html"><img src="./image/user.png"></a></li>
+            </ul>
+         </div>
+       <div class="fr">
+          <p><span>欢迎您：李毅&nbsp;&nbsp;<a href="#"><i class="icon iconfont icon-shutDown"></i>退出</a></span></p>
+          <p class="hidden_p"><i class="icon iconfont icon-weizhi"></i>
+            <a href="#">当前位置：</a>
+            <a href="./BAIC_login.html">首页</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="./BAIC_first_depth.html">汽车品牌</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="#">汽车车型</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="#" class="tabname">配置</a>
+          </p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w">
+
+  
+      <!--  item 用户-->
+      <div  class="hot_tab_tem active">
+        <!-- 顶部select -->
+        <ul class="hot_select clearfix common_color">
+            <li>
+              <div class="benpin">
+                <span>本品：</span>
+                <p>绅宝D50</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                         <div class="fl">
+                              <span>所有车型</span>
+                              <select>
+                                  <option>微型轿车</option>
+                                  <option>微型轿车</option>
+                                  <option>微型轿车</option>
+                                  <option>微型轿车</option>
+                                  <option>微型轿车</option>
+                                  <option>微型轿车</option>
+                              </select>
+                          </div>
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">小型轿车</th>
+                            </tr>
+                            <tr>
+                              <td>A0-H</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li>
+              <div class="benpin">
+                <span>竞品一：</span>
+                <p>荣威i6</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>对比车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>GL8</td>
+                              <td><a href="#">艾力绅</a><a href="#">马自达8</a></td>
+                            </tr>
+                            <tr>
+                              <td>凯越三箱</td>
+                              <td><a href="#">宝来</a><a href="#">朗动</a></td>
+                            </tr>
+                            <tr>
+                              <td>君威</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <td>君越</td>
+                              <td><a href="#">东风悦达起亚</a><a href="#">东风日产</a></td>
+                            </tr>
+                            <tr>
+                              <td>昂科拉</td>
+                              <td><a href="#">迈腾</a><a href="#">辉腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>A朗逸</td>
+                              <td><a href="#">2008</a><a href="#">翼博</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗</td>
+                              <td><a href="#">凯罗拉</a><a href="#">速腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗XT</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li>
+              <div class="benpin">
+                <span>竞品二：</span>
+                <p>逸动</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>对比车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>GL8</td>
+                              <td><a href="#">艾力绅</a><a href="#">马自达8</a></td>
+                            </tr>
+                            <tr>
+                              <td>凯越三箱</td>
+                              <td><a href="#">宝来</a><a href="#">朗动</a></td>
+                            </tr>
+                            <tr>
+                              <td>君威</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <td>君越</td>
+                              <td><a href="#">东风悦达起亚</a><a href="#">东风日产</a></td>
+                            </tr>
+                            <tr>
+                              <td>昂科拉</td>
+                              <td><a href="#">迈腾</a><a href="#">辉腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>A朗逸</td>
+                              <td><a href="#">2008</a><a href="#">翼博</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗</td>
+                              <td><a href="#">凯罗拉</a><a href="#">速腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗XT</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li>
+              <div class="benpin">
+                <span>竞品三：</span>
+                <p>帝豪</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>对比车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>GL8</td>
+                              <td><a href="#">艾力绅</a><a href="#">马自达8</a></td>
+                            </tr>
+                            <tr>
+                              <td>凯越三箱</td>
+                              <td><a href="#">宝来</a><a href="#">朗动</a></td>
+                            </tr>
+                            <tr>
+                              <td>君威</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <td>君越</td>
+                              <td><a href="#">东风悦达起亚</a><a href="#">东风日产</a></td>
+                            </tr>
+                            <tr>
+                              <td>昂科拉</td>
+                              <td><a href="#">迈腾</a><a href="#">辉腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>A朗逸</td>
+                              <td><a href="#">2008</a><a href="#">翼博</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗</td>
+                              <td><a href="#">凯罗拉</a><a href="#">速腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗XT</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li>
+              <div class="benpin">
+                <span>竞品四：</span>
+                <p>科沃兹</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>对比车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>GL8</td>
+                              <td><a href="#">艾力绅</a><a href="#">马自达8</a></td>
+                            </tr>
+                            <tr>
+                              <td>凯越三箱</td>
+                              <td><a href="#">宝来</a><a href="#">朗动</a></td>
+                            </tr>
+                            <tr>
+                              <td>君威</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <td>君越</td>
+                              <td><a href="#">东风悦达起亚</a><a href="#">东风日产</a></td>
+                            </tr>
+                            <tr>
+                              <td>昂科拉</td>
+                              <td><a href="#">迈腾</a><a href="#">辉腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>A朗逸</td>
+                              <td><a href="#">2008</a><a href="#">翼博</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗</td>
+                              <td><a href="#">凯罗拉</a><a href="#">速腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗XT</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li>
+              <div class="benpin">
+                <span>竞品五：</span>
+                <p>选择品牌/车系/车型</p>
+                <i class="icon iconfont icon-xiajiantou"></i>
+                <div class="hot_select_div">
+                    <h2>对比车型</h2>
+                     <div class="hot_select_div_search clearfix">
+                          <div class="fr">
+                              <input type="text" placeholder="查询"><button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
+                          </div>
+                     </div>
+                     <div class="hot_select_div_table">
+                      <table class="layui-table">
+                          <colgroup>
+                            <col width="50">
+                            <col width="150">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <td>GL8</td>
+                              <td><a href="#">艾力绅</a><a href="#">马自达8</a></td>
+                            </tr>
+                            <tr>
+                              <td>凯越三箱</td>
+                              <td><a href="#">宝来</a><a href="#">朗动</a></td>
+                            </tr>
+                            <tr>
+                              <td>君威</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                            <tr>
+                              <td>君越</td>
+                              <td><a href="#">东风悦达起亚</a><a href="#">东风日产</a></td>
+                            </tr>
+                            <tr>
+                              <td>昂科拉</td>
+                              <td><a href="#">迈腾</a><a href="#">辉腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>A朗逸</td>
+                              <td><a href="#">2008</a><a href="#">翼博</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗</td>
+                              <td><a href="#">凯罗拉</a><a href="#">速腾</a></td>
+                            </tr>
+                            <tr>
+                              <td>英朗XT</td>
+                              <td><a href="#">FABIA SCOUT</a><a href="#">K2 三厢</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div> 
+              </div>
+            </li>
+            <li style="width:6%;margin-left:5%;">
+              <button class="filter" value="user">筛选</button>
+            </li>
+        </ul>
+        <!-- 本品 -->
+        <div class="user_message">
+          <!-- 上 -->
+            <div class="user_message_t clearfix">
+                <div class="details_wrapper benpin_width common_color" >
+                    <div class="details_title">
+                        <h1>本品</h1>
+                    </div>
+                    <div class="user_message_t_l fl" id="car_name">
+                      <!-- <img src="./image/car1.png" alt="">
+                      <p>绅宝D50</p> -->
+                      <!-- <div class="brand_lunbo"> -->
+
+                          <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                              <!-- 模板 -->
+                          <!-- </div> -->
+                      <!-- </div> -->
+                    </div>
+                </div>
+              <!-- 人员对话 -->
+              <div class="user_message_t_z common_color fl">
+                  <div class="details_wrapper user-width common_color" >
+                      <div class="details_title">
+                          <h1>本品</h1>
+                      </div>
+                      <ul class="clearfix" id="user_dialogue">
+                        <!-- 模板 -->
+                      </ul>
+                  </div>
+              </div>
+              <div class="user_message_t_y common_color fl">
+                <div id="user_advantage_img" style="width: 320px; height: 220px;"></div>
+              </div>
+            </div>
+            <!-- 上结束 -->
+            <!-- 下 -->
+            <div class="user_message_b clearfix">
+              <div class="user_message_b_l fl common_color">
+                <div id="user_map_num" style="width: 767px;height: 300px;"></div>
+              </div>
+              <div  class="user_message_b_r fr common_color">
+                <div id="user_message_b_r" style="width: 490px; height:280px; "></div>
+              </div>
+            </div>
+            <!-- 下结束 -->
+        </div>
+        <!-- 本品结束 -->
+        <!-- 竞品1 -->
+        <div class="user_message">
+            <!-- 上 -->
+              <div class="user_message_t clearfix">
+                  <div class="details_wrapper benpin_width common_color" >
+                      <div class="details_title">
+                          <h1>竞品一</h1>
+                      </div>
+                      <div class="user_message_t_l fl" id="car_name1">
+                        <!-- <img src="./image/car1.png" alt="">
+                        <p>绅宝D50</p>
+                        <div>返回本品</div> -->
+                        <!-- <div class="brand_lunbo"> -->
+        
+                            <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                                <!-- 模板 -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+                  </div>
+                <!-- 人员对话 -->
+                <div class="user_message_t_z common_color fl">
+                   <ul class="clearfix" id="user_dialogue1">  </ul>
+                </div>
+                <div class="user_message_t_y common_color fl">
+                  <div id="user_advantage_img1" style="width: 320px; height: 220px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1545635334305"><div style="position: relative; overflow: hidden; width: 320px; height: 220px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="320" height="220" style="position: absolute; left: 0px; top: 0px; width: 320px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                </div>
+              </div>
+              <!-- 上结束 -->
+              <!-- 下 -->
+              <div class="user_message_b clearfix">
+                <div class="user_message_b_l fl common_color">
+                  <div id="user_map_num1" style="width: 767px; height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334304"><div style="position: relative; overflow: hidden; width: 767px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="767" height="300" style="position: absolute; left: 0px; top: 0px; width: 767px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 360px; top: 77px; pointer-events: none;">内蒙古<br>47万辆</div></div>
+                </div>
+                <div class="user_message_b_r fr common_color">
+                  <div id="user_message_b_r1" style="width: 490px; height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334306"><div style="position: relative; overflow: hidden; width: 490px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="490" height="280" style="position: absolute; left: 0px; top: 0px; width: 490px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+              <!-- 下结束 -->
+        </div>
+        <!-- 竞品1结束 -->
+        <!-- 竞品2 -->
+        <div class="user_message">
+            <!-- 上 -->
+              <div class="user_message_t clearfix">
+                  <div class="details_wrapper benpin_width common_color" >
+                      <div class="details_title">
+                          <h1>竞品二</h1>
+                      </div>
+                      <div class="user_message_t_l fl" id="car_name2">
+                        <!-- <img src="./image/car1.png" alt="">
+                        <p>绅宝D50</p> -->
+                        <!-- <div class="brand_lunbo"> -->
+        
+                            <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                                <!-- 模板 -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+              </div>
+                <!-- 人员对话 -->
+                <div class="user_message_t_z common_color fl">
+                   <ul class="clearfix" id="user_dialogue2">  </ul>
+                </div>
+                <div class="user_message_t_y common_color fl">
+                  <div id="user_advantage_img2" style="width: 320px; height: 220px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1545635334305"><div style="position: relative; overflow: hidden; width: 320px; height: 220px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="320" height="220" style="position: absolute; left: 0px; top: 0px; width: 320px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                </div>
+              </div>
+              <!-- 上结束 -->
+              <!-- 下 -->
+              <div class="user_message_b clearfix">
+                <div class="user_message_b_l fl common_color">
+                  <div id="user_map_num2" style="width: 767px; height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334304"><div style="position: relative; overflow: hidden; width: 767px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="767" height="300" style="position: absolute; left: 0px; top: 0px; width: 767px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 360px; top: 77px; pointer-events: none;">内蒙古<br>47万辆</div></div>
+                </div>
+                <div class="user_message_b_r fr common_color">
+                  <div id="user_message_b_r2" style="width: 490px; height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334306"><div style="position: relative; overflow: hidden; width: 490px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="490" height="280" style="position: absolute; left: 0px; top: 0px; width: 490px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+              <!-- 下结束 -->
+        </div>
+        <!-- 竞品2结束 -->
+        <!-- 竞品3 -->
+        <div class="user_message">
+            <!-- 上 -->
+              <div class="user_message_t clearfix">
+                  <div class="details_wrapper benpin_width common_color" >
+                      <div class="details_title">
+                          <h1>竞品三</h1>
+                      </div>
+                      <div class="user_message_t_l fl" id="car_name3">
+                        <!-- <img src="./image/car1.png" alt="">
+                        <p>绅宝D50</p> -->
+                        <!-- <div class="brand_lunbo"> -->
+        
+                            <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                                <!-- 模板 -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+              </div>
+                <!-- 人员对话 -->
+                <div class="user_message_t_z common_color fl">
+                   <ul class="clearfix" id="user_dialogue3"> </ul>
+                </div>
+                <div class="user_message_t_y common_color fl">
+                  <div id="user_advantage_img3" style="width: 320px; height: 220px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1545635334305"><div style="position: relative; overflow: hidden; width: 320px; height: 220px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="320" height="220" style="position: absolute; left: 0px; top: 0px; width: 320px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                </div>
+              </div>
+              <!-- 上结束 -->
+              <!-- 下 -->
+              <div class="user_message_b clearfix">
+                <div class="user_message_b_l fl common_color">
+                  <div id="user_map_num3" style="width: 767px; height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334304"><div style="position: relative; overflow: hidden; width: 767px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="767" height="300" style="position: absolute; left: 0px; top: 0px; width: 767px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 360px; top: 77px; pointer-events: none;">内蒙古<br>47万辆</div></div>
+                </div>
+                <div class="user_message_b_r fr common_color">
+                  <div id="user_message_b_r3" style="width: 490px; height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334306"><div style="position: relative; overflow: hidden; width: 490px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="490" height="280" style="position: absolute; left: 0px; top: 0px; width: 490px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+              <!-- 下结束 -->
+        </div>
+        <!-- 竞品3结束 -->
+        <!-- 竞品4 -->
+        <div class="user_message">
+            <!-- 上 -->
+              <div class="user_message_t clearfix">
+                  <div class="details_wrapper benpin_width common_color" >
+                      <div class="details_title">
+                          <h1>竞品四</h1>
+                      </div>
+                      <div class="user_message_t_l fl" id="car_name4">
+                        <!-- <img src="./image/car1.png" alt="">
+                        <p>绅宝D50</p> -->
+                        <!-- <div class="brand_lunbo"> -->
+        
+                            <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                                <!-- 模板 -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+              </div>
+                <!-- 人员对话 -->
+                <div class="user_message_t_z common_color fl">
+                   <ul class="clearfix" id="user_dialogue4"> </ul>
+                </div>
+                <div class="user_message_t_y common_color fl">
+                  <div id="user_advantage_img4" style="width: 320px; height: 220px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1545635334305"><div style="position: relative; overflow: hidden; width: 320px; height: 220px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="320" height="220" style="position: absolute; left: 0px; top: 0px; width: 320px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                </div>
+              </div>
+              <!-- 上结束 -->
+              <!-- 下 -->
+              <div class="user_message_b clearfix">
+                <div class="user_message_b_l fl common_color">
+                  <div id="user_map_num4" style="width: 767px; height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334304"><div style="position: relative; overflow: hidden; width: 767px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="767" height="300" style="position: absolute; left: 0px; top: 0px; width: 767px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 360px; top: 77px; pointer-events: none;">内蒙古<br>47万辆</div></div>
+                </div>
+                <div class="user_message_b_r fr common_color">
+                  <div id="user_message_b_r4" style="width: 490px; height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334306"><div style="position: relative; overflow: hidden; width: 490px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="490" height="280" style="position: absolute; left: 0px; top: 0px; width: 490px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+              <!-- 下结束 -->
+        </div>
+        <!-- 竞品4结束 -->
+        <!-- 竞品5 -->
+        <div class="user_message">
+            <!-- 上 -->
+              <div class="user_message_t clearfix">
+                  <div class="details_wrapper benpin_width common_color" >
+                      <div class="details_title">
+                          <h1>竞品五</h1>
+                      </div>
+                      <div class="user_message_t_l fl" id="car_name5">
+                        <!-- <img src="./image/car1.png" alt="">
+                        <p>绅宝D50</p> -->
+                        <!-- <div class="brand_lunbo"> -->
+        
+                            <!-- <div class="swiper-wrapper" id="user_tab"> -->
+                                <!-- 模板 -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+                  </div>
+                <!-- 人员对话 -->
+                <div class="user_message_t_z common_color fl">
+                   <ul class="clearfix" id="user_dialogue5"> </ul>
+                </div>
+                <div class="user_message_t_y common_color fl">
+                  <div id="user_advantage_img5" style="width: 320px; height: 220px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1545635334305"><div style="position: relative; overflow: hidden; width: 320px; height: 220px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="320" height="220" style="position: absolute; left: 0px; top: 0px; width: 320px; height: 220px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                </div>
+              </div>
+              <!-- 上结束 -->
+              <!-- 下 -->
+              <div class="user_message_b clearfix">
+                <div class="user_message_b_l fl common_color">
+                  <div id="user_map_num5" style="width: 767px; height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334304"><div style="position: relative; overflow: hidden; width: 767px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="767" height="300" style="position: absolute; left: 0px; top: 0px; width: 767px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 360px; top: 77px; pointer-events: none;">内蒙古<br>47万辆</div></div>
+                </div>
+                <div class="user_message_b_r fr common_color">
+                  <div id="user_message_b_r5" style="width: 490px; height: 280px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1545635334306"><div style="position: relative; overflow: hidden; width: 490px; height: 280px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="490" height="280" style="position: absolute; left: 0px; top: 0px; width: 490px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+              <!-- 下结束 -->
+        </div>
+        <!-- 竞品5结束 -->
+      </div>
+      <!--  item 用户结束-->
+ 
+    </div>
+  <!-- 公共底部 -->
+<div class="footer">
+    <p>&copy;北京汽车研究总院 </p>
+    <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+</div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/wedclun.js"></script>
+  <script type="text/javascript" src="./js/datatool.js"></script>
+  <script type="text/javascript" src="./js/map.js"></script>
+  <script type="text/javascript" src="./js/hot_tab_event.js"></script>
+  <script type="text/javascript" src="./json/hot_img.js"></script>
+  <script type="text/javascript" src="./json/sbD5011.js"></script>
+  <script type="text/javascript" src="./json/sbZhiXing.js"></script>
+  <script type="text/javascript" src="./json/dihao.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+<!-- 汽车tab模板结束 -->
+
+
+
+
+  <!-- user切换 -->
+
+  <!-- user切换结束 -->
+  <!-- 本品插入图片和车名 -->
+  <script type="text/html" id="img_car">
+    <img src="{{ d.data.benpin.user_tab.carimg }}" alt="">
+    <p>{{ d.data.benpin.user_tab.carname }}</p>
+    
+  </script>
+  <!-- 本品插入图片和车名结束 -->
+  <!-- 竞品1插入图片和车名 -->
+  <script type="text/html" id="img_car1">
+    <img src="{{ d.data.jingpin1.user_tab.carimg }}" alt="">
+    <p>{{ d.data.jingpin1.user_tab.carname }}</p>
+    <div>返回本品</div>
+  </script>
+  <!-- 竞品1插入图片和车名结束 -->
+  <!-- 竞品2插入图片和车名 -->
+  <script type="text/html" id="img_car2">
+    <img src="{{ d.data.jingpin2.user_tab.carimg }}" alt="">
+    <p>{{ d.data.jingpin2.user_tab.carname }}</p>
+    <div>返回本品</div>
+  </script>
+  <!-- 竞品2插入图片和车名结束 -->
+  <!-- 竞品3插入图片和车名 -->
+  <script type="text/html" id="img_car3">
+    <img src="{{ d.data.jingpin3.user_tab.carimg }}" alt="">
+    <p>{{ d.data.jingpin3.user_tab.carname }}</p>
+    <div>返回本品</div>
+  </script>
+  <!-- 竞品3插入图片和车名结束 -->
+  <!-- 竞品4插入图片和车名 -->
+  <script type="text/html" id="img_car4">
+    <img src="{{ d.data.jingpin4.user_tab.carimg }}" alt="">
+    <p>{{ d.data.jingpin4.user_tab.carname }}</p>
+    <div>返回本品</div>
+  </script>
+  <!-- 竞品4插入图片和车名结束 -->
+  <!-- 竞品5插入图片和车名 -->
+  <script type="text/html" id="img_car5">
+    <img src="{{ d.data.jingpin5.user_tab.carimg }}" alt="">
+    <p>{{ d.data.jingpin5.user_tab.carname }}</p>
+    <div>返回本品</div>
+  </script>
+  <!-- 竞品5插入图片和车名结束 -->
+  <!-- 本品user对话 -->
+    <script type="text/html" id="user_dialogue_template">
+          {{# layui.each(d.data.benpin.user_dialogue,function(index,item) { }}
+                   {{# if(index == 0) { }}
+                   <li>
+                     <img src="{{item.img_url}}">
+                     <h2>1.单身贵族 <span>{{item.num}}%</span></h2>
+                     <div>
+                      {{# layui.each(item.text_arr,function(index,item) { }}
+                        <p class="layui-elip"><i>·</i>{{item}}</p>
+                      {{# }); }}
+                     </div>
+                   </li>
+                   {{# } }}
+                  {{# if(index == 1) { }}
+                     <li class="fashion">
+                        <img src="{{item.img_url}}">
+                        <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                        <div>
+                        {{# layui.each(item.text_arr,function(index,item) { }}
+                        <p class="layui-elip"><i>·</i>{{item}}</p>
+                        {{# }); }}
+                        </div>
+                      </li>
+                  {{# } }}
+                  {{# if(index == 2) { }}
+                       <li class="Aboriginal">
+                        <img src="{{item.img_url}}">
+                        <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                        <div>
+                        {{# layui.each(item.text_arr,function(index,item) { }}
+                        <p class="layui-elip"><i>·</i>{{item}}</p>
+                        {{# }); }}
+                        </div>
+                      </li>
+                  {{# } }}
+          {{# }); }}
+      </script>
+  <!-- 本品buser对话结束 -->
+  <!-- 竞品1user对话 -->
+  <script type="text/html" id="user_dialogue_template1">
+    {{# layui.each(d.data.jingpin1.user_dialogue,function(index,item) { }}
+             {{# if(index == 0) { }}
+             <li>
+               <img src="{{item.img_url}}">
+               <h2>{{item.name}} <span>{{item.num}}%</span></h2>
+               <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                  <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+               </div>
+             </li>
+             {{# } }}
+            {{# if(index == 1) { }}
+               <li class="fashion">
+                  <img src="{{item.img_url}}">
+                  <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                  <div>
+                  {{# layui.each(item.text_arr,function(index,item) { }}
+                  <p class="layui-elip"><i>·</i>{{item}}</p>
+                  {{# }); }}
+                  </div>
+                </li>
+            {{# } }}
+            {{# if(index == 2) { }}
+                 <li class="Aboriginal">
+                  <img src="{{item.img_url}}">
+                  <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                  <div>
+                  {{# layui.each(item.text_arr,function(index,item) { }}
+                  <p class="layui-elip"><i>·</i>{{item}}</p>
+                  {{# }); }}
+                  </div>
+                </li>
+            {{# } }}
+    {{# }); }}
+</script>
+<!-- 竞品1buser对话结束 -->
+<!-- 竞品2user对话 -->
+<script type="text/html" id="user_dialogue_template2">
+  {{# layui.each(d.data.jingpin2.user_dialogue,function(index,item) { }}
+           {{# if(index == 0) { }}
+           <li>
+             <img src="{{item.img_url}}">
+             <h2>{{item.name}} <span>{{item.num}}%</span></h2>
+             <div>
+              {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+              {{# }); }}
+             </div>
+           </li>
+           {{# } }}
+          {{# if(index == 1) { }}
+             <li class="fashion">
+                <img src="{{item.img_url}}">
+                <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+          {{# if(index == 2) { }}
+               <li class="Aboriginal">
+                <img src="{{item.img_url}}">
+                <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+  {{# }); }}
+</script>
+<!-- 竞品2buser对话结束 -->
+<!-- 竞品3user对话 -->
+<script type="text/html" id="user_dialogue_template3">
+  {{# layui.each(d.data.jingpin3.user_dialogue,function(index,item) { }}
+           {{# if(index == 0) { }}
+           <li>
+             <img src="{{item.img_url}}">
+             <h2>{{item.name}} <span>{{item.num}}%</span></h2>
+             <div>
+              {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+              {{# }); }}
+             </div>
+           </li>
+           {{# } }}
+          {{# if(index == 1) { }}
+             <li class="fashion">
+                <img src="{{item.img_url}}">
+                <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+          {{# if(index == 2) { }}
+               <li class="Aboriginal">
+                <img src="{{item.img_url}}">
+                <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+  {{# }); }}
+</script>
+<!-- 竞品3buser对话结束 -->
+<!-- 竞品4user对话 -->
+<script type="text/html" id="user_dialogue_template4">
+  {{# layui.each(d.data.jingpin4.user_dialogue,function(index,item) { }}
+           {{# if(index == 0) { }}
+           <li>
+             <img src="{{item.img_url}}">
+             <h2>{{item.name}} <span>{{item.num}}%</span></h2>
+             <div>
+              {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+              {{# }); }}
+             </div>
+           </li>
+           {{# } }}
+          {{# if(index == 1) { }}
+             <li class="fashion">
+                <img src="{{item.img_url}}">
+                <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+          {{# if(index == 2) { }}
+               <li class="Aboriginal">
+                <img src="{{item.img_url}}">
+                <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+  {{# }); }}
+</script>
+<!-- 竞品4buser对话结束 -->
+<!-- 竞品5user对话 -->
+<script type="text/html" id="user_dialogue_template5">
+  {{# layui.each(d.data.jingpin5.user_dialogue,function(index,item) { }}
+           {{# if(index == 0) { }}
+           <li>
+             <img src="{{item.img_url}}">
+             <h2>{{item.name}} <span>{{item.num}}%</span></h2>
+             <div>
+              {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+              {{# }); }}
+             </div>
+           </li>
+           {{# } }}
+          {{# if(index == 1) { }}
+             <li class="fashion">
+                <img src="{{item.img_url}}">
+                <h2>2.乐享时尚  <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+          {{# if(index == 2) { }}
+               <li class="Aboriginal">
+                <img src="{{item.img_url}}">
+                <h2>3.城市土著   <span>{{item.num}}%</span></h2>
+                <div>
+                {{# layui.each(item.text_arr,function(index,item) { }}
+                <p class="layui-elip"><i>·</i>{{item}}</p>
+                {{# }); }}
+                </div>
+              </li>
+          {{# } }}
+  {{# }); }}
+</script>
+<!-- 竞品5buser对话结束 -->
+  <!-- 盒子图 -->
+    <script type="text/html" id="he_template">
+          {{# layui.each(d.data_arr,function(index,item) { }}
+                {{# if(index==1 || index == 4){ }}
+                   <li class="common_color three_fix_image_i">
+                     <div id="he_img{{index}}" style="width: 400px;height: 220px;"></div>
+                  </li>
+                {{#   }else{ }}
+                   <li class="common_color">
+                     <div id="he_img{{index}}" style="width: 400px;height: 220px;"></div>
+                  </li>
+                {{# } }}
+          {{# }); }}
+      </script>
+  <!-- 盒子图结束 -->
+  <!-- 正面帖模板 -->
+ 
+  <script type="text/javascript">
+      
+      layui.use(['layer', 'laytpl'], function(){
+        var layer = layui.layer,
+            laytpl = layui.laytpl;
+          
+      
+
+          // 用户tab切换结束
+            //  用户页面插入汽车图片和名字
+            laytpl($("#img_car").html()).render(user_config, function(html){
+                  $("#car_name").html(html)
+                })
+            //  用户页面插入汽车图片和名字结束
+            //  竞品1页面插入汽车图片和名字
+            laytpl($("#img_car1").html()).render(user_config, function(html){
+                  $("#car_name1").html(html)
+                })
+            //  竞品1页面插入汽车图片和名字结束
+            //  竞品2页面插入汽车图片和名字
+            laytpl($("#img_car2").html()).render(user_config, function(html){
+                  $("#car_name2").html(html)
+                })
+            //  竞品2页面插入汽车图片和名字结束
+            //  竞品3页面插入汽车图片和名字
+            laytpl($("#img_car3").html()).render(user_config, function(html){
+                  $("#car_name3").html(html)
+                })
+            //  竞品3页面插入汽车图片和名字结束
+            //  竞品4页面插入汽车图片和名字
+            laytpl($("#img_car4").html()).render(user_config, function(html){
+                  $("#car_name4").html(html)
+                })
+            //  竞品4页面插入汽车图片和名字结束
+            //  竞品5页面插入汽车图片和名字
+            laytpl($("#img_car5").html()).render(user_config, function(html){
+                  $("#car_name5").html(html)
+                })
+            //  竞品5页面插入汽车图片和名字结束
+          // 用户对话
+                //  本品用户对话
+                laytpl($("#user_dialogue_template").html()).render(user_config, function(html){
+                  $("#user_dialogue").html(html)
+                })
+                //本品用户对话结束
+                // 竞品1用户对话
+                laytpl($("#user_dialogue_template1").html()).render(user_config, function(html){
+                  $("#user_dialogue1").html(html)
+                })
+                //竞品1用户对话结束
+                // 竞品2用户对话
+                laytpl($("#user_dialogue_template2").html()).render(user_config, function(html){
+                  $("#user_dialogue2").html(html)
+                })
+                //竞品2用户对话结束
+                // 竞品3用户对话
+                laytpl($("#user_dialogue_template3").html()).render(user_config, function(html){
+                  $("#user_dialogue3").html(html)
+                })
+                //竞品3用户对话结束
+                // 竞品4用户对话
+                laytpl($("#user_dialogue_template4").html()).render(user_config, function(html){
+                  $("#user_dialogue4").html(html)
+                })
+                //竞品4用户对话结束
+                // 竞品5用户对话
+                laytpl($("#user_dialogue_template4").html()).render(user_config, function(html){
+                  $("#user_dialogue5").html(html)
+                })
+                //竞品5用户对话结束t
+          // 盒子
+             laytpl($("#he_template").html()).render(he_data, function(html){
+              $("#three_fix_image_img").html(html)
+             })
+          // 盒子结束
+     });
+  </script>
+  <!-- 效果 -->
+  <script type="text/javascript">
+      var laytpl = layui.laytpl;
+
+    $(function(){
+      // 汽车参数切换
+      $('.occupancy_rate_tab').on('click','li span',function() {
+         $('.occupancy_rate_tab').find('li span').removeClass('active');
+         $(this).addClass('active');
+      })
+      // 轮播
+      $('.brand_lunbo').on('click','.swiper-slide span',function() {
+        $('.brand_lunbo').find('.swiper-slide span').removeClass('active');
+        $(this).addClass('active');
+      })
+        var mySwiper = $('.swiper-container').swiper({
+          mode : 'vertical',
+          slidesPerView : 5,
+          grabCursor: true,
+          paginationClickable: true
+        });
+        $('.brand_lunbo_l').on('click', function(e){
+          mySwiper.swipePrev()
+        })
+        $('.brand_lunbo_r').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipeNext()
+        })
+        
+        //搜索结果tab
+        $('.hot_select').on('click','li>div',function(e){
+            e=e||window.event;
+            e.stopPropagation();
+            $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.hot_select_div').stop().animate({bottom:"-430px"},1000).show();
+        })
+         // 表格子元素点击
+         $('.hot_select_div').on('click','td a',function() {
+          $(this).parents('.benpin').find('p').text($(this).text());
+          $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+         });
+         // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+        });
+        $('.hot_select_div').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+        // 汽车配置页面的弹框效果
+        $('.peizhi_a').on('click','.peizhi_a1_span',function(e){
+            e=e||window.event;
+            e.stopPropagation();
+            $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+           $(this).find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+        })
+         // 表格子元素点击
+         $('.peizhi_a3').on('click','td a',function() {
+          $(this).parents('.peizhi_a1').find('.peizhi_a1_span_text').text($(this).text());
+          $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+         });
+         // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+        });
+        $('.peizhi_a2').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+      // 小指标与数据tab切换
+      $('.three_index_l_tab').on('click','span',function() {
+        var tabname1 = $(this).attr('tabname1');
+        $('.hidden_p a.tabname').html(tabname1);
+        console.log(tabname1);
+        var index = $(this).index();
+        $('.three_index_l_tab').find('span').removeClass('active');
+        $(this).addClass('active');
+        $('.index_data_item').removeClass('active');
+        $('.index_data_item').eq(index).addClass('active');
+        if(index == 0) {
+          $('#user_zb_option_img1').hide();
+          $('#user_zb_option_img').show();
+        }
+        if(index == 1) {
+          $('#user_zb_option_img').hide();
+          $('#user_zb_option_img1').show();
+        }
+      })
+    });
+  </script>
+<script>
+   
+  // 用户tab页面地图 
+    var user_map_num = echarts.init(document.getElementById('user_map_num'));
+    user_map_num.setOption( map_city(user_config.data.benpin.user_map_city.name_car,user_config.data.benpin.user_map_city.arr));
+    var user_map_num1 = echarts.init(document.getElementById('user_map_num1'));
+    user_map_num1.setOption( map_city(user_config.data.jingpin1.user_map_city.name_car,user_config.data.jingpin1.user_map_city.arr));
+    var user_map_num2 = echarts.init(document.getElementById('user_map_num2'));
+    user_map_num2.setOption( map_city(user_config.data.jingpin2.user_map_city.name_car,user_config.data.jingpin2.user_map_city.arr));
+    var user_map_num3 = echarts.init(document.getElementById('user_map_num3'));
+    user_map_num3.setOption( map_city(user_config.data.jingpin3.user_map_city.name_car,user_config.data.jingpin3.user_map_city.arr));
+    var user_map_num4 = echarts.init(document.getElementById('user_map_num4'));
+    user_map_num4.setOption( map_city(user_config.data.jingpin4.user_map_city.name_car,user_config.data.jingpin4.user_map_city.arr));
+    var user_map_num5 = echarts.init(document.getElementById('user_map_num5'));
+    user_map_num5.setOption( map_city(user_config.data.jingpin5.user_map_city.name_car,user_config.data.jingpin5.user_map_city.arr));
+  // 用户优势气泡图
+    var user_advantage = echarts.init(document.getElementById('user_advantage_img'));
+    user_advantage.setOption(user_advantage_fn(user_config.data.benpin.user_advantage,'绅宝D50用途'));
+    var user_advantage1 = echarts.init(document.getElementById('user_advantage_img1',));
+    user_advantage1.setOption(user_advantage_fn(user_config.data.jingpin1.user_advantage,'荣威i6用途'));
+    var user_advantage2 = echarts.init(document.getElementById('user_advantage_img2'));
+    user_advantage2.setOption(user_advantage_fn(user_config.data.jingpin2.user_advantage,'逸动用途'));
+    var user_advantage3 = echarts.init(document.getElementById('user_advantage_img3'));
+    user_advantage3.setOption(user_advantage_fn(user_config.data.jingpin3.user_advantage,'逸动用途'));
+    var user_advantage4 = echarts.init(document.getElementById('user_advantage_img4'));
+    user_advantage4.setOption(user_advantage_fn(user_config.data.jingpin4.user_advantage,'帝豪用途'));
+    var user_advantage5 = echarts.init(document.getElementById('user_advantage_img5'));
+    user_advantage5.setOption(user_advantage_fn(user_config.data.jingpin5.user_advantage,'科沃兹用途'));
+     
+  //用户关系词云图
+   //用户关系词云图
+   var user_graphs = echarts.init(document.getElementById('user_message_b_r'));
+        user_graphs.setOption(user_graph_fn("绅宝D50词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+        var user_graphs1 = echarts.init(document.getElementById('user_message_b_r1'));
+        user_graphs1.setOption(user_graph_fn("荣威i6词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+        var user_graphs2 = echarts.init(document.getElementById('user_message_b_r2'));
+        user_graphs2.setOption(user_graph_fn("逸动词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+        var user_graphs3 = echarts.init(document.getElementById('user_message_b_r3'));
+        user_graphs3.setOption(user_graph_fn("逸动词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+        var user_graphs4 = echarts.init(document.getElementById('user_message_b_r4'));
+        user_graphs4.setOption(user_graph_fn("帝豪词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+        var user_graphs5 = echarts.init(document.getElementById('user_message_b_r5'));
+        user_graphs5.setOption(user_graph_fn("科沃兹词云图",user_graph.data_arr,user_graph.links_arr,user_graph.categories_arr));
+
+
+  
+    // 地图销量结束
+     // 点击筛选
+     var num = 0;
+     var jingpinNum = 1;
+     var userNum = 1;
+$('.filter').click(function () { 
+    var value = $(this).attr('value');
+    
+    console.log(value);
+    console.log(num)
+    if(value == 'peizhi') {
+       if(num == 0) {
+        var chart = document.getElementById('occupancy_rate_img');
+          initData(car_config1.data.text,car_config1.data.car_img,chart);
+          layui.use(['layer', 'laytpl'], function(){
+            var layer = layui.layer,
+                laytpl = layui.laytpl;
+              //汽车tab
+              laytpl($("#occupancy_rate_tab_template").html()).render(car_config1, function(html){
+                  $("#occupancy_rate_tab").html(html)
+                  // // //竞品页添加导航
+                  // $("#occupancy_rate_tab1").html(html)
+              })
+              // 汽车结束
+              // 汽车图片
+              laytpl($("#car_img_six_template").html()).render(car_config1, function(html){
+                  $("#car_img_six").html(html)
+              })
+              // 汽车图片结束
+             
+        });
+       }
+       if(num == 1) {
+         num =0;
+       }else{
+        num++;
+       }
+       
+    }else if(value == 'jingpin') {
+        // 竞品页的柱状图
+        if(jingpinNum == 1) {
+          var chart1 = document.getElementById('occupancy_rate_img1');
+            initData(power_config1.data.text,power_config1.data.car_img,chart1,100);
+          layui.use(['layer', 'laytpl'], function(){
+            var layer = layui.layer,
+                laytpl = layui.laytpl;
+              //竞品tab
+              laytpl($("#occupancy_rate_tab_template").html()).render(car_config1, function(html){
+                    // // //竞品页添加导航
+                    $("#occupancy_rate_tab1").html(html)
+                })
+                // 竞品结束
+                //竞品页面添加汽车图片
+                laytpl($("#car_img_six_template").html()).render(power_config1, function(html){
+                    $("#car_img_six1").html(html)
+                })
+                // 竞品图片结束
+                // 竞品页面添加表格
+                laytpl($("#car_table_six_template").html()).render(power_config1, function(html){
+                    $("#car_table_six1").html(html)
+                })
+                // 竞品页面添加表格结束
+              });
+        }else if(jingpinNum == 2) {
+          var chart1 = document.getElementById('occupancy_rate_img1');
+            initData(power_config2.data.text,power_config2.data.car_img,chart1,100);
+          layui.use(['layer', 'laytpl'], function(){
+            var layer = layui.layer,
+                laytpl = layui.laytpl;
+              //竞品tab
+              laytpl($("#occupancy_rate_tab_template").html()).render(car_config2, function(html){
+                    // // //竞品页添加导航
+                    $("#occupancy_rate_tab1").html(html)
+                })
+                // 竞品结束
+                //竞品页面添加汽车图片
+                laytpl($("#car_img_six_template").html()).render(power_config2, function(html){
+                    $("#car_img_six1").html(html)
+                })
+                // 竞品图片结束
+                // 竞品页面添加表格
+                laytpl($("#car_table_six_template").html()).render(power_config2, function(html){
+                    $("#car_table_six1").html(html)
+                })
+                // 竞品页面添加表格结束
+              });
+        }else if(jingpinNum == 3) {
+          var chart1 = document.getElementById('occupancy_rate_img1');
+            initData(power_config3.data.text,power_config3.data.car_img,chart1,100);
+          layui.use(['layer', 'laytpl'], function(){
+            var layer = layui.layer,
+                laytpl = layui.laytpl;
+              //竞品tab
+              laytpl($("#occupancy_rate_tab_template").html()).render(car_config3, function(html){
+                    // // //竞品页添加导航
+                    $("#occupancy_rate_tab1").html(html)
+                })
+                // 竞品结束
+                //竞品页面添加汽车图片
+                laytpl($("#car_img_six_template").html()).render(power_config3, function(html){
+                    $("#car_img_six1").html(html)
+                })
+                // 竞品图片结束
+                // 竞品页面添加表格
+                laytpl($("#car_table_six_template").html()).render(power_config3, function(html){
+                    $("#car_table_six1").html(html)
+                })
+                // 竞品页面添加表格结束
+              });
+        }else if(jingpinNum == 4) {
+          var chart1 = document.getElementById('occupancy_rate_img1');
+            initData(power_config4.data.text,power_config4.data.car_img,chart1,100);
+          layui.use(['layer', 'laytpl'], function(){
+            var layer = layui.layer,
+                laytpl = layui.laytpl;
+              //竞品tab
+              laytpl($("#occupancy_rate_tab_template").html()).render(car_config2, function(html){
+                    // // //竞品页添加导航
+                    $("#occupancy_rate_tab1").html(html)
+                })
+                // 竞品结束
+                //竞品页面添加汽车图片
+                laytpl($("#car_img_six_template").html()).render(power_config4, function(html){
+                    $("#car_img_six1").html(html)
+                })
+                // 竞品图片结束
+                // 竞品页面添加表格
+                laytpl($("#car_table_six_template").html()).render(power_config4, function(html){
+                    $("#car_table_six1").html(html)
+                })
+                // 竞品页面添加表格结束
+              });
+        }
+        if(jingpinNum == 4) {
+         jingpinNum =1;
+        }else{
+         jingpinNum++;
+        }      
+        
+    }else if(value == 'zhibiao') {
+        // 热力图
+        var myChart = echarts.init(document.getElementById('three_hot_img_r_img'));
+            myChart.setOption(hot_img_fn(hot_data.text,hot_data.hot_img_clier));
+        // 指标饼图配置
+        var bing_inmg = echarts.init(document.getElementById('bing_inmg'));
+            bing_inmg.setOption(bing_fn(index_data_config.bing_data.text,index_data_config.bing_data.tata_x,index_data_config.bing_data.data_message));
+        // 柱状图
+        var zhu_img = echarts.init(document.getElementById('zhu_img'));
+            zhu_img.setOption(zhu_fn(index_data_config.zhu_data.title,index_data_config.zhu_data.zhu_data_m));
+        // 指标tab切换业指标统计折线图
+          var user_zb = echarts.init(document.getElementById('user_zb_option_img1'));
+          user_zb.setOption(user_zb_fn(user_zb_option_data.text,user_zb_option_data.data_x,user_zb_option_data.series));
+        //词云图
+        var maskImage = new Image();
+            maskImage.src = 'image/qiche.png';
+        var bing_clound_index = echarts.init(document.getElementById('bing_clound'));
+            maskImage.onload = function() {
+            bing_clound_index.setOption(car_ci(index_data_config.word_loud,"绅宝D50-词云图"));
+        };
+        // 盒须图
+        var he_img = echarts.init(document.getElementById('user_zb_option_img'));
+            he_img.setOption(he_fn(he_data1.data_arr[0].compoted,he_data.data_arr[0].data_title,he_data.data_arr[0].option_title_text,he_data.data_arr[0].scatter_data));
+            var he_img0 = echarts.init(document.getElementById('he_img0'));
+            he_img0.setOption(he_fn(he_data.data_arr[0].compoted,he_data.data_arr[0].data_title,he_data.data_arr[0].option_title_text,he_data.data_arr[0].scatter_data));
+            var he_img1 = echarts.init(document.getElementById('he_img1'));
+            he_img1.setOption(he_fn(he_data.data_arr[1].compoted,he_data.data_arr[1].data_title,he_data.data_arr[1].option_title_text,he_data.data_arr[1].scatter_data));
+            var he_img2 = echarts.init(document.getElementById('he_img2'));
+            he_img2.setOption(he_fn(he_data.data_arr[2].compoted,he_data.data_arr[2].data_title,he_data.data_arr[2].option_title_text,he_data.data_arr[2].scatter_data));
+            var he_img3 = echarts.init(document.getElementById('he_img3'));
+            he_img3.setOption(he_fn(he_data.data_arr[3].compoted,he_data.data_arr[3].data_title,he_data.data_arr[3].option_title_text,he_data.data_arr[3].scatter_data));
+            var he_img4 = echarts.init(document.getElementById('he_img4'));
+            he_img4.setOption(he_fn(he_data.data_arr[4].compoted,he_data.data_arr[4].data_title,he_data.data_arr[4].option_title_text,he_data.data_arr[4].scatter_data));
+            var he_img5 = echarts.init(document.getElementById('he_img5'));
+            he_img5.setOption(he_fn(he_data.data_arr[5].compoted,he_data.data_arr[5].data_title,he_data.data_arr[5].option_title_text,he_data.data_arr[5].scatter_data));
+        // 桑基图
+          var sankey_pei = echarts.init(document.getElementById('three_hot_img_l_img'));
+          sankey_pei.setOption(sankey_fn(sankey_img.Sankey_data,sankey_img.Sankey_title));
+        // 热力图
+          var myChart = echarts.init(document.getElementById('three_hot_img_r_img'));
+          myChart.setOption(hot_img_fn(hot_data.text,hot_data.hot_img_clier));
+    }else if(value == 'user') {
+      if(userNum == 1) {
+        console.log(userNum);
+        userConfig(user_config1);
+      }else if(userNum == 2) {
+        userConfig(user_config2);
+      }else if(userNum == 3) {
+        userConfig(user_config3);
+      }
+      if(userNum == 4) {
+        userNum = 1;
+      }else {
+        userNum ++;
+      }
+      bindEvent();
+    }else if(value == 'cuxiao') {
+      // 地图销量
+        var price_map_img = echarts.init(document.getElementById('price_map_img'));
+        price_map_img.setOption(user_fn(price_config.user_map.show_price,price_config.user_map.convertData,price_config.user_map.data_city));
+      // 地图销量结束
+      // 促销图
+      var  cuxiao = echarts.init(document.getElementById('cuxiao_img'));
+      cuxiao.setOption(price_num_fn(price_config.price_min.text,price_config.price_min.item));
+      // 新车事件
+      var promotion_b_event = echarts.init(document.getElementById('promotion_b'));
+      promotion_b_event.setOption(new_car_fn(new_car.text,new_car.time,new_car.h,new_car.car_event));
+      layui.use(['table','layer'], function(){
+      var table = layui.table;
+      var layer = layui.layer;
+      table.render({
+        elem: '#auction_table'
+        ,height:210
+        ,cols: [[//标题栏
+          {field:'name', title: '竞品',align: 'center',minWidth:140}
+          ,{field:'num_price', title: '指导价（万）',align: 'center',minWidth:140}
+          ,{field:'num_discount', title: '优惠（万）',align: 'center',minWidth:140}
+        ]]
+         ,data: price_config.price_table
+      });
+   });
+    }
+    console.log(benpin,li1,li2,li3,li4,li5);
+  })
+  // 点击返回本品
+ function bindEvent() {
+  $('.user_message_t_l div').click(function () {
+    $('html,body').animate({scrollTop:0},1000);//回到顶端;
+    console.log(22222)
+   return false;
+  })
+ }
+ bindEvent();
+  function  userConfig(user_config) {
+    console.log(user_config);
+     // 用户tab页面地图
+     var user_map_num = echarts.init(document.getElementById('user_map_num'));
+          user_map_num.setOption( map_city(user_config.data.benpin.user_map_city.name_car,user_config.data.benpin.user_map_city.arr));
+          var user_map_num1 = echarts.init(document.getElementById('user_map_num1'));
+          user_map_num1.setOption( map_city(user_config.data.jingpin1.user_map_city.name_car,user_config.data.jingpin1.user_map_city.arr));
+          var user_map_num2 = echarts.init(document.getElementById('user_map_num2'));
+          user_map_num2.setOption( map_city(user_config.data.jingpin2.user_map_city.name_car,user_config.data.jingpin2.user_map_city.arr));
+          var user_map_num3 = echarts.init(document.getElementById('user_map_num3'));
+          user_map_num3.setOption( map_city(user_config.data.jingpin3.user_map_city.name_car,user_config.data.jingpin3.user_map_city.arr));
+          var user_map_num4 = echarts.init(document.getElementById('user_map_num4'));
+          user_map_num4.setOption( map_city(user_config.data.jingpin4.user_map_city.name_car,user_config.data.jingpin4.user_map_city.arr));
+          var user_map_num5 = echarts.init(document.getElementById('user_map_num5'));
+          user_map_num5.setOption( map_city(user_config.data.jingpin5.user_map_city.name_car,user_config.data.jingpin5.user_map_city.arr));
+        // 用户优势气泡图
+        // 用户优势气泡图
+    var user_advantage = echarts.init(document.getElementById('user_advantage_img'));
+    user_advantage.setOption(user_advantage_fn(user_config.data.benpin.user_advantage,'绅宝D50用途'));
+    var user_advantage1 = echarts.init(document.getElementById('user_advantage_img1',));
+    user_advantage1.setOption(user_advantage_fn(user_config.data.jingpin1.user_advantage,'荣威i6用途'));
+    var user_advantage2 = echarts.init(document.getElementById('user_advantage_img2'));
+    user_advantage2.setOption(user_advantage_fn(user_config.data.jingpin2.user_advantage,'逸动用途'));
+    var user_advantage3 = echarts.init(document.getElementById('user_advantage_img3'));
+    user_advantage3.setOption(user_advantage_fn(user_config.data.jingpin3.user_advantage,'逸动用途'));
+    var user_advantage4 = echarts.init(document.getElementById('user_advantage_img4'));
+    user_advantage4.setOption(user_advantage_fn(user_config.data.jingpin4.user_advantage,'帝豪用途'));
+    var user_advantage5 = echarts.init(document.getElementById('user_advantage_img5'));
+    user_advantage5.setOption(user_advantage_fn(user_config.data.jingpin5.user_advantage,'科沃兹用途'));
+  
+      }
+</script>
+</body>
+</html>

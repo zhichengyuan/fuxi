@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/details.css">
+    <title>国六页</title>
+    <style>
+        .guoliu_l{position:absolute;left: 0;width: 6px;height: 6px;}
+        .guoliu_r{position:absolute;right: 0;width: 6px;height: 6px;}
+    </style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="fr">
+          <p><span>欢迎您：李毅&nbsp;&nbsp;<a href="#"><i class="icon iconfont icon-shutDown"></i>退出</a></span></p>
+          <p class="hidden_p"><i class="icon iconfont icon-weizhi"></i>
+            <a href="#">当前位置：</a>
+            <a href="./BAIC_login.html">首页</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="#">六国标准</a>
+          </p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w">
+      <!-- 详情页面 -->
+      <div class="details clearfix">
+        <div class="details_left common_color fl">
+          <h2 class="margin">轻型汽车国六排放标准实施时间与区域图</h2>
+          <!-- 内容解释区域 -->
+          <div class="details_presentation" id="details_presentation">
+               <!-- 模板 -->
+          </div>
+          <div id="main" style="height: 500px;width: 100%;"></div>
+        </div>
+        <div class="details_right fr">
+          <div class="details_right_top clearfix">
+             <div class="details_right_top_l common_color fl">
+               <div style="width: 100%;height: 100%;" id="six_national_jt"></div>
+             </div>
+             <div class="details_right_top_r common_color fr">
+               <div style="width: 100%;height: 100%;" id="six_national"></div>
+             </div>
+          </div>
+          <div class="details_right_btm clearfix">
+                <div class="details_wrapper six_guo_shishi common_color"  >
+                        <div class="details_title">
+                            <h1>国六实施地区</h1>
+                        </div>
+                        <div class = "details_six1">
+                            <div class="btn btn-left" id="btn-left"></div>
+                            <div class="btn btn-right" id="btn-right"></div>
+                            <div class="swiper-container details_six">
+                                
+                                <div class="swiper-wrapper" id="user_tab">
+                                    <!-- 模板 -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shiqu">
+                            <span>北京</span>
+                            <span>上海</span>
+                            <span>江苏</span>
+                            <span>辽宁</span>
+                            <span>中华</span>
+                            
+                        </div>
+                </div>
+              <!-- <div class="details_right_btm_l fl" id="city_red"> -->
+                    <!-- 模板 -->
+              <!-- </div> -->
+              <div class="details_wrapper six_guo_message common_color" id="standard_meaasge" >
+                    <!-- <div class="details_title">
+                        <h1>促销资讯</h1>
+                        <a href="">更多></a>
+                    </div>
+                    <ol class="new_list">
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              <li><a href="http://www.bjev.com.cn/models/detile.htm?oid=18&amp;name=eu5" class="layui-elip">瞄准高端出行 吉利/戴姆勒成立合资公司</a><span>2018-10-13</span></li>
+                              
+                    </ol> -->
+                </div>
+             <!-- <div class="details_right_btm_r fr" id="standard_meaasge"> -->
+                 <!-- 模板 -->
+             <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- 公共底部 -->
+<div class="footer">
+    <p>&copy;北京汽车研究总院 </p>
+    <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+</div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./js/map.js"></script>
+  <script type="text/javascript" src="./json/six_national.js"></script>
+  <script type="text/javascript" src="./json/hot_img.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- 内容解释区域模板 -->
+    <script type="text/html" id="details_presentation_template">
+          <p>{{d.data_cun.details_presentation.text}}</p>
+          <h2>更新日期:{{d.data_cun.details_presentation.time}}</h2>
+          <h2>更新内容:{{d.data_cun.details_presentation.title}}</h2>
+    </script>
+  <!-- 内容解释区域模板结束 -->
+  <!-- 城市区域 -->
+   <script type="text/html" id="city_red_template">
+          <h2>京津冀及周边地区</h2>
+          <p>
+            {{# layui.each(d.data_cun.city_red,function(index,item) {  }}
+                 {{# if(item.is_first == 1) { }}
+                 <span style="color: #f62929;">{{item.name}}</span>
+                 {{# } else { }}
+                 <span>{{item.name}}</span>
+                 {{# } }}
+            {{# }); }}
+          </p>
+    </script>
+  <!-- 城市区域结束 -->
+  <!-- 标准资讯 -->
+  <script type="text/html" id="standard_meaasge_template">
+    <div class="details_title">
+            <h1>国六标准资讯</h1>
+            <a href="{{d.data_cun.more}}">更多></a>
+        </div>
+    <ol>
+      {{# layui.each(d.data_cun.standard_meaasge,function(index,item) {  }}
+        <li class="layui-elip"><a href="{{item.link}}">{{item.text}}<span>{{item.time}}</span></a></li>
+      {{# }); }}  
+    </ol>
+  </script>
+  <!-- 标准资讯结束 -->
+  <!-- 国家省份切换 -->
+  <script type="text/html" id="user_tab_template">
+        <div class="swiper-slide"><span class="active">北京</span></div>
+        <div class="swiper-slide"><span>上海</span></div>
+        <div class="swiper-slide"><span>天津</span></div>
+        <div class="swiper-slide"><span>重庆</span></div>
+        <div class="swiper-slide"><span>厦门</span></div>
+        <div class="swiper-slide"><span>北京</span></div>
+        <div class="swiper-slide"><span>上海</span></div>
+        <div class="swiper-slide"><span>天津</span></div>
+        <div class="swiper-slide"><span>重庆</span></div>
+        <div class="swiper-slide"><span>厦门</span></div>
+        <div class="swiper-slide"><span>北京</span></div>
+        <div class="swiper-slide"><span>上海</span></div>
+        <div class="swiper-slide"><span>天津</span></div>
+        <div class="swiper-slide"><span>重庆</span></div>
+        <div class="swiper-slide"><span>厦门</span></div>
+    </script>
+<!--国家省份切换结束 -->
+  <script type="text/javascript">
+      layui.use(['layer', 'laytpl'], function(){
+        var layer = layui.layer,
+          laytpl = layui.laytpl;
+        // 内容解释区域
+          laytpl($("#details_presentation_template").html()).render(six_page, function(html){
+                $("#details_presentation").html(html)
+          });
+        // 内容解释区域结束
+        // 城市选择区域
+        laytpl($("#city_red_template").html()).render(six_page, function(html){
+                $("#city_red").html(html)
+          });
+        // 城市选择区域结束
+        // 标准资讯
+        laytpl($("#standard_meaasge_template").html()).render(six_page, function(html){
+                $("#standard_meaasge").html(html)
+        });
+        // 标准资讯结束
+        // 省会变红
+        var str = "北京市,天津市,上海市,重庆市,河北省,山西省,辽宁省,吉林省,黑龙江省,江苏省,浙江省,安徽省,福建省,江西省,山东省,河南省,湖北省,湖南省,广东省,海南省,四川省,贵州省,云南省,陕西省,甘肃省,青海省,台湾省,内蒙古自治区,广西壮族自治区,西藏自治区,宁夏回族自治区,新疆维吾尔自治区,香港特别行政区,澳门特别行政区,哈尔滨,长春,沈阳,石家庄,郑州,济南,太原,西安,兰州,西宁,成都,昆明,贵阳,长沙,武汉,合肥,南京,杭州,南昌,福州,广州,海口,台北,北京市,天津市,上海市,重庆市";
+        var a = $('#city_red').find('span');
+        $.each(a,function(index,item) {
+          if(str.indexOf($(item).text()) != -1) {
+            $(item).css({
+              color:'#f62929'
+            })
+          }
+          $(item).text()
+        })
+        // 用户tab切换
+        laytpl($("#user_tab_template").html()).render(user_config1, function(html){
+              $("#user_tab").html(html)
+          })
+     });
+     var obj1 = {
+        "timearr" :['2018年1113日(海南未发文-油品以保障)','2018年12:13日(深圳未发文-油品以保障)','2018年12:13日(北京未发文-油品以保障)','2018年12:13日(天津未发文-油品以保障)','2018年12:13日(其他未发文-油品以保障)'],
+        "data":[
+            [
+                    {name: '福建',value: 300},
+                    {name: '广东',value: 300},
+                    {name: '西藏',value: 300},
+                    {name: '四川',value: 300},
+                    {name: '宁夏',value: 300},
+                    {name: '香港',value: 300}
+                ],
+            [
+                    {name: '北京',value: 150},
+                    {name: '天津',value: 150},
+                    {name: '上海',value: 150},
+                    {name: '重庆',value: 150},
+                    {name: '河北',value: 150}
+                ],
+            [
+                    {name: '安徽',value: 100},
+                    {name: '新疆',value: 100},
+                    {name: '浙江',value: 100},
+                    {name: '江西',value: 100},
+                    {name: '山西',value: 100},
+                    {name: '内蒙古',value: 100},
+                    {name: '吉林',value: 100}
+                ],
+            [
+                    {name: '安徽',value: 100},
+                    {name: '新疆',value: 100},
+                    {name: '浙江',value: 100},
+                    {name: '江西',value: 100},
+                    {name: '四川',value: 100},
+                    {name: '内蒙古',value: 100},
+                    {name: '甘肃',value: 100}
+                ],
+           [
+                    {name: '安徽',value: 100},
+                    {name: '辽宁',value: 100},
+                    {name: '浙江',value: 100},
+                    {name: '江西',value: 100},
+                    {name: '上海',value: 100},
+                    {name: '内蒙古',value: 100},
+                    {name: '吉林',value: 100}
+                ]
+     ]
+    }
+    // 国六标准
+    var six_national = echarts.init(document.getElementById('six_national'));
+        six_national.setOption(six_guo(six_page.data_cun.country_polygon_map.parallelAxis,six_page.data_cun.country_polygon_map.series));
+    // 阶梯
+      var jt_data = echarts.init(document.getElementById('six_national_jt'));
+      jt_data.setOption(jt_fn(six_page.data_cun.jt.first_title,six_page.data_cun.jt.scend_title,six_page.data_cun.jt.three_title,six_page.data_cun.jt.jt_arr));
+       // 地图
+        var map_image = echarts.init(document.getElementById('main'));
+        // map_image.setOption(map_text(six_page.data_cun.map.map_data,six_page.data_cun.map.text));
+        map_image.setOption(returnOption(obj1));
+    // 阶梯图
+    function jt_fn(first_title,scend_title,three_title,jt_arr) {
+          var data = [1,2,3,4,5]
+          var jt_option = {
+            title: [
+                {
+                left: 20,
+                top:10,
+                text: '区域销售占比',
+                },
+                {
+                  left: '0',
+                  top: '6%',
+                  subtext:first_title,
+                  subtextStyle:{
+                    left:0,
+                    color:'#0000000',
+                    fontSize:'14',
+                    fontWeight:800
+                  }
+                }, {
+                top: '33%',
+                left: 'left',
+                subtext:scend_title,
+                subtextStyle:{
+                    align:'left',
+                    color:'#0000000',
+                    fontSize:'14',
+                    fontWeight:800
+                }
+            }, {
+                top: '63%',
+                left: 'left',
+                subtext: three_title,
+                subtextStyle:{
+                    align:'left',
+                    color:'#0000000',
+                    fontSize:'14',
+                    fontWeight:800
+                }
+            }],
+            xAxis: [{
+                show:false,
+                axisLabel:{
+                    interval: 0
+                },
+                data: data
+            }, {
+                show:false,
+                data: data,
+                gridIndex: 1
+            },{
+                show:false,
+                data: data,
+                gridIndex: 2
+            }],
+            yAxis: [{
+                show:false,
+                splitLine: {show: false}
+            }, {
+                show:false,
+                splitLine: {show: false},
+                gridIndex: 1
+            },{
+                show:false,
+                splitLine: {show: false},
+                gridIndex: 2
+            }],
+            grid: [{
+                bottom: '60%'
+            }, {
+                top:'50%',
+                bottom: '33%'
+            }, {
+                top:'80%',
+                bottom: '0%'
+            }],
+            series:[
+                    {
+                        stack: '总量',
+                        barWidth : 30,
+                        itemStyle: {
+                            normal: {
+                                barBorderColor: 'rgba(0,0,0,0)',
+                                color: 'rgba(0,0,0,0)'
+                             },
+                            emphasis: {
+                                barBorderColor: 'rgba(0,0,0,0)',
+                                color: 'rgba(0,0,0,0)'
+                            }
+                        },
+                        type: 'bar',
+                        data: jt_arr[0].jt_top
+                    },
+                    {
+                        type: 'bar',
+                        stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%'
+                        }
+                    },
+                    data: jt_arr[0].jt_btn
+                    },
+                    {
+                        stack: '第二个',
+                         barWidth : 30,
+                        xAxisIndex: 1,
+                        yAxisIndex: 1,
+                        itemStyle: {
+                            normal: {
+                                barBorderColor: 'rgba(0,0,0,0)',
+                                color: 'rgba(0,0,0,0)'
+                             },
+                            emphasis: {
+                                barBorderColor: 'rgba(0,0,0,0)',
+                                color: 'rgba(0,0,0,0)'
+                            }
+                        },
+                        type: 'bar',
+                        data: jt_arr[1].jt_top
+                    },
+                    {
+                        type: 'bar',
+                        stack: '第二个',
+                        xAxisIndex: 1,
+                        yAxisIndex: 1,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%'
+                        }
+                    },
+                    data: jt_arr[1].jt_btn
+                    },
+                    {
+                        stack: '第三个',
+                        barWidth : 30,
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                        itemStyle: {
+                            normal: {
+                                color: ['#C33531','#EFE42A','#64BD3D','#EE9201','#29AAE3', '#B74AE5','#0AAF9F','#E89589','#16A085','#4A235A','#C39BD3 ','#F9E79F','#BA4A00','#ECF0F1','#616A6B','#EAF2F8','#4A235A','#3498DB' ],
+                                barBorderColor: 'rgba(0,0,0,0)',
+                                color: 'rgba(0,0,0,0)'
+                             },
+                            emphasis: {
+                                barBorderColor: 'rgba(251,4,33,0)',
+                                color: 'rgba(251,4,33,0)'
+                            }
+                        },
+                        type: 'bar',
+                        data: jt_arr[2].jt_top
+                    },
+                    {
+                        type: 'bar',
+                        stack: '第三个',
+                        xAxisIndex: 2,
+                        yAxisIndex: 2,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%'
+                        }
+                    },
+                    data: jt_arr[2].jt_btn
+                    },
+                ]
+          };
+          return jt_option;
+    }
+      //国六标准图
+     function six_guo(parallelAxis,array_name) {
+        var six_national_option = {
+            title:{
+               show:true,
+               text:'国六标准',
+               left:20,
+               top:10,
+            },
+            legend:{
+                show:true,
+                right:0
+            },
+            grid: {
+                height: '50%',
+                y: '10%',
+                top:60
+            },
+            parallelAxis: parallelAxis,
+            series: [
+                {
+                name:array_name[0].name,
+                type: 'parallel',
+                top:30,
+                lineStyle: {
+                    width: 1,
+                    color:'#fb0421'
+                },
+                data: [
+                    array_name[0].arr
+                ]
+            },{
+                name:array_name[1].name,
+                type: 'parallel',
+                top:60,
+                lineStyle: {
+                    width: 1,
+                    color:'#009cff'
+                },
+                data: [
+                    array_name[1].arr
+                ]
+            }
+            ]
+        }
+        return six_national_option;
+    };
+    // 地图
+      function map_text(map_data,map_title) {
+        var arr = ['#005977', '#0066ff', '#23ade5', '#90cbf2', '#dce6f2'];
+        map_image_option = {
+          visualMap: {
+            min: 0,
+            max: 200,
+            calculable:false,
+            itemWidth:3,
+            itemHeight:70,
+              min: 1,
+              max: 5,
+              text:['早','晚'],
+              realtime: false,
+              inRange: {
+                  color: arr
+              }
+          },
+          legend: {
+              show:true,
+              orient: 'vertical',
+              bottom:0,
+              left:20,
+              icon:'rect',
+              data:['ni','上海']
+          },
+          geo: {
+              map: 'china',
+              roam: true,
+              label: {
+                  normal: {
+                      show: true,
+                      textStyle: {
+                          color: 'rgba(0,0,0,0.6)'
+                      }
+                  }
+              },
+              itemStyle: {
+                  normal:{
+                      borderColor: 'rgba(0, 0, 0, 0.2)'
+                  },
+                  emphasis:{
+                      shadowColor: 'rgba(0, 0, 0, 0.5)'
+                  }
+              }
+          },
+          series : [
+              {
+                name:'ni',
+                type: 'map',
+                roam: true,
+                geoIndex: 0,
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: arr[2]
+                    }
+                },
+                data:[{name:'河北',value:3},{name:'天津',value:3}]
+              }
+          ]
+      }
+        return map_image_option;
+      }
+      
+      
+        
+        $(function(){
+       
+            var mySwiper = $('.swiper-container').swiper({
+            mode : 'horizontal',
+            slidesPerView : 5,
+            grabCursor: true,
+            paginationClickable: true
+            });
+            $('#btn-right').on('click', function(e){
+                
+                 mySwiper.swipePrev()
+            })
+            $('#btn-left').on('click', function(e){
+                e.preventDefault()
+                mySwiper.swipeNext()
+            })
+            $('.swiper-wrapper .swiper-slide span').click(function (){
+                console.log(2345454);
+                $(this).addClass('active');
+                $(this).parents('div').siblings().find('span').removeClass('active')
+            })
+    })
+
+
+
+function returnOption(obj){
+    console.log(obj);
+    option = {
+    tooltip : {
+        trigger: 'item'
+    },
+    color:['#005977', '#0166ff', '#24ade4', '#90cbf3', '#dce6f2'],
+    legend: {
+        orient: 'vertical',
+        left: 40,
+        bottom:10,
+        data:obj.timearr
+    },
+    visualMap: {
+        min: 0,
+        max: 200,
+        calculable:false,
+        itemWidth:3,
+        itemHeight:70,
+        text:['早','晚'],
+        inRange: {
+            color: ['#dce6f2', '#90cbf3', '#24ade4', '#0166ff', '#005977']
+        },
+        textStyle: {
+            color: '#000000'
+        }
+    },
+    toolbox: {
+        show: true,
+        orient : 'vertical',
+        left: 'right',
+        top: 'center',
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name: '2018年1113日(海南未发文-油品以保障)',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:obj.data[0]
+        },
+        {
+            name: '2018年12:13日(深圳未发文-油品以保障)',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:obj.data[1]
+        },
+        {
+            name: '2018年12:13日(北京未发文-油品以保障)',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:obj.data[2]
+        },
+        {
+            name: '2018年12:13日(天津未发文-油品以保障)',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:obj.data[3]
+        },
+        {
+            name: '2018年12:13日(其他未发文-油品以保障)',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:obj.data[4]
+        }
+    ]
+};
+return option;
+}
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

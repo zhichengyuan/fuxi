@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .fixed_box{
+                position: fixed;
+                left: 0px;
+                top: 190px;
+                z-index: 99;
+                width: 40px;
+                height: auto;
+            }
+            .fixed_box h2{
+                width: 40px;
+                height: 120px;
+                background: #e4e4e4;
+                text-align: center;
+            }
+            .fixed_box h2 a{
+                display: inline-block;
+                width: 40px;
+                box-sizing: border-box;
+                padding:10px;
+                font-size: 18px;
+                text-decoration: none;
+                color:#000;
+            }
+            .fixed_box h2 a.font_maring {
+                margin-top: 10px;
+            }
+            .fixed_box h2.active1{
+                background: #d83f36;
+                
+            }
+            .fixed_box h2.active1 a{
+                color:#fff;
+            }
+            .wrapper_box{
+                width: 100%;
+                margin: auto;
+            }
+            .wrapper_box img{
+                width: 100%;
+            }
+        </style>
+</head>
+<body>
+    <div class="fixed_box" style="display: none;">
+        <h2><a href="">国六咨询</a></h2>
+        <h2 class="active1"><a href="" class="font_maring">品越野</a></h2>
+    </div>
+    <div class="wrapper_box"><img src="./image/index.png" alt=""></div>
+</body>
+</html>

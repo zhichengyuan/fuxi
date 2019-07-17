@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/first_depth.css">
+    <title>首页</title>
+    <style type="text/css">
+      .height_h{height: 92px;border:none !important; line-height: 90px;}
+    </style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       <div class="fr">
+          <p><span>欢迎您：李毅&nbsp;&nbsp;<a href="#"><i class="icon iconfont icon-shutDown"></i>退出</a></span></p>
+          <p class="hidden_p"><i class="icon iconfont icon-weizhi"></i>
+            <a href="#">当前位置：</a>
+            <a href="./BAIC_login.html">首页</a>
+            <i class="icon iconfont icon-jiantou"></i>
+            <a href="./BAIC_first_depth.html">汽车品牌</a>
+          </p>
+       </div>
+    </div>
+    <!-- 公共版心 -->
+    <div class="w">
+        <div class="first_depth clearfix">
+                <div class="details_wrapper luntan_width common_color" >
+                        <div class="details_title">
+                            <h1>论坛综合评分</h1>
+                        </div>
+                        <div class="first_depth_l fl">
+                                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                                  <ul class="layui-tab-title">
+                                    <li class="layui-this" style="text-align: left;"><a href="#"><span class="active">本品</span></a></li>
+                                    <li><a href="#"><span>自主</span></a></li>
+                                    <li  style="text-align: right;"><a href="#"><span>合资</span></a></li>
+                                  </ul>
+                                  <div class="layui-tab-content">
+                                    <div class="layui-tab-item layui-show">
+                                        <ol id="ranking">
+                                        </ol>
+                                    </div>
+                                    <div class="layui-tab-item">
+                                        <ol id="ranking1"></ol>
+                                    </div>
+                                    <div class="layui-tab-item">
+                                        <ol id="ranking2"></ol>
+                                    </div>
+                                  </div>
+                                </div>   
+                            </div>
+                </div>
+            <!-- 左侧tab切换 -->
+            <!-- <div class="first_depth_l common_color fl">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                  <ul class="layui-tab-title">
+                    <li class="layui-this" style="text-align: left;"><a href="#"><span class="active">本品<span></a></li>
+                    <li><a href="#"><span>自主<span></a></li>
+                    <li  style="text-align: right;"><a href="#"><span>合资<span></a></li>
+                  </ul>
+                  <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <ol id="ranking">
+                        </ol>
+                    </div>
+                    <div class="layui-tab-item">
+                        <ol id="ranking1"></ol>
+                    </div>
+                    <div class="layui-tab-item">
+                        <ol id="ranking2"></ol>
+                    </div>
+                  </div>
+                </div>   
+            </div> -->
+            <div class="first_depth_r common_color fr">
+                <div id="main" style="width: 100%;height:100%"></div>
+                <div class="time_tab">
+                    <span class="active">年</span>
+                    <span>季</span>
+                    <span>月</span>
+                </div>
+            </div>
+        </div>  
+        <!-- 下半部分 -->
+        <div class="first_depth_bom common_color">
+            <div class="footer_top">
+                <h2>主打品牌</h2>
+                <span><a href="./BAIC_sencd_depth.html">查看所有品牌</a></span>
+            </div>
+            <div class="btn fl btn-left" value="btn-left" id="btn-left"></div>
+            <div class="brand_list swiper-container">
+                    <!-- <ul class="clearfix" id="first_depth_bom"></ul> -->
+                    
+                     <ul class="swiper-wrapper swiper-container2" id="first_depth_bom111">
+                            <!-- 模板 -->
+                     </ul> 
+                   
+            </div>
+            <div class="btn fr btn-right" value="btn-right" id="btn-right"></div>
+        </div>
+    </div>
+    </div>
+  <!-- 公共底部 -->
+<div class="footer">
+    <p>&copy;北京汽车研究总院 </p>
+    <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+</div>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.all.js"></script>
+  <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/echarts.min.js"></script>
+  <script type="text/javascript" src="./json/first.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <!-- user切换 -->
+    <!-- <script type="text/html" id="user_tab_template">
+    
+        {{# layui.each(d.data_arr[0].data_title,function(index,item) { }}
+              {{# if(index==0){ }}
+                 <div class="swiper-slide"><span class="active">{{item}}</span></div>
+              {{#   }else{ }}
+                 <div class="swiper-slide"><span>{{item}}</span></div>
+              {{# } }}
+        {{# }); }}
+    </script> -->
+
+    <!-- 品牌数据模板 -->
+    <script id="user_tab_template" type="text/html">
+        {{# layui.each(d.data,function(index,item) {}}
+        <li class="swiper-slide">
+                <div>
+                  <div class="height_h">
+                     <img src="{{item.url}}">
+                  </div>
+                        
+                        <p>{{item.name}}</p>
+                </div>
+                <div>
+                    <a href="./BAIC_sencd_depth.html?carbrandData={{item.name}}">品牌数据 ></a>
+                    <a href="./BAIC_brand.html">品牌印象 ></a>
+                </div>
+        </li>
+        {{# }); }}
+    </script>
+        <!-- user切换结束 -->
+  <script id="first_template" type="text/html">
+    <li>
+        <a class="textl" href="#">排名</a>
+        <a class="textc" href="#">品牌</a>
+        <a class="textr" href="#">评分</a>
+    </li>
+    {{# layui.each(d.data,function(index,item) {}}
+    <li>
+        <a class="textl pl" href="#"><span>{{item.rank}}</span></a>
+        <a class="textc" href="./BAIC_peizhi.html?carbrandname={{item.name}}">{{item.name}}</a>
+        <a class="textr pr" href="#">{{item.num}}</a>
+    </li>
+    {{# }); }}
+</script>
+  <script type="text/javascript">
+  //获取url中的参数
+
+      $('.first_depth_l li').click(function() {
+         $('.first_depth_l li').find('span').removeClass('active');
+        $(this).find('span').addClass('active');
+      })
+      $(function(){ 
+        　　bindEvent()
+     }); 
+      //点击btn按钮切换品牌
+      function bindEvent() {
+        var num = 0;
+        var list = $('#first_depth_bom');
+        var liW = list.find('li').innerWidth();
+        var liLength = list.find('li').length;
+        var maxleft = (liW * liLength - liW * 6);
+        console.log(maxleft);
+        console.log(liLength);
+        $('.btn').click(function () {
+            var fangxiang = $(this).attr('value');
+            var leftstr =list.css('left');
+            var left =  parseInt(leftstr);
+            console.log(left);
+            console.log(liLength);
+            console.log(liW);
+            console.log(fangxiang);
+            if(fangxiang == "btn-left"){
+                if(maxleft > 0 ) {
+                    list.css('left')
+                }else {
+                    return false;
+                }
+            }else if(fangxiang == "btn-right"){
+
+            }
+        })
+      }
+      
+
+      $(function(){
+      // 汽车参数切换
+      $('.occupancy_rate_tab').on('click','li span',function() {
+         $('.occupancy_rate_tab').find('li span').removeClass('active');
+         $(this).addClass('active');
+      })
+      // 轮播
+      $('.brand_lunbo').on('click','.swiper-slide span',function() {
+        $('.brand_lunbo').find('.swiper-slide span').removeClass('active');
+        $(this).addClass('active');
+      })
+        var mySwiper = $('.swiper-container').swiper({
+          mode : 'horizontal',
+          slidesPerView : 6,
+          grabCursor: true,
+          paginationClickable: true
+        });
+        $('#btn-right').on('click', function(e){
+            console.log('232343543534');
+          mySwiper.swipePrev()
+        })
+        $('#btn-left').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipeNext()
+        })
+        
+        //搜索结果tab
+        $('.hot_select').on('click','li>div',function(e){
+            e=e||window.event;
+            e.stopPropagation();
+            $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.hot_select_div').stop().animate({bottom:"-430px"},1000).show();
+        })
+         // 表格子元素点击
+         $('.hot_select_div').on('click','td a',function() {
+          $(this).parents('.benpin').find('p').text($(this).text());
+          $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+         });
+         // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.hot_select_div').stop().css({bottom:"0px"}).hide();
+        });
+        $('.hot_select_div').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+        // 汽车配置页面的弹框效果
+        $('.peizhi_a').on('click','.peizhi_a1_span',function(e){
+            e=e||window.event;
+            e.stopPropagation();
+            $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+           $(this).find('.peizhi_a2').stop().animate({bottom:"-300px"},1000).show();
+        })
+         // 表格子元素点击
+         $('.peizhi_a3').on('click','td a',function() {
+          $(this).parents('.peizhi_a1').find('.peizhi_a1_span_text').text($(this).text());
+          $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+         });
+         // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.peizhi_a2').stop().css({bottom:"0px"}).hide();
+        });
+        $('.peizhi_a2').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+      // 小指标与数据tab切换
+      $('.three_index_l_tab').on('click','span',function() {
+        var tabname1 = $(this).attr('tabname1');
+        $('.hidden_p a.tabname').html(tabname1);
+        console.log(tabname1);
+        var index = $(this).index();
+        $('.three_index_l_tab').find('span').removeClass('active');
+        $(this).addClass('active');
+        $('.index_data_item').removeClass('active');
+        $('.index_data_item').eq(index).addClass('active');
+        if(index == 0) {
+          $('#user_zb_option_img1').hide();
+          $('#user_zb_option_img').show();
+        }
+        if(index == 1) {
+          $('#user_zb_option_img').hide();
+          $('#user_zb_option_img1').show();
+        }
+      })
+    });
+
+  </script>
+  <script type="text/javascript">
+        //layui全局对象
+      var laydate = layui.laydate //日期
+          ,laypage = layui.laypage //分页
+          ,layer = layui.layer //弹层
+          ,table = layui.table //表格
+          ,laytpl = layui.laytpl;
+
+    //左侧排名
+    laytpl($("#first_template").html()).render(paiming, function(html){
+            $("#ranking").html(html)
+    })
+    laytpl($("#first_template").html()).render(paimings, function(html){
+            $("#ranking1").html(html)
+    })
+    laytpl($("#first_template").html()).render(paimingss, function(html){
+            $("#ranking2").html(html)
+    })
+    // 品牌数据
+    // laytpl($("#first_depth_bom_template").html()).render(first_depth_bom_data, function(html){
+    //         $("#first_depth_bom").html(html)
+    // })
+    // 用户tab切换
+    laytpl($("#user_tab_template").html()).render(first_depth_bom_data, function(html){
+              $("#first_depth_bom111").html(html)
+          })
+      var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        option = {
+            backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                offset: 0,
+                color: 'rgba(255, 255, 255,0.1)'
+            }, {
+                offset: 1,
+                color: 'rgba(255, 255, 255,0.1)'
+            }]),
+            textStyle:
+                {color:'#000'},
+            title: {
+                text: '中国汽车市场竞争分析图',
+                left: 'left',
+                top:12,
+                textStyle: {
+                    color:'#000',
+                    fontWeight: 'bold',
+                    fontSize: 16
+                }
+            },
+            legend: {
+                right: 100,
+                top:50,
+                data: ['北汽子品牌','核心竞品','其他品牌'],
+                textStyle: {
+                    color: '#000',
+                    fontSize: 12
+                }
+            },
+            grid: {
+                x:400,
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                top:'20%',
+                borderWidth:0,
+                containLabel: true
+            },
+             toolbox: {
+                show: true,
+                right:20,
+                feature: {
+                  dataView: {
+                    readOnly: true,
+                    // icon:'image://image/save_data.png'
+                },
+                  saveAsImage: {
+                    // icon:'image://image/save_img.png'
+                  }
+                }
+            },
+            xAxis: {
+                name:'(辆)',
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(0, 0, 0,0.38)'
+                    }
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                    name:'平均售价(万元)',
+                    axisLine: {
+                    lineStyle: {
+                        color: 'rgba(0, 0, 0,0.38)'
+                    }
+                },
+                    splitLine: {
+                    show: false
+                },
+                scale: true
+            },
+            dataZoom: [
+                {
+                    type: 'slider',
+                    show: true,
+                    xAxisIndex: [0],
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'slider',
+                    show: true,
+                    yAxisIndex: [0],
+                    left: '95%',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside',
+                    xAxisIndex: [0],
+                    start: 0,
+                    end: 35
+                },
+                {
+                    type: 'inside',
+                    yAxisIndex: [0],
+                    start: 29,
+                    end: 36
+                }
+            ],
+            series: [{
+                name: '北汽子品牌',
+                data: data[0],
+                type: 'scatter',
+                label: {
+                    emphasis: {
+                        show: true,
+                        formatter: function (param) {
+                            return param.data[3];
+                        },
+                        position: 'top'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(120, 36, 50, 0.5)',
+                        shadowOffsetY: 5,
+                        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                            offset: 0,
+                            color: 'rgb(251, 118, 123)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(204, 46, 72)'
+                        }])
+                    }
+                }
+            },{
+                name: '核心竞品',
+                data: data[2],
+                type: 'scatter',
+                label: {
+                    emphasis: {
+                        show: true,
+                        formatter: function (param) {
+                            return param.data[3];
+                        },
+                        position: 'top'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(120, 36, 50, 0.5)',
+                        shadowOffsetY: 5,
+                        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                            offset: 0,
+                            color: 'rgb(136,128,244)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(136,128,244)'
+                        }])
+                    }
+                }
+            }, {
+                name: '其他品牌',
+                data: data[1],
+                type: 'scatter',
+                label: {
+                    emphasis: {
+                        show: true,
+                        formatter: function (param) {
+                            return param.data[3];
+                        },
+                        position: 'top'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(25, 100, 150, 0.5)',
+                        shadowOffsetY: 5,
+                        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                            offset: 0,
+                            color: 'rgb(129, 227, 238)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(25, 183, 207)'
+                        }])
+                    }
+                }
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+</body>
+</html>

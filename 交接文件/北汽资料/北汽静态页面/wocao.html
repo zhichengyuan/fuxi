@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>全国十大税收新闻评选</title>
+	<link href="common.css" type="text/css" rel="stylesheet" OLDSRC="common.css" OLDID="136" RELATED="1">
+	<link href="sp_index.css" type="text/css" rel="stylesheet" OLDSRC="sp_index.css" OLDID="153" RELATED="1">
+	<style>
+.match_top {
+    
+    /*height: 380px;*/
+    
+}
+.font_size{
+    font-size:14px;
+}
+.match_content1 {
+    padding-top: 74px;
+	z-index: 2;
+	position: relative;
+	bottom: 80px;
+}
+/*.match_top{
+    position: absolute;
+	z-index: 1;
+}*/
+html{
+    width: 100%;
+}
+table{
+	font-family: Arial;
+}
+.mc_b p {
+    text-indent: 0;
+	/*z-index: 0;*/
+}
+.match_foot{
+	position: relative;
+	bottom: 80px;
+}
+.mc_c{
+	margin-top: 5px;
+	/*height: 50px;*/
+}
+.mc_c1{
+	height: 97px;
+	position: relative;
+	bottom: 0px;
+}
+.match_content2{
+	position: relative;
+	bottom: 80px;
+}
+.s-left{
+	position: absolute;
+	top: 0;
+	right: 0;
+	/*border: solid 1px red;*/
+}
+.s-right{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.mc_a {
+	position: relative;
+	bottom: 15px;
+}
+.mc_b{
+	margin-top: 10px;
+}
+.mc2>p{
+	color: #0f8c7f;
+}
+.toupiao{
+	/*border: solid 1px red;*/
+	width: 90px;
+	height: 34px;
+	position: absolute;
+	left: 383px;
+    top: 0;
+}
+</style>
+<script src="jquery-1.7.2.min.js" type="text/javascript" OLDSRC="jquery-1.7.2.min.js" OLDID="152" RELATED="1"></script>
+<script src="${ROOT_PATH}images/layer/layer.min.js" type="text/javascript"></script>
+<script src="${ROOT_PATH}images/layer/extend/layer.ext.js" type="text/javascript"></script>
+<!--<script>
+	$(function () {
+		$("#confirm").bind("click", saveData);
+		$("#reset").bind("click", refresh);
+		// alert(window.innerWidth)
+		// headPic()
+		// window.onresize = function () {
+		// 	headPic()
+		// }
+
+// 评选结果按钮开始
+
+	// $('.toupiao').click(function(){
+	// 	location.href = "${ROOT_PATH}pub/wcmdemo4/2016shuishouxinwen/pingxuanjieguo/"
+	// })
+
+    // 评选结果按钮结束
+
+	})
+	function checkData() {
+		var result = true;
+		return result;
+	}
+	function saveData() {
+                console.log("verifyCode",$("#verifyCode").val());
+		if (!checkData()) {
+			layer.alert("亲，投票信息不完整，小心错过大奖哦！");
+		} else {
+			var objTitles = $("input[name='news']:checked");
+			if (objTitles.length == 0) {
+				layer.alert("请填写选项!");
+			} else if (objTitles.length > 10) {
+				layer.alert("您的选项超过10项,此选票无效,请重新填写!");
+			} else {
+				$("#confirm").unbind("click");
+				$("#confirm").bind("click", message);
+				layer.load(1);
+				var titles = "";
+				objTitles.each(function () {
+					titles += $(this).val() + ";;;";
+				})
+				$("#titles").val(titles);
+				$("#dataForm").submit();
+			}
+                          //layer.alert("投票已经结束，谢谢您的参与哦！");
+  
+		}
+	}
+	function message() {
+		layer.alert("请等待当前操作执行完毕!");
+	}
+	function refresh() {
+		window.location.reload();
+	}
+
+	// 头部两侧图片自适应
+	function headPic(){
+		var d = (window.innerWidth - 1000) * 0.65
+		$('.s-left').width(d)
+		$('.s-right').width(d)
+	}
+	
+</script>-->
+<script>
+$(function(){
+   $("#confirm").bind("click",saveData);
+   $("#reset").bind("click",refresh);
+})
+    function checkData(){
+       var result=true;
+       var username=$("#username");
+       var address=$("#address");
+    //    var postcode=$("#postcode");
+       var telephone=$("#telephone");
+    //    var idcard=$("#idcard");
+        var job=$("input[name='job']:checked");
+       var code = $("#verifyCode");
+       //var objArr=[username,address,postcode,telephone,idcard,job];
+       var objArr=[username,address,telephone,job,code];
+       $(objArr).each(function(){
+          if($.trim($(this).val())==""){
+               result=false; 
+          }
+       })
+       return result;
+    }
+    function dataValidate(){
+       //邮编简单验证
+       //var post_reg=/^\d{6}$/;
+       //电话简单验证
+       var tele_reg=/^((\d{11})|((0\d{2,3}-)?(\d{7,8})(-\d{1,4})?))$/;
+       //身份证号简单验证
+      //  var idcard_reg=/^((\d{15})|(\d{17}[0-9xX]))$/;
+      //if(!$("#postcode").val().match(post_reg)){
+       //     layer.alert("邮编必须为6位整数");
+      //     return false;
+      // }
+       if(!$("#telephone").val().match(tele_reg)){
+           layer.alert("号码必须是手机号或者电话号码");
+           return false;
+       }
+       // if(!$("#idcard").val().match(idcard_reg)){
+       //     layer.alert("请填写正确的身份证号");
+        //    return false;
+       // }
+       return true;
+    }
+    function saveData(){
+        if(!checkData()){
+           layer.alert("亲，投票信息不完整，小心错过大奖哦！");
+        }else{
+             if(!dataValidate()){return;}
+             var objTitles=$("input[name='news']:checked");
+             if(objTitles.length==0){
+                 layer.alert("请填写选项!");
+            }else if(objTitles.length>10){
+                 layer.alert("您的选项超过10项,此选票无效,请重新填写!");
+             }else{
+                 $("#confirm").unbind("click");
+                 $("#confirm").bind("click",message);
+                 layer.load(1);
+                 var titles="";
+                objTitles.each(function(){
+                   titles+=$(this).val()+";;;";
+                 })
+                 $("#titles").val(titles);
+                 $("#formCode").val($("#verifyCode").val());
+                 $("#dataForm").submit();
+             }
+             //layer.alert("投票已经结束，谢谢您的参与哦！");
+
+        }
+    }
+    function message(){
+        layer.alert("请等待当前操作执行完毕!");
+    }
+    function refresh(){
+        window.location.reload();
+    }
+function reloadCode(ele, sname) {
+	var eleSrc = "/wcm/verifycode.do";
+	var hash = new Date().getTime();
+	if (eleSrc.indexOf('?') > -1) {
+		ele.src = eleSrc + "&" + hash;
+	} else {
+		ele.src = eleSrc + "?" + hash;
+	}
+}
+</script>
+</head>
+
+<body>
+<!--<div id="fly1">
+	<img src="fly-img.jpg" OLDSRC="fly-img.jpg" OLDID="155" RELATED="1" />
+	<a class="gohref" href="http://www.ctaxnews.net.cn" target="_blank"></a>
+</div>-->
+	<div class="match_top">
+		<TRS_CHANNELLOGO id="OWNER" index="1" showpic="true"></TRS_CHANNELLOGO>
+		<!--<img class="s-left" src="3333333333_03.png" alt="" OLDSRC="3333333333_03.png" OLDID="156" RELATED="1" />-->
+		<!--<img class="s-right" src="4444444444_01.png" alt="" OLDSRC="4444444444_01.png" OLDID="157" RELATED="1" />-->
+	</div>
+	<div class="match_content1" style="background:url(<TRS_CHANNELLOGO id="OWNER" index="2" showpic="false" showmode="FILEPARSE"></TRS_CHANNELLOGO>) no-repeat 0 -10px">
+    <div class="toupiao"></div>
+<div class="mc_a">
+	<TRS_DOCUMENTS id="OWNER" channeltype="0" num="1" startpos="0" automore="FALSE">
+		<TRS_DOCUMENT FIELD="DOCHTMLCON" />
+	</TRS_DOCUMENTS>
+</div>
+<div class="h50"></div>
+<div class="mc_b fl font_size">
+	<TRS_DOCUMENTS id="OWNER" channeltype="0" num="1" startpos="1" automore="FALSE">
+		<TRS_DOCUMENT FIELD="DOCHTMLCON" />
+	</TRS_DOCUMENTS>
+</div>
+<!--评选办法-->
+<div class="mc_c fl " style="border:none" > 
+    <div class="mc_c1"
+        <TRS_DOCUMENTS id="OWNER" channeltype="0" num="1" startpos="2" automore="FALSE">
+            <TRS_DOCUMENT FIELD="DOCHTMLCON" />
+        </TRS_DOCUMENTS>
+    </div>
+    <div class="mc_c2">
+        <form id="dataForm" method="post" action="/wcm/app/apply/skytp2017/toupiao_deal.jsp">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                    <td width="80" height="30">姓 名： </td>
+                    <td><input type="text" class="match_in1" name="username" id="username"></td>
+                </tr>
+                <tr>
+                    <td width="80" height="30">地 址：</td>
+                    <td><input type="text" class="match_in1" name="address" id="address"></td>
+                </tr>
+                <!--<tr>
+                    <td width="80" height="30">邮 编：</td>
+                    <td><input type="text" class="match_in1" name="postcode" id="postcode" /></td>
+                </tr>-->
+                <tr>
+                    <td width="80" height="30">电 话：</td>
+                    <td><input type="text" class="match_in1" name="telephone" id="telephone"></td>
+                </tr>
+                <!--<tr>
+                    <td width="80" height="30">身份证号码：</td>
+                    <td><input type="text" class="match_in1" name="idcard" id="idcard" /></td>
+                </tr>-->
+                <tr>
+                    <td width="100" height="28" class="">职 业：</td>
+                    <td>
+                        <input class="font_size" name="job" type="radio" value="财会人员">财会人员
+                        <input class="font_size" name="job" type="radio" value="税务人员">税务人员
+                        <input class="font_size" name="job" type="radio" value="其它">其它
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span style="color: rgb(255, 0, 0);font-weight: bold;font-size: 15px;">提 示：</span>请认真填写上述信息，信息不全或有误的，将失去抽奖资格。获奖名单拟于1月11日在中国税网和《中国税务报》微信、新浪微博、客户端公布，敬请关注！</td>
+                </tr>
+            </tbody></table>
+            <input type="hidden" name="titles" id="titles">
+                    <input type="hidden" name="verifyCode" id="formCode">
+        </form>
+    </div>
+</div>
+
+
+<div class="match_content2">
+	<TRS_DOCUMENTS id="owner" childindex="0" channeltype="0" num="22" startpos="0" automore="FALSE">
+
+		<div class="mc2 fl">
+			<p><input type="checkbox" name="news" value="<TRS_DOCUMENT FIELD=" DOCTITLE " autolink="false" />" />
+				<TRS_ROWNO>文档序号</TRS_ROWNO>、
+				<a><TRS_DOCUMENT FIELD="DOCTITLE" target="_blank" autolink="false" /></a>
+			</p>
+			<p class="mp1">
+				<TRS_DOCUMENT FIELD="DOCCONTENT" num="180" />
+			</p>
+		</div>
+	</TRS_DOCUMENTS>
+</div>
+
+<div class="match_foot">
+	<div class="match_foot_txt" style="width:360px;text-align: center;margin: 35px auto;">
+<!--<a href="javascript:void(0);" id="reset"><img src="mach_but11.jpg" OLDSRC="mach_but11.jpg" OLDID="158" RELATED="1" /></a>-->
+<span style="float:left;margin-left: 63px;">验证码：</span>
+                  <input type="text" id="verifyCode" name="verifyCode" value="" size="6" class="input" onkeypress = "return regInput(this,	/^[0-9]*$/,		String.fromCharCode(event.keyCode))" onpaste "return regInput(this,	/^[0-9]*$/,		window.clipboardData.getData('Text'))" ondrop "return regInput(this,	/^[0-9]*$/,		event.dataTransfer.getData('Text'))" style="ime-mode:Disabled;float:left;width:100px;height:30px;font-size: 30px;text-align: center;" />
+<img src="/wcm/verifycode.do" align="absmiddle" style="border:1px solid #ccc;cursor:pointer;float:left;margin-left: 10px;margin-bottom: 20px;" onclick="reloadCode(this,'verify1')" alt="点击重新加载验证码" />
+<input type="button" value class="match_in3" id="confirm" />
+<a href="/wcm/app/apply/skytp2017/toupiao_result.jsp" class="go-result" style="right:0px;bottom: -55px;">查看投票结果</a>
+</div>
+</div>
+ <!--<script type="text/javascript">
+y=50
+x=0
+xin=true
+yin=true
+var d
+var pc
+function floatDIV(){
+  b=document.documentElement.clientWidth-document.getElementById("fly1").offsetWidth;
+  r=document.documentElement.clientHeight-document.getElementById("fly1").offsetHeight;
+  t=y+document.documentElement.scrollLeft;
+  l=x+document.documentElement.scrollTop;
+  document.getElementById("fly1").style.left=t+"px";
+  document.getElementById("fly1").style.top=l+"px";
+  //console.log(t,l);
+  y=y+(yin?1:-1);
+  if(y<0){yin=true;y=0};
+  if(y>b){yin=false;y=b};
+  
+  x=x+(xin?1:-1);
+  if(x<0){xin=true;x=0};
+  if(x>r){xin=false;x=r};
+  
+  }
+d=setInterval("floatDIV()",30);
+
+document.getElementById("fly1").onmouseover=function(){clearInterval(d);/*clearInterval(pc);*/};
+document.getElementById("fly1").onmouseout=function(){d=setInterval("floatDIV()", 30);/*pc=setInterval("pctab()",4000);*/};
+</script>-->
+</body>
+
+</html>

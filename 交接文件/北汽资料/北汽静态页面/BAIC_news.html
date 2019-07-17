@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/download.css">
+    <link rel="stylesheet" type="text/css" href="./css/news.css">
+    <title>新闻</title>
+    <style>
+
+</style>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="rightFiexd">
+        <ul>
+            <li><a href="javascript:;"><img src="./image/fixed1.png"><p>下载中心</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed2.png"><p>报告导入</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed3.png"><p>指标统计</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed4.png"><p>数据采集管理</p></a></li>
+            <li><a href="javascript:;"><img src="./image/fixed5.png"><p>系统管理</p></a></li>
+        </ul>
+    </div>
+    <!-- 公共顶部 -->
+    <div class="common_top clearfix">
+       <img class="fl" src="./image/logo_small.png">
+       
+    </div>
+    <!-- 公共版心 -->
+    <div class="w ">
+      <div class="news common_color " style="width:100%;height:auto;">
+         
+          <div class="news_list">
+              <div class="news-title">
+                  <h1 class="active">新车</h1>
+              </div>
+              <div class="list">
+                 <ul class="active" id="news-list">
+                    <!-- <li>
+                      <a href="">瞄准高端出行 吉利/戴姆勒成立合资公司</a><h2><span>来源：汽车之家</span><span>2018-10-29</span></h2>
+                    </li> -->
+                   
+                 </ul>
+                 
+              </div>
+ 
+              <!-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                <legend>显示完整功能</legend>
+              </fieldset> -->
+              <div class="pages"> <div id="demo7"></div></div>
+          </div>
+      </div>
+      
+    </div>
+      <!-- 公共底部 -->
+    <div class="footer">
+        <p>&copy;北京汽车股份有限公司 版权所有 京ICP备14056995号-1</p>
+        <p>本系统由中科聚网信息技术有限公司提供技术支持</p>
+    </div>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
+    <script type="text/javascript" src="./js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="./js/placeholder.js"></script>
+    <script type="text/javascript" src="./json/details.js"></script>
+  <!--[if lt IE 7]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+ <!-- 新车资讯 -->
+ <script type="text/html" id="details_detailed_message_template3">
+    <li>
+            <a href="" >标题</a><h1><span>来源</span><span>时间</span></h1>
+    </li>
+      {{# layui.each(d.data.newcar_message,function(index,item) { }}
+      
+      <li><a href="{{item.link}}" ><span style="">·</span>瞄准高端出行 吉利/戴姆勒成立合资公司</a><h2><span>来源：{{item.source}}</span><span>{{item.time}}</span></h2></li>
+     {{# }); }}
+    
+  </script>
+  <!-- 新车资讯结束 -->
+  <!-- 效果 -->
+  <script type="text/javascript">
+    layui.use(['layer', 'laytpl'], function(){
+        var layer = layui.layer,
+          laytpl = layui.laytpl;
+          //新车资讯
+      laytpl($("#details_detailed_message_template3").html()).render(details_page, function(html){
+                $("#news-list").html(html)
+        });
+     });
+  
+    $(function(){
+        var mySwiper = $('.swiper-container').swiper({
+          mode : 'horizontal',
+          slidesPerView : 5,
+          grabCursor: true,
+          paginationClickable: true
+        });
+        $('.details_detailed_tab_left').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipePrev()
+        })
+        $('.details_detailed_tab_right').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipeNext()
+        })
+        // 点击切换
+        $('.didden_table').on('click','.swiper-container span',function() {
+           $('.didden_table .swiper-container span').removeClass('active');
+           $(this).addClass('active');
+        })
+        // 品牌、车型切换
+        $('.search_screen_l').click(function(e) {
+            e=e||window.event;
+            e.stopPropagation();
+            $('.select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.select_div').stop().animate({bottom:"-362px"},1000).show();
+        })
+        $('.search_screen_r').click(function(e) {
+            e=e||window.event;
+            e.stopPropagation();
+            $('.select_div').stop().css({bottom:"0px"}).hide();
+           $(this).find('.select_div').stop().animate({bottom:"-362px"},1000).show();
+        })
+        // 表格子元素点击
+         $('.select_div').on('click','td a',function() {
+          $(this).parents('.select_div').siblings('.show_car').val($(this).text());
+          $('.select_div').stop().css({bottom:"0px"}).hide();
+         });
+        // 点击div以外地方div隐藏
+        $(document).on("click",function(){
+           $('.select_div').stop().css({bottom:"0px"}).hide();
+        });
+        $('.select_div').on("click",function(event){
+            event=event||window.event;
+            event.stopPropagation();
+        });
+    });
+  </script>
+  <script>
+      layui.use(['laypage', 'layer'], function(){
+        var laypage = layui.laypage
+        ,layer = layui.layer;
+ 
+        //完整功能
+        laypage.render({
+          elem: 'demo7'
+          ,count: 100
+          ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+          ,jump: function(obj){
+            console.log(obj)
+          }
+        });
+      
+       
+        
+       
+        //将一段数组分页展示
+        
+        //测试数据
+        var data = [
+          '北京',
+          '上海',
+          '广州',
+          '深圳',
+          '杭州',
+          '长沙',
+          '合肥',
+          '宁夏',
+          '成都',
+          '西安',
+          '南昌',
+          '上饶',
+          '沈阳',
+          '济南',
+          '厦门',
+          '福州',
+          '九江',
+          '宜春',
+          '赣州',
+          '宁波',
+          '绍兴',
+          '无锡',
+          '苏州',
+          '徐州',
+          '东莞',
+          '佛山',
+          '中山',
+          '成都',
+          '武汉',
+          '青岛',
+          '天津',
+          '重庆',
+          '南京',
+          '九江',
+          '香港',
+          '澳门',
+          '台北'
+        ];
+        
+        //调用分页
+        laypage.render({
+          elem: 'demo20'
+          ,count: data.length
+          ,jump: function(obj){
+            //模拟渲染
+            document.getElementById('biuuu_city_list').innerHTML = function(){
+              var arr = []
+              ,thisData = data.concat().splice(obj.curr*obj.limit - obj.limit, obj.limit);
+              layui.each(thisData, function(index, item){
+                arr.push('<li>'+ item +'</li>');
+              });
+              return arr.join('');
+            }();
+          }
+        });
+        
+      });
+      </script>
+      <script>
+          $('.news-title h1').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            var index = $(this).index();
+            $('.list ul').eq(index).addClass('active').siblings().removeClass('active');
+          })
+      </script>
+</body>
+</html>
